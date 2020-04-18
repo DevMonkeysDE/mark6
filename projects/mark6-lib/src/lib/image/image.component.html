@@ -1,0 +1,22 @@
+<img class="preview"
+     #imgPreview
+     (load)="previewLoaded()"
+     *ngIf="preview && state !== 'failed'"
+     [@fadeOut]="state"
+     [attr.src]="preview"
+     [attr.alt]="_alt"/>
+
+<img class="success"
+     *ngIf="src && state !== 'failed'"
+     [@fadeIn]="state"
+     [ngClass]="state"
+     (load)="loadSuccess()"
+     (error)="loadFailed()"
+     [attr.src]="src"
+     [attr.srcset]="srcSet"
+     [attr.alt]="_alt"/>
+
+<img class="failed"
+     *ngIf="state === 'failed'"
+     [src]="failedSrc"
+     alt="Image not found"/>

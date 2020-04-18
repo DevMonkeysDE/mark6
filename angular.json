@@ -123,6 +123,50 @@
           }
         }
       }
-    }},
-  "defaultProject": "mark6"
+    },
+    "mark6-lib": {
+      "projectType": "library",
+      "root": "projects/mark6-lib",
+      "sourceRoot": "projects/mark6-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mark6-lib/tsconfig.lib.json",
+            "project": "projects/mark6-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/mark6-lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mark6-lib/src/test.ts",
+            "tsConfig": "projects/mark6-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/mark6-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mark6-lib/tsconfig.lib.json",
+              "projects/mark6-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "mark6",
+  "cli": {
+    "analytics": "61f6670f-a6a6-424e-8c87-7fb68bb71b82"
+  }
 }
