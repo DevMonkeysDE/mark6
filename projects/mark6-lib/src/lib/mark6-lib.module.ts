@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Mark6LibComponent } from './mark6-lib.component';
+import {Mark6ImageModule} from "./image";
 
 
 
 @NgModule({
-  declarations: [Mark6LibComponent],
-  imports: [
-  ],
-  exports: [Mark6LibComponent]
+  exports: [
+    Mark6ImageModule
+  ]
 })
 export class Mark6LibModule { }
