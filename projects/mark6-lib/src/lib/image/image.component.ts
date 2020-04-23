@@ -1,12 +1,12 @@
 import {
-  ChangeDetectorRef,
-  Component,
-  HostBinding,
-  Input,
-  ViewChild,
-  ElementRef,
-  Output,
-  EventEmitter
+    ChangeDetectorRef,
+    Component,
+    HostBinding,
+    Input,
+    ViewChild,
+    ElementRef,
+    Output,
+    EventEmitter
 } from '@angular/core';
 import { animate, style, transition, trigger, state } from '@angular/animations';
 
@@ -49,6 +49,8 @@ export class Mark6ImageComponent {
         return this._src;
     }
     @Output() public imageDimensions = new EventEmitter();
+    @Output() public onFailed = new EventEmitter<void>();
+    @Output() public onLoaded = new EventEmitter<void>();
 
     @ViewChild('imgPreview', { static: false }) previewImg: ElementRef;
 
@@ -69,11 +71,13 @@ export class Mark6ImageComponent {
     loadSuccess() {
         this.state = 'success';
         this._cd.detectChanges();
+        this.onLoaded.next();
     }
 
     loadFailed() {
         this.state = 'failed';
         this._cd.detectChanges();
+        this.onFailed.next();
     }
 
     previewLoaded() {
