@@ -64,10 +64,6 @@ export class Mark6ImageComponent {
     constructor(private _cd: ChangeDetectorRef) {
     }
 
-    get _alt() {
-        return this.state === 'success' ? this.alt : null;
-    }
-
     loadSuccess() {
         this.state = 'success';
         this._cd.detectChanges();
