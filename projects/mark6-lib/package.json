@@ -5,7 +5,7 @@
         "type": "git",
         "url": "https://github.com/DevMonkeysDE/ngx-mark6"
     },
-    "version": "0.2.13-alpha",
+    "version": "0.2.14-alpha",
     "license": "MIT",
     "peerDependencies": {
         "@angular/common": "^9.1.1",
