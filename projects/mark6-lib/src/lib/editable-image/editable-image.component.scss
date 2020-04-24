@@ -1,0 +1,58 @@
+@import "~@devmonkeys/scss-elements/style";
+
+.mark6-editable-image {
+    display: block;
+    position: relative;
+    @include mediaMin($resDesktop) {
+        // For <mark6-avatar-upload> Child Component
+        /* TODO - Maybe not needed anymore...
+        &:hover:not(.uploading) {
+            .mark6-editable-image-upload {
+                opacity: 1;
+                cursor: pointer;
+                background-color: rgba(0, 0, 0, 0.64);
+            }
+        }
+        */
+        // Overlay
+        &:hover, &.uploading {
+            .mark6-editable-image-overlay {
+                background-color: rgba(255, 255, 255, 0.48);
+            }
+        }
+    }
+
+    .mark6-editable-image-overlay {
+        width: 100%;
+        height: 100%;
+
+        top: 0;
+        left: 0;
+        z-index: 2;
+        position: absolute;
+
+        transition-duration: 0.4s;
+        background-color: rgba(255, 255, 255, 0);
+        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition-property: background-color;
+    }
+
+    img {
+        width: 100%;
+
+        z-index: 1;
+        position: relative;
+
+        display: block;
+    }
+
+    .mark6-editable-image-progress {
+        width: 100%;
+
+        bottom: 0;
+        left: 0;
+        z-index: 3;
+        position: absolute;
+    }
+
+}

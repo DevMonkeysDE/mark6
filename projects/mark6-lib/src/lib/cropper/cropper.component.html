@@ -1,0 +1,14 @@
+<!-- CROPPER WRAPPER -->
+<div class="cropper-wrapper">
+
+    <!-- LOADING -->
+    <div class="loading-block" *ngIf="isLoading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- CROPPER -->
+    <div class="cropper">
+        <img #image alt="image" [src]="imageUrl"/>
+    </div>
+
+</div>

@@ -1,0 +1,43 @@
+<section class="site-user-profile">
+    <div class="site-user-profile-inner">
+
+        <div class="mark6-profile-element-sidebar" *ngIf="resMinDesktop.matches">
+            <mark6-editable-image [editMode]="true" [uploadProgress]="53">
+                <mark6-editable-image-content>Not Edit Mode</mark6-editable-image-content>
+                <mark6-editable-image-content-edit>
+                    <button>Upload</button>
+                    <button>Re-Crop</button>
+                    <button>Delete</button>
+                </mark6-editable-image-content-edit>
+                <mark6-image [src]="user.avatarURL" [alt]="user.displayName"></mark6-image>
+            </mark6-editable-image>
+
+            <h1>UserName <span>@profileUrlName</span></h1>
+            <mark6-cropper [imageUrl]="user.avatarURL"  (cropEnd)="avatarCropEnd($event)"></mark6-cropper>
+
+            <div class="mark6-profile-element-menu">
+                <ul>
+                    <li>Dashboard</li>
+                    <li>About</li>
+                    <li>Blogs</li>
+                    <li class="divider"></li>
+                    <li>Watchlist</li>
+                    <li>etc...</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="main-content">
+
+
+            <mark6-editable-image [editMode]="true">
+                <mark6-editable-image-content>Not Edit Mode</mark6-editable-image-content>
+                <mark6-editable-image-content-edit>Edit Mode</mark6-editable-image-content-edit>
+                <!-- <mark6-image [width]="'2'" [height]="'1'" [srcSet]="srcSet | async" [sizes]="sizes"></mark6-image> -->
+                <mark6-image [width]="'16'" [height]="'9'" src="https://dummyimage.com/1920x1080/000/fff.jpg" [sizes]="sizes"></mark6-image>
+            </mark6-editable-image>
+
+
+        </section>
+    </div>
+</section>

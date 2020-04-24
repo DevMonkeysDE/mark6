@@ -1,0 +1,29 @@
+@import "~@devmonkeys/scss-elements/style";
+
+section.site-user-profile {
+    .site-user-profile-inner {
+        max-width: 960px;
+        margin: auto;
+        padding: 40px 0;
+        @include mediaMin($resDesktop) {
+            max-width: 1280px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .mark6-profile-element-sidebar {
+            width: 200px;
+            margin-right: 20px;
+        }
+
+        section.main-content {
+            @include mediaMin($resDesktop) {
+                width: calc(100% - 200px - 40px);
+                margin-left: 20px;
+            }
+
+        }
+
+    }
+}

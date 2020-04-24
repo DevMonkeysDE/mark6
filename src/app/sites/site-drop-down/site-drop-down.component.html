@@ -1,0 +1,22 @@
+<mark6-drop-down positionY="bottom" positionX="left">
+
+    <mark6-drop-down-trigger>
+        <button mat-button mark6DropDownCloseTrigger>Trigger</button>
+    </mark6-drop-down-trigger>
+
+    <mark6-drop-down-content>
+        <mat-card>
+            <mat-nav-list>
+
+                <h3 mat-subheader>Demo title</h3>
+                <ng-container *ngFor="let demo of demoEntries">
+                    <mat-list-item (click)="close()">
+                        <h4 mat-line>{{demo.title}} Close with service</h4>
+                    </mat-list-item>
+                </ng-container>
+
+            </mat-nav-list>
+        </mat-card>
+    </mark6-drop-down-content>
+
+</mark6-drop-down>

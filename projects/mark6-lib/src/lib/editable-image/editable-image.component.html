@@ -1,0 +1,12 @@
+<ng-container *ngIf="!editMode">
+    <ng-content select="mark6-editable-image-content"></ng-content>
+</ng-container>
+
+<ng-container *ngIf="editMode">
+    <ng-content select="mark6-editable-image-content-edit"></ng-content>
+    <div class="mark6-editable-image-overlay"></div>
+    <div class="mark6-editable-image-progress" [style.height.%]="uploadProgress" [style.backgroundColor]="uploadProgressColor" *ngIf="uploadProgress"></div>
+</ng-container>
+
+<ng-content select="mark6-image"></ng-content>
+<ng-content></ng-content>
