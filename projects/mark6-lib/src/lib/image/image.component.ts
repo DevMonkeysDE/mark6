@@ -41,13 +41,7 @@ export class Mark6ImageComponent {
     @Input() public emitSize = false;
     @Input() public preview: string;
     @Input() public failedSrc = 'https://dummyimage.com/512x512/404040/fff.png';
-    @Input() public set src(value: string) {
-        this._src = value;
-        this.state = 'loading';
-    }
-    public get src() {
-        return this._src;
-    }
+    @Input() public src;
     @Output() public imageDimensions = new EventEmitter();
     @Output() public onFailed = new EventEmitter<void>();
     @Output() public onLoaded = new EventEmitter<void>();
