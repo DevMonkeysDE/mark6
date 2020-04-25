@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, ElementRef, ViewChild, Input, EventEmitter, Output, OnDestroy } from '@angular/core';
+import { Component, ViewEncapsulation, ElementRef, ViewChild, Input, EventEmitter, Output, OnDestroy, AfterViewInit } from '@angular/core';
 import Cropper from 'cropperjs';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
@@ -26,7 +26,7 @@ export interface ImageCropperResult {
     styleUrls: ['./cropper.component.scss'],
     encapsulation: ViewEncapsulation.None,
 })
-export class Mark6CropperComponent implements OnInit, OnDestroy {
+export class Mark6CropperComponent implements AfterViewInit, OnDestroy {
 
     @ViewChild('image') image: ElementRef;
 
@@ -47,7 +47,7 @@ export class Mark6CropperComponent implements OnInit, OnDestroy {
         this.cropObservable.unsubscribe();
     }
 
-    ngOnInit() {
+    ngAfterViewInit() {
         // listen to the crop event as observable in order to easy debounce and throttle output event
         this.cropObservable = fromEvent(this.image.nativeElement, 'crop')
             .pipe(
