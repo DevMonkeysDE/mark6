@@ -1,0 +1,18 @@
+.mark6-drop-down-content {
+    min-width: 240px;
+    max-width: 260px;
+    max-height: 58vh;
+    padding: 0;
+    position: relative;
+
+    // Support Material2 Card
+    .mat-card {
+        padding: 0;
+    }
+
+    // Support Material2 Nav List
+    .mat-nav-list {
+        padding-bottom: 8px;
+    }
+
+}
