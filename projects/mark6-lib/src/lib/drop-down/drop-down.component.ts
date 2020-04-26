@@ -8,9 +8,11 @@ import {
     OnDestroy,
     OnInit,
     ViewEncapsulation,
-    Directive
+    Directive,
+    OnChanges,
+    SimpleChanges
 } from '@angular/core';
-import {Mark6DropDownService} from './drop-down.service';
+import { Mark6DropDownService } from './drop-down.service';
 
 /**
  * DropDown
@@ -26,29 +28,17 @@ import {Mark6DropDownService} from './drop-down.service';
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Mark6DropDownComponent implements OnInit, OnDestroy {
+export class Mark6DropDownComponent implements OnInit, OnDestroy, OnChanges {
 
     @HostBinding('class') classes = 'mark6-drop-down';
 
-    @HostBinding('class.pos-x-right')
-    get a() {
-        return this.positionX === 'right';
-    }
+    @HostBinding('class.pos-x-right') a;
 
-    @HostBinding('class.pos-x-left')
-    get b() {
-        return this.positionX === 'left';
-    }
+    @HostBinding('class.pos-x-left') b;
 
-    @HostBinding('class.pos-y-top')
-    get c() {
-        return this.positionY === 'top';
-    }
+    @HostBinding('class.pos-y-top') c;
 
-    @HostBinding('class.pos-y-bottom')
-    get d() {
-        return this.positionY === 'bottom';
-    }
+    @HostBinding('class.pos-y-bottom') d;
 
     @Input() public addClass: string;
     @Input() public positionY = 'bottom';
@@ -120,7 +110,12 @@ export class Mark6DropDownComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }
-
+    ngOnChanges(changes: SimpleChanges) {
+        if (changes.positionX) { this.a = changes.positionX.currentValue === 'right'; }
+        if (changes.positionX) { this.b = changes.positionX.currentValue === 'left'; }
+        if (changes.positionY) { this.c = changes.positionY.currentValue === 'top'; }
+        if (changes.positionY) { this.d = changes.posipositionYtionX.currentValue === 'bottom'; }
+    }
 }
 
 
@@ -138,7 +133,7 @@ export class Mark6DropDownTriggerComponent {
     @HostBinding('class') classes = 'mark6-drop-down-trigger';
 }
 
-@Directive({selector: '[mark6DropDownCloseTrigger]'})
+@Directive({ selector: '[mark6DropDownCloseTrigger]' })
 export class Mark6DropDownCloseTriggerDirective {
     constructor(private _dropDownService: Mark6DropDownService) {
     }
