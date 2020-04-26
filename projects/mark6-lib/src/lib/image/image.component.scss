@@ -1,22 +1,22 @@
-:host {
+.mark6-image {
     width: inherit;
     height: inherit;
     position: relative;
     display: block;
     overflow: hidden;
-}
 
-img {
-    width: 100%;
-    display: block;
+    img {
+        width: 100%;
+        display: block;
 
-    &.preview {
-        filter: blur(10px);
-    }
+        &.preview {
+            filter: blur(10px);
+        }
 
-    &.success {
-        top: 0;
-        left: 0;
-        position: absolute;
+        &.success {
+            top: 0;
+            left: 0;
+            position: absolute;
+        }
     }
 }

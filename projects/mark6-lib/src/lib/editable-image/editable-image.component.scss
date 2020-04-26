@@ -22,21 +22,6 @@
         }
     }
 
-    .mark6-editable-image-overlay {
-        width: 100%;
-        height: 100%;
-
-        top: 0;
-        left: 0;
-        z-index: 2;
-        position: absolute;
-
-        transition-duration: 0.4s;
-        background-color: rgba(255, 255, 255, 0);
-        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-        transition-property: background-color;
-    }
-
     img {
         width: 100%;
 
@@ -46,13 +31,28 @@
         display: block;
     }
 
-    .mark6-editable-image-progress {
-        width: 100%;
+}
 
-        bottom: 0;
-        left: 0;
-        z-index: 3;
-        position: absolute;
-    }
+.mark6-editable-image-overlay {
+    width: 100%;
+    height: 100%;
 
+    top: 0;
+    left: 0;
+    z-index: 2;
+    position: absolute;
+
+    transition-duration: 0.4s;
+    background-color: rgba(255, 255, 255, 0);
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-property: background-color;
+}
+
+.mark6-editable-image-progress {
+    width: 100%;
+
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    position: absolute;
 }

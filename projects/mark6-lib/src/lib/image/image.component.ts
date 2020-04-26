@@ -7,36 +7,39 @@ import {
     Output,
     EventEmitter,
     OnChanges,
-    SimpleChanges
+    SimpleChanges, ViewEncapsulation
 } from '@angular/core';
-import { animate, style, transition, trigger, state } from '@angular/animations';
+import {animate, style, transition, trigger, state} from '@angular/animations';
 
 @Component({
     selector: 'mark6-image',
     templateUrl: './image.component.html',
     styleUrls: ['./image.component.scss'],
+    encapsulation: ViewEncapsulation.None,
     animations: [
         trigger('fadeIn', [
-            state('loading', style({ opacity: 0 })),
+            state('loading', style({opacity: 0})),
             transition('* => success', [
-                animate('300ms ease-in', style({ opacity: 1 }))
+                animate('300ms ease-in', style({opacity: 1}))
             ])
         ]),
         trigger('fadeOut', [
-            state('loading', style({ opacity: 1 })),
+            state('loading', style({opacity: 1})),
             transition('* => success', [
-                animate('300ms ease-in', style({ opacity: 0 }))
+                animate('300ms ease-in', style({opacity: 0}))
             ]),
-            state('success', style({ opacity: 0 })),
+            state('success', style({opacity: 0})),
         ])
     ]
 })
 export class Mark6ImageComponent implements OnChanges {
 
+    private hostClass = 'mark6-image';
+    @HostBinding('class') classes = this.hostClass;
 
     @Input() public srcSet: string;
     @Input() public alt: string;
-    @Input() public addClass = '';
+    @Input() public addClass: string;
     @Input() public backgroundColor = '#404040';
     @Input() public emitSize = false;
     @Input() public preview: string;
@@ -46,9 +49,7 @@ export class Mark6ImageComponent implements OnChanges {
     @Output() public failed = new EventEmitter<void>();
     @Output() public loaded = new EventEmitter<void>();
 
-    @ViewChild('imgPreview', { static: false }) previewImg: ElementRef;
-
-    @HostBinding('class') classes;
+    @ViewChild('imgPreview', {static: false}) previewImg: ElementRef;
 
     /* Image loading state */
     public state: 'loading' | 'success' | 'failed' = 'loading';
@@ -57,8 +58,12 @@ export class Mark6ImageComponent implements OnChanges {
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        if (changes.addClass) { this.classes = changes.addClass.currentValue; }
-        if (changes.src && changes.src.currentValue) { this.state = 'loading'; }
+        if (changes.addClass) {
+            this.classes = this.hostClass + ' ' + changes.addClass.currentValue;
+        }
+        if (changes.src && changes.src.currentValue) {
+            this.state = 'loading';
+        }
     }
 
     loadSuccess() {
