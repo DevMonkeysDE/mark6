@@ -43,7 +43,6 @@ export class Mark6ImageComponent implements OnChanges {
     @Input() public failedSrc = 'https://dummyimage.com/512x512/404040/fff.png';
     @Input() public src: string;
 
-    @Output() public imageDimensions = new EventEmitter();
     @Output() public failed = new EventEmitter<void>();
     @Output() public loaded = new EventEmitter<void>();
 
@@ -70,11 +69,6 @@ export class Mark6ImageComponent implements OnChanges {
         this.failed.next();
     }
 
-    previewLoaded() {
-        if (this.emitSize) {
-            const { offsetWidth, offsetHeight } = this.previewImg.nativeElement;
-            this.imageDimensions.emit({ height: offsetHeight, width: offsetWidth });
-        }
-    }
+   
 
 }

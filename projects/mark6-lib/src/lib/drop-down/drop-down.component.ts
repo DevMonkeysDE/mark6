@@ -111,10 +111,14 @@ export class Mark6DropDownComponent implements OnInit, OnDestroy, OnChanges {
         this.subscription.unsubscribe();
     }
     ngOnChanges(changes: SimpleChanges) {
-        if (changes.positionX) { this.a = changes.positionX.currentValue === 'right'; }
-        if (changes.positionX) { this.b = changes.positionX.currentValue === 'left'; }
-        if (changes.positionY) { this.c = changes.positionY.currentValue === 'top'; }
-        if (changes.positionY) { this.d = changes.posipositionYtionX.currentValue === 'bottom'; }
+        if (changes.positionX) {
+            this.a = changes.positionX.currentValue === 'right';
+            this.b = changes.positionX.currentValue === 'left';
+        }
+        if (changes.positionY) {
+            this.c = changes.positionY.currentValue === 'top';
+            this.d = changes.positionY.currentValue === 'bottom';
+        }
     }
 }
 
