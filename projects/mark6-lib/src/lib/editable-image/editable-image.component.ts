@@ -1,4 +1,4 @@
-import {Component, HostBinding, Input, ViewEncapsulation} from '@angular/core';
+import { Component, HostBinding, Input, ViewEncapsulation, OnChanges, SimpleChanges } from '@angular/core';
 
 
 @Component({
@@ -8,19 +8,21 @@ import {Component, HostBinding, Input, ViewEncapsulation} from '@angular/core';
     styleUrls: ['./editable-image.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class Mark6EditableImageComponent {
+export class Mark6EditableImageComponent implements OnChanges {
 
     @HostBinding('class') classes = 'mark6-editable-image';
 
-    @HostBinding('class.uploading')
-    get isUploading() {
-        return this.uploadProgress > 0;
-    }
+    @HostBinding('class.uploading') isUploading;
 
     @Input() public editMode = false;
     @Input() public uploadProgress = null;
     @Input() public uploadProgressColor = 'rgba(0, 0, 0, 0.64)';
 
+    ngOnChanges(changes: SimpleChanges) {
+        if (changes.uploadProgress) {
+            this.isUploading = changes.uploadProgress.currentValue > 0;
+        }
+    }
 }
 
 

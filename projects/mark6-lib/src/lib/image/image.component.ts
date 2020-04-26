@@ -1,17 +1,18 @@
 import {
-    ChangeDetectorRef,
     Component,
     HostBinding,
     Input,
     ViewChild,
     ElementRef,
     Output,
-    EventEmitter
+    EventEmitter,
+    OnChanges,
+    SimpleChanges
 } from '@angular/core';
 import { animate, style, transition, trigger, state } from '@angular/animations';
 
 @Component({
-    selector: 'app-image',
+    selector: 'mark6-image',
     templateUrl: './image.component.html',
     styleUrls: ['./image.component.scss'],
     animations: [
@@ -30,9 +31,8 @@ import { animate, style, transition, trigger, state } from '@angular/animations'
         ])
     ]
 })
-export class Mark6ImageComponent {
+export class Mark6ImageComponent implements OnChanges {
 
-    private _src: string;
 
     @Input() public srcSet: string;
     @Input() public alt: string;
@@ -41,40 +41,33 @@ export class Mark6ImageComponent {
     @Input() public emitSize = false;
     @Input() public preview: string;
     @Input() public failedSrc = 'https://dummyimage.com/512x512/404040/fff.png';
-    @Input() public set src(value: string) {
-        this._src = value;
-        this.state = 'loading';
-    }
-    public get src() {
-        return this._src;
-    }
+    @Input() public src: string;
 
     @Output() public imageDimensions = new EventEmitter();
-    @Output() public onFailed = new EventEmitter<void>();
-    @Output() public onLoaded = new EventEmitter<void>();
+    @Output() public failed = new EventEmitter<void>();
+    @Output() public loaded = new EventEmitter<void>();
 
     @ViewChild('imgPreview', { static: false }) previewImg: ElementRef;
 
-    @HostBinding('class') get classes() {
-        return this.addClass;
-    }
+    @HostBinding('class') classes;
 
     /* Image loading state */
     public state: 'loading' | 'success' | 'failed' = 'loading';
 
-    constructor(private _cd: ChangeDetectorRef) {
+    constructor() {
     }
-
+    ngOnChanges(changes: SimpleChanges) {
+        if (changes.addClass) { this.classes = changes.addClass.currentValue; }
+        if (changes.src && changes.src.currentValue) { this.state = 'loading'; }
+    }
     loadSuccess() {
         this.state = 'success';
-        this._cd.detectChanges();
-        this.onLoaded.next();
+        this.loaded.next();
     }
 
     loadFailed() {
         this.state = 'failed';
-        this._cd.detectChanges();
-        this.onFailed.next();
+        this.failed.next();
     }
 
     previewLoaded() {

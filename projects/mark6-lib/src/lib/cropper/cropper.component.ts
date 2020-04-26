@@ -60,10 +60,8 @@ export class Mark6CropperComponent implements AfterViewInit, OnDestroy {
         this.image.nativeElement.addEventListener('ready', () => this._ready());
 
         // Set cropperjs
-        setTimeout(() => {
-            const options = { ...defaultOptions, ...this.options };
-            this.cropper = new Cropper(this.image.nativeElement, options);
-        }, 0);
+        const options = { ...defaultOptions, ...this.options };
+        this.cropper = new Cropper(this.image.nativeElement, options);
     }
 
     /**
