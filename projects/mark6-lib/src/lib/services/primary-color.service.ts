@@ -1,4 +1,6 @@
 import {Injectable, RendererFactory2} from '@angular/core';
+// TODO Check sometimes when the bug in compiler is fixed. then we can move Renderer2 again to above import
+// More about it: https://github.com/ng-packagr/ng-packagr/issues/1543#issuecomment-593873874
 import {Renderer2} from '@angular/core';
 
 @Injectable({

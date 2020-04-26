@@ -55,10 +55,12 @@ export class Mark6ImageComponent implements OnChanges {
 
     constructor() {
     }
+
     ngOnChanges(changes: SimpleChanges) {
         if (changes.addClass) { this.classes = changes.addClass.currentValue; }
         if (changes.src && changes.src.currentValue) { this.state = 'loading'; }
     }
+
     loadSuccess() {
         this.state = 'success';
         this.loaded.next();
@@ -68,7 +70,5 @@ export class Mark6ImageComponent implements OnChanges {
         this.state = 'failed';
         this.failed.next();
     }
-
-   
 
 }
