@@ -1,3 +1,7 @@
+<div class="mark6-image-placeholder"
+     [style.paddingTop.%]="100 / aspectRatio"
+     [style.backgroundColor]="backgroundColor"></div>
+
 <img class="preview"
      #imgPreview
      *ngIf="preview && state !== 'failed'"
