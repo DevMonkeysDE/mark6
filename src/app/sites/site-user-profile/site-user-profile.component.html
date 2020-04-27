@@ -13,7 +13,7 @@
             </mark6-editable-image>
 
             <h1>UserName <span>@profileUrlName</span></h1>
-            <mark6-cropper [imageUrl]="user.avatarURL"  (cropEnd)="avatarCropEnd($event)"></mark6-cropper>
+            <!--<mark6-cropper [imageUrl]="user.avatarURL"  (cropEnd)="avatarCropEnd($event)"></mark6-cropper>-->
 
             <div class="mark6-profile-element-menu">
                 <ul>
@@ -34,7 +34,7 @@
                 <mark6-editable-image-content>Not Edit Mode</mark6-editable-image-content>
                 <mark6-editable-image-content-edit>Edit Mode</mark6-editable-image-content-edit>
                 <!-- <mark6-image [width]="'2'" [height]="'1'" [srcSet]="srcSet | async" [sizes]="sizes"></mark6-image> -->
-                <mark6-image [width]="'16'" [height]="'9'" src="https://dummyimage.com/1920x1080/000/fff.jpg" [sizes]="sizes"></mark6-image>
+                <mark6-image src="https://dummyimage.com/1920x1080/000/fff.jpg"></mark6-image>
             </mark6-editable-image>
 
 

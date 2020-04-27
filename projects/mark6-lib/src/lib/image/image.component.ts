@@ -37,13 +37,16 @@ export class Mark6ImageComponent implements OnChanges {
     private hostClass = 'mark6-image';
     @HostBinding('class') classes = this.hostClass;
 
+    @Input() public backgroundColor = '#404040';
+    @HostBinding('style.background') hostBackgroundColor = this.backgroundColor;
+
     @Input() public srcSet: string;
     @Input() public alt: string;
     @Input() public addClass: string;
-    @Input() public backgroundColor = '#404040';
+    @Input() public default: string;
     @Input() public emitSize = false;
     @Input() public preview: string;
-    @Input() public failedSrc = 'https://dummyimage.com/512x512/404040/fff.png';
+    @Input() public failedSrc = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN0+A8AAYUBQcxKiF0AAAAASUVORK5CYII=';
     @Input() public src: string;
 
     @Output() public failed = new EventEmitter<void>();

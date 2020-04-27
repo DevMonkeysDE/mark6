@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { ImageCropperResult } from '../../../../projects/mark6-lib/src/lib/cropper';
 import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import {ImageCropperResult} from "../../../../projects/mark6-lib/src/lib/cropper/cropper.component";
 
 
 @Component({

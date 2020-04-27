@@ -1,0 +1,21 @@
+.mat-toolbar {
+
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        li {
+            margin-left: 16px;
+            a {
+                color: #404040;
+                text-decoration: none;
+            }
+        }
+    }
+
+}
+
+main {
+    height: calc(100% - 56px);
+}
