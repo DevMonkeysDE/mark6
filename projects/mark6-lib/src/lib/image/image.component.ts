@@ -64,7 +64,6 @@ export class Mark6ImageComponent implements OnChanges {
     constructor(private ref: ChangeDetectorRef) { }
 
     ngOnChanges(changes: SimpleChanges) {
-
         console.log(changes, this.state);
         if (changes.addClass) {
             this.classes = this.hostClass + ' ' + changes.addClass.currentValue;
@@ -87,23 +86,19 @@ export class Mark6ImageComponent implements OnChanges {
                 this.aspectRatioNumber = Math.floor(w / h);
             }
         }
-
         this.ref.detectChanges();
-
     }
 
     loadSuccess() {
         this.state = 'success';
         this.loaded.next();
         this.ref.detectChanges();
-
     }
 
     loadFailed() {
         this.state = 'failed';
         this.failed.next();
         this.ref.detectChanges();
-
     }
 
 }
