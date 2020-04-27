@@ -9,7 +9,7 @@ import {
     OnChanges,
     SimpleChanges, ViewEncapsulation
 } from '@angular/core';
-import {animate, style, transition, trigger, state} from '@angular/animations';
+import { animate, style, transition, trigger, state } from '@angular/animations';
 
 @Component({
     selector: 'mark6-image',
@@ -18,17 +18,17 @@ import {animate, style, transition, trigger, state} from '@angular/animations';
     encapsulation: ViewEncapsulation.None,
     animations: [
         trigger('fadeIn', [
-            state('loading', style({opacity: 0})),
+            state('loading', style({ opacity: 0 })),
             transition('* => success', [
-                animate('300ms ease-in', style({opacity: 1}))
+                animate('300ms ease-in', style({ opacity: 1 }))
             ])
         ]),
         trigger('fadeOut', [
-            state('loading', style({opacity: 1})),
+            state('loading', style({ opacity: 1 })),
             transition('* => success', [
-                animate('300ms ease-in', style({opacity: 0}))
+                animate('300ms ease-in', style({ opacity: 0 }))
             ]),
-            state('success', style({opacity: 0})),
+            state('success', style({ opacity: 0 })),
         ])
     ]
 })
@@ -53,7 +53,7 @@ export class Mark6ImageComponent implements OnChanges {
     @Output() public failed = new EventEmitter<void>();
     @Output() public loaded = new EventEmitter<void>();
 
-    @ViewChild('imgPreview', {static: false}) previewImg: ElementRef;
+    @ViewChild('imgPreview', { static: false }) previewImg: ElementRef;
 
     /* Image loading state */
     public state: 'loading' | 'success' | 'failed' = 'loading';
@@ -66,6 +66,10 @@ export class Mark6ImageComponent implements OnChanges {
             this.classes = this.hostClass + ' ' + changes.addClass.currentValue;
         }
         if (changes.src && changes.src.currentValue) {
+            this.state = 'loading';
+        }
+        if (changes.default && changes.default.currentValue && !!!changes.src && !!!this.src && !!!this.srcSet) {
+            this.src = changes.default.currentValue;
             this.state = 'loading';
         }
     }
