@@ -77,7 +77,10 @@ export class Mark6ImageComponent implements OnChanges {
             this.state = 'loading';
         }
         if (changes.aspectRatio && changes.aspectRatio.currentValue) {
-            const values = changes.aspectRatio.currentValue.split('/');
+            let seperator;
+            if (changes.aspectRatio.currentValue.includes('/')) { seperator = '/'; }
+            else if (changes.aspectRatio.currentValue.includes(':')) { seperator = ':'; }
+            const values = changes.aspectRatio.currentValue.split(seperator);
             if (values.length === 2) {
                 const w = +values[0];
                 const h = +values[1];
