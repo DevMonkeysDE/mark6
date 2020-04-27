@@ -5,13 +5,13 @@ import {
     HostBinding,
     HostListener,
     Input,
-    OnDestroy,
-    OnInit,
     ViewEncapsulation,
-    Directive,
-    OnChanges,
-    SimpleChanges
+    Directive
 } from '@angular/core';
+import { SimpleChanges } from '@angular/core';
+import { OnChanges } from '@angular/core';
+import { OnDestroy } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { Mark6DropDownService } from './drop-down.service';
 
 /**

@@ -6,9 +6,10 @@ import {
     ElementRef,
     Output,
     EventEmitter,
-    OnChanges,
-    SimpleChanges, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, OnDestroy
+    ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef
 } from '@angular/core';
+import { SimpleChanges } from '@angular/core';
+import { OnChanges } from '@angular/core';
 import { animate, style, transition, trigger, state } from '@angular/animations';
 
 @Component({
@@ -64,7 +65,6 @@ export class Mark6ImageComponent implements OnChanges {
     constructor(private ref: ChangeDetectorRef) { }
 
     ngOnChanges(changes: SimpleChanges) {
-        console.log(changes, this.state);
         if (changes.addClass) {
             this.classes = this.hostClass + ' ' + changes.addClass.currentValue;
         }
