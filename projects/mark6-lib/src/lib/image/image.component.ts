@@ -7,7 +7,7 @@ import {
     Output,
     EventEmitter,
     OnChanges,
-    SimpleChanges, ViewEncapsulation
+    SimpleChanges, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, OnDestroy
 } from '@angular/core';
 import { animate, style, transition, trigger, state } from '@angular/animations';
 
@@ -15,6 +15,7 @@ import { animate, style, transition, trigger, state } from '@angular/animations'
     selector: 'mark6-image',
     templateUrl: './image.component.html',
     styleUrls: ['./image.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     animations: [
         trigger('fadeIn', [
@@ -58,11 +59,13 @@ export class Mark6ImageComponent implements OnChanges {
 
     /* Image loading state */
     public state: 'loading' | 'success' | 'failed' = 'loading';
+    public aspectRatioNumber;
 
-    constructor() {
-    }
+    constructor(private ref: ChangeDetectorRef) { }
 
     ngOnChanges(changes: SimpleChanges) {
+
+        console.log(changes, this.state);
         if (changes.addClass) {
             this.classes = this.hostClass + ' ' + changes.addClass.currentValue;
         }
@@ -73,16 +76,31 @@ export class Mark6ImageComponent implements OnChanges {
             this.src = changes.default.currentValue;
             this.state = 'loading';
         }
+        if (changes.aspectRatio && changes.aspectRatio.currentValue) {
+            const values = changes.aspectRatio.currentValue.split('/');
+            if (values.length === 2) {
+                const w = +values[0];
+                const h = +values[1];
+                this.aspectRatioNumber = Math.floor(w / h);
+            }
+        }
+
+        this.ref.detectChanges();
+
     }
 
     loadSuccess() {
         this.state = 'success';
         this.loaded.next();
+        this.ref.detectChanges();
+
     }
 
     loadFailed() {
         this.state = 'failed';
         this.failed.next();
+        this.ref.detectChanges();
+
     }
 
 }
