@@ -7,6 +7,7 @@
         "build": "ng build",
         "build:lib": "ng build mark6-lib",
         "build:lib:prod": "ng build mark6-lib --prod",
+        "publish": "npm publish ./dist/mark6-lib",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e"
