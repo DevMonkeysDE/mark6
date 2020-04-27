@@ -1,15 +1,15 @@
 <div class="mark6-image-placeholder"
-     [style.paddingTop.%]="100 / aspectRatio"
-     [style.backgroundColor]="backgroundColor"></div>
+     [style.paddingTop.%]="100 / (1 / 3)"
+     [style.backgroundImage]="backgroundImage"></div>
 
-<img class="preview"
+<img class="mark6-image-preview"
      #imgPreview
      *ngIf="preview && state !== 'failed'"
      [@fadeOut]="state"
      [attr.src]="preview"
      [attr.alt]="alt"/>
 
-<img class="success"
+<img class="mark6-image-success"
      *ngIf="src && state !== 'failed'"
      [@fadeIn]="state"
      [ngClass]="state"
@@ -19,7 +19,7 @@
      [attr.srcset]="srcSet"
      [attr.alt]="alt"/>
 
-<img class="failed"
+<img class="mark6-image-failed"
      *ngIf="state === 'failed'"
      [src]="failedSrc"
      alt="Image not found"/>

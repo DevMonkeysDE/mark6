@@ -5,15 +5,19 @@
     display: block;
     overflow: hidden;
 
+    .mark6-image-placeholder {
+
+    }
+
     img {
         width: 100%;
         display: block;
 
-        &.preview {
+        &.mark6-image-preview {
             filter: blur(10px);
         }
 
-        &.success {
+        &.mark6-image-success {
             top: 0;
             left: 0;
             position: absolute;
