@@ -1,8 +1,11 @@
 ---
-description: asd
+description: >-
+  If you don't have any code yet, please consider checking Angular CLI
+  documentation for help creating your app. In case you want to start based on
+  our ngx-admin starter kit, please check out Based on S
 ---
 
-# Untitled
+# Install Mark6
 
 ## Getting Super Powers
 

@@ -4,5 +4,6 @@
 
 ## Getting Started
 
-* [Untitled](getting-started/untitled.md)
+* [Install Mark6](getting-started/untitled/README.md)
+  * [Untitled](getting-started/untitled/untitled.md)
 
