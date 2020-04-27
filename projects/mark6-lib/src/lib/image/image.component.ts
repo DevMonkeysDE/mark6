@@ -71,7 +71,7 @@ export class Mark6ImageComponent implements OnChanges {
         if (changes.src && changes.src.currentValue) {
             this.state = 'loading';
         }
-        if (changes.default && changes.default.currentValue && !!!changes.src && !!!this.src && !!!this.srcSet) {
+        if (changes.default && changes.default.currentValue && (changes.src && !!!changes.src.currentValue)) {
             this.src = changes.default.currentValue;
             this.state = 'loading';
         }
