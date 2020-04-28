@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, ViewEncapsulation, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, HostBinding, Input, ViewEncapsulation, OnChanges, SimpleChanges, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 
 
 @Component({
@@ -6,6 +6,7 @@ import { Component, HostBinding, Input, ViewEncapsulation, OnChanges, SimpleChan
     exportAs: 'mark6EditableImage',
     templateUrl: './editable-image.component.html',
     styleUrls: ['./editable-image.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None
 })
 export class Mark6EditableImageComponent implements OnChanges {
@@ -19,7 +20,7 @@ export class Mark6EditableImageComponent implements OnChanges {
     @Input() public editMode = false;
     @Input() public uploadProgress = null;
     @Input() public uploadProgressColor = 'rgba(0, 0, 0, 0.64)';
-
+    constructor(private ref: ChangeDetectorRef) { }
     ngOnChanges(changes: SimpleChanges) {
         if (changes.addClass) {
             this.classes = this.hostClass + ' ' + changes.addClass.currentValue;
@@ -27,6 +28,7 @@ export class Mark6EditableImageComponent implements OnChanges {
         if (changes.uploadProgress) {
             this.isUploading = changes.uploadProgress.currentValue > 0;
         }
+        this.ref.detectChanges();
     }
 }
 
