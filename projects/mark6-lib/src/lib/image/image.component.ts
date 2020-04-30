@@ -43,7 +43,7 @@ export class Mark6ImageComponent implements OnChanges {
     @HostBinding('style.background') hostBackgroundColor = this.backgroundColor;
 
     @Input() public backgroundImage: string;
-    @Input() public aspectRatio = '1 / 1';
+    @Input() public aspectRatio = this.parseRation('1 / 1');
     @Input() public srcSet: string;
     @Input() public alt: string;
     @Input() public addClass: string;
@@ -76,18 +76,11 @@ export class Mark6ImageComponent implements OnChanges {
             this.state = 'loading';
         }
         if (changes.aspectRatio && changes.aspectRatio.currentValue) {
-            let seperator;
-            if (changes.aspectRatio.currentValue.includes('/')) { seperator = '/'; }
-            else if (changes.aspectRatio.currentValue.includes(':')) { seperator = ':'; }
-            const values = changes.aspectRatio.currentValue.split(seperator);
-            if (values.length === 2) {
-                const w = +values[0];
-                const h = +values[1];
-                this.aspectRatioNumber = Math.floor(w / h);
-            }
+            this.aspectRatioNumber = this.parseRation(changes.aspectRatio.currentValue);
         }
         this.ref.detectChanges();
     }
+
 
     loadSuccess() {
         this.state = 'success';
@@ -100,5 +93,15 @@ export class Mark6ImageComponent implements OnChanges {
         this.failed.next();
         this.ref.detectChanges();
     }
-
+    private parseRation(value) {
+        let seperator;
+        if (value.includes('/')) { seperator = '/'; }
+        else if (value.includes(':')) { seperator = ':'; }
+        const values = value.split(seperator);
+        if (values.length === 2) {
+            const w = +values[0];
+            const h = +values[1];
+            return Math.floor(w / h);
+        }
+    }
 }
