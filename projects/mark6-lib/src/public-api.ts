@@ -13,9 +13,9 @@ export * from './lib/image/image.component';
 export * from './lib/editable-image/editable-image.module';
 export * from './lib/editable-image/editable-image.component';
 
-/*// Mark6 Cropper
+// Mark6 Cropper
 export * from './lib/cropper/cropper.module';
-export * from './lib/cropper/cropper.component';*/
+export * from './lib/cropper/cropper.component';
 
 // Mark6 DropDown
 export * from './lib/drop-down/drop-down.module';

@@ -81,7 +81,6 @@ export class Mark6ImageComponent implements OnChanges {
         this.ref.detectChanges();
     }
 
-
     loadSuccess() {
         this.state = 'success';
         this.loaded.next();
@@ -94,10 +93,10 @@ export class Mark6ImageComponent implements OnChanges {
         this.ref.detectChanges();
     }
     private parseRation(value) {
-        let seperator;
-        if (value.includes('/')) { seperator = '/'; }
-        else if (value.includes(':')) { seperator = ':'; }
-        const values = value.split(seperator);
+        let separator;
+        if (value.includes('/')) { separator = '/'; }
+        else if (value.includes(':')) { separator = ':'; }
+        const values = value.split(separator);
         if (values.length === 2) {
             const w = +values[0];
             const h = +values[1];
