@@ -43,7 +43,7 @@ export class Mark6ImageComponent implements OnChanges {
     @HostBinding('style.background') hostBackgroundColor = this.backgroundColor;
 
     @Input() public backgroundImage: string;
-    @Input() public aspectRatio = this.parseRation('1 / 1');
+    @Input() public aspectRatio: string;
     @Input() public srcSet: string;
     @Input() public alt: string;
     @Input() public addClass: string;
@@ -60,7 +60,7 @@ export class Mark6ImageComponent implements OnChanges {
 
     /* Image loading state */
     public state: 'loading' | 'success' | 'failed' = 'loading';
-    public aspectRatioNumber;
+    public aspectRatioNumber = this.parseRation('1 / 1');
 
     constructor(private ref: ChangeDetectorRef) {
     }
@@ -79,6 +79,7 @@ export class Mark6ImageComponent implements OnChanges {
         if (changes.aspectRatio && changes.aspectRatio.currentValue) {
             this.aspectRatioNumber = this.parseRation(changes.aspectRatio.currentValue);
         }
+
         this.ref.detectChanges();
     }
 
