@@ -80,7 +80,8 @@ export class Mark6ImageComponent implements OnChanges {
             this.aspectRatioNumber = this.parseRation(changes.aspectRatio.currentValue);
         }
         if (changes.src.previousValue && !!!changes.src.currentValue) {
-            this.src = changes.default.currentValue;
+            if (this.default)
+                this.src = this.default;
         }
         this.ref.detectChanges();
     }
