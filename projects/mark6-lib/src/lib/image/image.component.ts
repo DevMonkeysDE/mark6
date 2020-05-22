@@ -40,7 +40,7 @@ export class Mark6ImageComponent implements OnChanges {
     @HostBinding('class') classes = this.hostClass;
 
     @Input() public backgroundColor = '#404040';
-    @HostBinding('style.background') hostBackgroundColor = this.backgroundColor;
+    @HostBinding('style.background-color') hostBackgroundColor = this.backgroundColor;
 
     @Input() public backgroundImage: string;
     @Input() public aspectRatio: string;
