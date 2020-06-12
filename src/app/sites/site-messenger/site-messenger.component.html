@@ -1,0 +1,11 @@
+<mat-toolbar color="accent">
+    <h1>Messenger Config</h1>
+    <div style="flex: auto;"></div>
+    <ul>
+        <li><button (click)="setMessengerMode('fullscreen')">Mode: Fullscreen</button></li>
+        <li><button (click)="setMessengerMode('boxed')">Mode: Boxed</button></li>
+    </ul>
+</mat-toolbar>
+
+<mark6-messenger [ngClass]="messengerMode === 'fullscreen' ? 'fullscreen' : 'boxed'"></mark6-messenger>
+

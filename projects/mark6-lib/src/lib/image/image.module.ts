@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {Mark6ImageComponent} from './image.component';
+import {Mark6ImageComponent} from "./image.component";
+
 
 @NgModule({
     imports: [

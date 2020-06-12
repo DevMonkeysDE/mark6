@@ -1,0 +1,38 @@
+@import "~@devmonkeys/scss-elements/style";
+
+.mat-toolbar {
+
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        li {
+            margin-left: 16px;
+            a {
+                color: #404040;
+                text-decoration: none;
+            }
+        }
+    }
+
+}
+
+.mark6-messenger {
+    &.fullscreen {
+        height: calc(100% - (56px * 2));
+        @include mediaMin($resMobileLarge) {
+            height: calc(100% - (64px * 2));
+        }
+    }
+    &.boxed {
+        width: 420px;
+        height: 600px;
+        right: 24px;
+        bottom: 0;
+        position: fixed;
+        border-color: red;
+        border-style: solid;
+        border-width: 1px 1px 0 1px;
+    }
+}
