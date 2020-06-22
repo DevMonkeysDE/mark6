@@ -1,13 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { UiMessage } from 'src/app/models/message.model';
-import * as moment from 'moment';
 
 @Pipe({
     name: 'messengerClass'
 })
 export class MessengerMessageClassPipe implements PipeTransform {
 
-    transform(message: UiMessage, previousMessage: UiMessage, nextMessage: UiMessage, isFirst: boolean, isLast: boolean, currentDate: Date, previousDate: Date): any {
+    transform(message: any, previousMessage: any, nextMessage: any, isFirst: boolean, isLast: boolean, currentDate: Date, previousDate: Date): any {
         const result = {
             'msg': true,
             [message.direction]: true,
@@ -23,8 +21,8 @@ export class MessengerMessageClassPipe implements PipeTransform {
 
     private isDifferentDate(currentDate: Date, previousDate: Date) {
         if (!!!currentDate || !!!previousDate) return false;
-        const c = moment(currentDate).hours(0).minutes(0).seconds(0).milliseconds(0).diff(moment(), 'days');
-        const p = moment(previousDate).hours(0).minutes(0).seconds(0).milliseconds(0).diff(moment(), 'days');
+        const c = `${currentDate.getFullYear}-${currentDate.getMonth}-${currentDate.getDay}`;
+        const p = `${previousDate.getFullYear}-${previousDate.getMonth}-${previousDate.getDay}`;
         return c !== p;
     }
 }

@@ -1,25 +1,22 @@
 <ng-container *ngFor="let message of messages; let isLast = last; let isFirst = first; let i = index; trackBy: trackByMessageId">
 
-    <div class="msg-date" *ngIf="message.value.postedAt | messengerCalendarDate:messages[i-1]?.value.postedAt as d">{{d}}</div>
+    <div class="msg-date" *ngIf="message.value.postedAt as d">{{d}}</div>
 
-    <div [ngClass]="message.value | messengerClass:messages[i-1]?.value:messages[i+1]?.value:isFirst:isLast:message.value.postedAt:messages[i-1]?.value.postedAt">
+    <div
+        [ngClass]="message.value | messengerClass:messages[i-1]?.value:messages[i+1]?.value:isFirst:isLast:message.value.postedAt:messages[i-1]?.value.postedAt">
 
-        <div class="msg-avatar" *ngIf="(avatarMe && message.value.direction === 'me') || (avatarOthers && message.value.direction === 'others')">
-            <mark6-image
-                [preview]="message.value.avatar?.preview | base64"
-                [default]="message.value.userGender | gender"
-                [srcSet]="message.value.avatar | srcSet:[36,72,108]:['1x','2x','3x']"
-                [src]="message.value.avatar | size:36"
-                [alt]="message.value.user">
-            </mark6-image>
+        <div class="msg-avatar"
+            *ngIf="(avatarMe && message.value.direction === 'me') || (avatarOthers && message.value.direction === 'others')">
+
         </div>
 
         <div class="msg-content" (click)="showTime(message)">
             <div class="msg-message" [ngClass]="{temp:message.value.tmp}">
-                <div class="header" *ngIf="type === 'group' && message.value.direction === 'others'">{{message.value.user}}</div>
+                <div class="header" *ngIf="type === 'group' && message.value.direction === 'others'">
+                    {{message.value.user}}</div>
                 <span>{{message.value.message}}</span>
                 <div class="footer" *ngIf="message.showTime" @fade>
-                    <span>{{message.value.postedAt | moment:'HH:mm'}}</span>
+                    <span>{{message.value.postedAt }}</span>
                 </div>
             </div>
         </div>

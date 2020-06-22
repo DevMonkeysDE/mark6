@@ -1,5 +1,4 @@
-import {Component, Input} from '@angular/core';
-import {MessengerService} from "./messenger.service";
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
     selector: 'mark6-messenger-message',
@@ -12,13 +11,12 @@ export class Mark6MessengerMessageComponent {
     @Input() public type: 'single' | 'group';
     @Input() public avatarMe = false;
     @Input() public avatarOthers = false;
+    @Output() timeToggled = new EventEmitter<boolean>();
 
-    constructor(private uiService: MessengerService) {
-    }
 
     showTime(message) {
         message.showTime = !!!message.showTime ? true : !message.showTime;
-        this.uiService.handleScrollPosittion();
+        this.timeToggled.emit(message.showTime);
     }
 
     trackByMessageId(index, message) {
