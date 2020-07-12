@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {MessengerDummyDataService} from "../../../../projects/mark6-lib/src/lib/messenger/messenger-dummy-data.service";
 
 @Component({
     selector: 'app-site-messenger',
@@ -7,9 +8,10 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SiteMessengerComponent implements OnInit {
 
+    public messages = [];
     public messengerMode: 'fullscreen' | 'boxed' = 'fullscreen';
 
-    constructor() {
+    constructor(public messengerDummyDataService: MessengerDummyDataService) {
     }
 
     setMessengerMode(mode) {
@@ -17,6 +19,8 @@ export class SiteMessengerComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.messages = this.messengerDummyDataService.getDummyData();
+        console.log(this.messages);
     }
 
 }

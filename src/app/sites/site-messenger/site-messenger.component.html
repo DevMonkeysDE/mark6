@@ -8,13 +8,11 @@
 </mat-toolbar>
 
 <mark6-messenger [ngClass]="messengerMode === 'fullscreen' ? 'fullscreen' : 'boxed'">
-    <mark6-messenger-history>
+    <mark6-messenger-content>
         <mark6-messenger-message
-            [messages]="messages$ | async"
-            [type]="room.type"
-            [avatarMe]="avatarMeState | async"
-            [avatarOthers]="avatarOthersState | async">
+            [messages]="messages"
+            [type]="'group'">
         </mark6-messenger-message>
-    </mark6-messenger-history>
+    </mark6-messenger-content>
 </mark6-messenger>
 

@@ -1,0 +1,178 @@
+$spaceBetweenMessages: 2px;
+$spaceBetweenMessageGroups: 24px;
+
+:host {
+    padding: 0 14px;
+    display: block;
+}
+
+.msg {
+    max-width: 95%;
+    padding: $spaceBetweenMessages / 2 0;
+    display: flex;
+    align-items: flex-end;
+
+    &-date {
+        padding: 16px 0;
+        text-align: center;
+    }
+
+    &.first-from-user {
+        padding-top: $spaceBetweenMessageGroups / 2;
+        .msg-avatar {
+            visibility: unset;
+        }
+    }
+
+    &.last-from-user {
+        padding-bottom: $spaceBetweenMessageGroups / 2;
+    }
+
+    &.first-message-this-day {
+        .msg-avatar {
+            visibility: unset;
+        }
+    }
+
+    // Very last message should be padding-bottom: 0;
+    &:last-of-type {
+        padding-bottom: 0;
+    }
+
+    &:not(.first-from-user) {
+        .msg-content {
+            .msg-message {
+                .header {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    // TODO in html last-from-direction dont work correct
+    &.last-from-direction {
+        .msg-content {
+            .msg-message {
+                .header {
+                    // display: block;
+                }
+            }
+        }
+    }
+
+    .msg-avatar {
+        width: 36px;
+        min-width: 36px;
+        height: 36px;
+        min-height: 36px;
+        margin-bottom: auto;
+        border-radius: 50%;
+        overflow: hidden;
+        visibility: hidden;
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    .msg-content {
+        display: flex;
+        flex-direction: column;
+        white-space: pre-wrap;
+
+        .msg-message {
+            min-height: 36px;
+            margin-top: 2px;
+            padding: 8px 12px;
+            display: inline-flex;
+            flex-direction: column;
+            font-size: 16px;
+            border-radius: 4px;
+            box-shadow: var(--messenger-message-all-box-shadow);
+
+            .header {
+                color: var(--messenger-message-all-title);
+                font-size: 14px;
+                font-weight: 500;
+                // display: none;
+            }
+
+            .footer {
+                opacity: 0.4;
+                font-size: 12px;
+            }
+
+            &.temp {
+                opacity: .6;
+            }
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &.me {
+        margin-left: auto;
+        justify-content: flex-end;
+
+        .msg-avatar {
+            order: 2;
+            margin-left: 8px;
+        }
+
+        .msg-content {
+            order: 1;
+
+            .msg-message {
+                margin-left: auto;
+                color: var(--messenger-message-me-contrast);
+                background-color: var(--messenger-message-me-background);
+
+                .footer {
+                    margin-left: auto;
+                }
+
+            }
+        }
+    }
+
+    &.others {
+        margin-right: auto;
+        justify-content: flex-start;
+
+        .msg-avatar {
+            order: 1;
+            margin-right: 8px;
+        }
+
+        .msg-content {
+            order: 2;
+
+            .msg-message {
+                margin-right: auto;
+                color: var(--messenger-message-others-contrast);
+                background-color: var(--messenger-message-others-background);
+
+                .footer {
+                    margin-right: auto;
+                }
+
+            }
+        }
+    }
+
+    &.info {
+        margin: auto;
+
+        .msg-content {
+            margin: auto;
+
+            .msg-message {
+                background-color: #7cb342;
+            }
+        }
+    }
+
+}

@@ -13,7 +13,6 @@ export class Mark6MessengerMessageComponent {
     @Input() public avatarOthers = false;
     @Output() timeToggled = new EventEmitter<boolean>();
 
-
     showTime(message) {
         message.showTime = !!!message.showTime ? true : !message.showTime;
         this.timeToggled.emit(message.showTime);

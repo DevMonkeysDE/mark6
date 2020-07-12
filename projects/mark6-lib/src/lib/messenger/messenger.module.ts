@@ -4,7 +4,7 @@ import {Mark6MessengerComponent} from "./messenger.component";
 import {MessengerMessageClassPipe} from "./messenger-message-class.pipe";
 import {MessengerCalendarDatePipe} from "./messenger-message-calendar-date.pipe";
 import {Mark6MessengerMessageComponent} from "./messenger-message.component";
-import {Mark6MessengerHistoryComponent} from "./messenger-history.component";
+import {Mark6MessengerContentComponent} from "./messenger-content.component";
 
 @NgModule({
     imports: [
@@ -13,7 +13,7 @@ import {Mark6MessengerHistoryComponent} from "./messenger-history.component";
     declarations: [
         Mark6MessengerComponent,
         Mark6MessengerMessageComponent,
-        Mark6MessengerHistoryComponent,
+        Mark6MessengerContentComponent,
         // Pipes
         MessengerMessageClassPipe,
         MessengerCalendarDatePipe
@@ -21,7 +21,7 @@ import {Mark6MessengerHistoryComponent} from "./messenger-history.component";
     exports: [
         Mark6MessengerComponent,
         Mark6MessengerMessageComponent,
-        Mark6MessengerHistoryComponent,
+        Mark6MessengerContentComponent,
         // Pipes
         MessengerMessageClassPipe,
         MessengerCalendarDatePipe
