@@ -23,7 +23,7 @@ export class SiteUserProfileComponent implements OnDestroy {
     sizes = `(max-width:960px) 100vw, 960px`;
 
     public user = {
-        avatarURL: 'assets/demo/avatar.png',
+        avatarURL: 'assets/demo/avatar-ryu.png',
         birthDate: 514072800000,
         coverURL: 'assets/demo/cover.png',
         displayName: 'Sven',

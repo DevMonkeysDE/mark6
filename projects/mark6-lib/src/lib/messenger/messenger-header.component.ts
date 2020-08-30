@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'mark6-messenger-header',
-  templateUrl: './messenger-header.component.html',
-  styleUrls: ['./messenger-header.component.scss']
+    selector: 'mark6-messenger-header',
+    templateUrl: './messenger-header.component.html',
+    styleUrls: ['./messenger-header.component.scss']
 })
 export class Mark6MessengerHeaderComponent implements OnInit {
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
 }

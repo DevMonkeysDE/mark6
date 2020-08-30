@@ -6,4 +6,35 @@
     grid-template-columns: auto;
     grid-template-rows: auto min-content;
     // grid-template-areas: "messenger-content" "messenger-footer";
+
+    /** Messenger **/
+    --messenger-textarea-background: #ffffff;
+    --messenger-textarea-placeholder: #a8a8a8;
+    --messenger-textarea-contrast: #212121;
+    --messenger-textarea-emoji-icon: #929292;
+    // Messenger Message All (Global Styles for me AND others)
+    --messenger-message-all-box-shadow: 0 1px 0.5px rgba(0, 0, 0, .13);
+    --messenger-message-all-title: var(--ion-color-primary);
+    // Messenger Message Me
+    --messenger-message-me-background: #4151d0;
+    --messenger-message-me-contrast: #fff;
+    // Messenger Message Others
+    --messenger-message-others-background: #ffffff;
+    --messenger-message-others-contrast: #212121;
+    // Messenger Backgrounds
+    --messenger-background-color-blank: #0d1723;
+    --messenger-background-image-default: url("/assets/images/messenger/background/default/light.png");
+    --messenger-background-image-luise: url("/assets/images/messenger/background/luise/light.png");
+
+    /** Emoji Picker **/
+    --emoji-picker-header-background: transparent;
+    --emoji-picker-header-contrast: #9ba4ab;
+    --emoji-picker-header-contrast-active: #4d5a63;
+
+    --emoji-picker-content-background: #ebeff2;
+    --emoji-picker-content-contrast: #ffffff;
+
+    --emoji-picker-footer-background: #e3e7e8;
+    --emoji-picker-footer-contrast: #6f7a80;
+    --emoji-picker-footer-contrast-active: var(--ion-color-primary);
 }

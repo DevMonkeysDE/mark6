@@ -9,10 +9,12 @@
 
 <mark6-messenger [ngClass]="messengerMode === 'fullscreen' ? 'fullscreen' : 'boxed'">
     <mark6-messenger-content>
-        <mark6-messenger-message
+        <mark6-messenger-messages
             [messages]="messages"
-            [type]="'group'">
-        </mark6-messenger-message>
+            [type]="'group'"
+            [avatarMe]="true"
+            [avatarOthers]="true">
+        </mark6-messenger-messages>
     </mark6-messenger-content>
 </mark6-messenger>
 

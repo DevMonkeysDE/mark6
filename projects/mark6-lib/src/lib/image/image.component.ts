@@ -8,9 +8,9 @@ import {
     EventEmitter,
     ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef
 } from '@angular/core';
-import { SimpleChanges } from '@angular/core';
-import { OnChanges } from '@angular/core';
-import { animate, style, transition, trigger, state } from '@angular/animations';
+import {SimpleChanges} from '@angular/core';
+import {OnChanges} from '@angular/core';
+import {animate, style, transition, trigger, state} from '@angular/animations';
 
 @Component({
     selector: 'mark6-image',
@@ -20,17 +20,17 @@ import { animate, style, transition, trigger, state } from '@angular/animations'
     encapsulation: ViewEncapsulation.None,
     animations: [
         trigger('fadeIn', [
-            state('loading', style({ opacity: 0 })),
+            state('loading', style({opacity: 0})),
             transition('* => success', [
-                animate('300ms ease-in', style({ opacity: 1 }))
+                animate('300ms ease-in', style({opacity: 1}))
             ])
         ]),
         trigger('fadeOut', [
-            state('loading', style({ opacity: 1 })),
+            state('loading', style({opacity: 1})),
             transition('* => success', [
-                animate('300ms ease-in', style({ opacity: 0 }))
+                animate('300ms ease-in', style({opacity: 0}))
             ]),
-            state('success', style({ opacity: 0 })),
+            state('success', style({opacity: 0})),
         ])
     ]
 })
@@ -53,7 +53,7 @@ export class Mark6ImageComponent implements OnChanges {
     @Output() public failed = new EventEmitter<void>();
     @Output() public loaded = new EventEmitter<void>();
 
-    @ViewChild('imgPreview', { static: false }) previewImg: ElementRef;
+    @ViewChild('imgPreview', {static: false}) previewImg: ElementRef;
 
     /* Image loading state */
     public state: 'loading' | 'success' | 'failed' = 'loading';
@@ -77,7 +77,9 @@ export class Mark6ImageComponent implements OnChanges {
             this.aspectRatioNumber = this.parseRation(changes.aspectRatio.currentValue);
         }
         if (changes.src && changes.src.previousValue && !!!changes.src.currentValue) {
-            if (this.default) { this.src = this.default; }
+            if (this.default) {
+                this.src = this.default;
+            }
         }
         this.ref.detectChanges();
     }

@@ -1,11 +1,11 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
-    selector: 'mark6-messenger-message',
-    templateUrl: './messenger-message.component.html',
-    styleUrls: ['./messenger-message.component.scss']
+    selector: 'mark6-messenger-messages',
+    templateUrl: './messenger-messages.component.html',
+    styleUrls: ['./messenger-messages.component.scss']
 })
-export class Mark6MessengerMessageComponent {
+export class Mark6MessengerMessagesComponent {
 
     @Input() public messages = null;
     @Input() public type: 'single' | 'group';

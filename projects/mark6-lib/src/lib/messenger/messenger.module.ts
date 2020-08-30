@@ -3,16 +3,18 @@ import {CommonModule} from '@angular/common';
 import {Mark6MessengerComponent} from "./messenger.component";
 import {MessengerMessageClassPipe} from "./messenger-message-class.pipe";
 import {MessengerCalendarDatePipe} from "./messenger-message-calendar-date.pipe";
-import {Mark6MessengerMessageComponent} from "./messenger-message.component";
+import {Mark6MessengerMessagesComponent} from "./messenger-messages.component";
 import {Mark6MessengerContentComponent} from "./messenger-content.component";
+import {Mark6ImageModule} from "../image/image.module";
 
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule,
+        Mark6ImageModule
     ],
     declarations: [
         Mark6MessengerComponent,
-        Mark6MessengerMessageComponent,
+        Mark6MessengerMessagesComponent,
         Mark6MessengerContentComponent,
         // Pipes
         MessengerMessageClassPipe,
@@ -20,7 +22,7 @@ import {Mark6MessengerContentComponent} from "./messenger-content.component";
     ],
     exports: [
         Mark6MessengerComponent,
-        Mark6MessengerMessageComponent,
+        Mark6MessengerMessagesComponent,
         Mark6MessengerContentComponent,
         // Pipes
         MessengerMessageClassPipe,

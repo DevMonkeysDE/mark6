@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {MessengerDummyDataService} from "../../../../projects/mark6-lib/src/lib/messenger/messenger-dummy-data.service";
+import {MessengerDummyDataService} from "./messenger-dummy-data.service";
 
 @Component({
     selector: 'app-site-messenger',

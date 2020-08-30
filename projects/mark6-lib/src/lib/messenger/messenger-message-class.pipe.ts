@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
     name: 'messengerClass'
@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class MessengerMessageClassPipe implements PipeTransform {
 
     transform(message: any, previousMessage: any, nextMessage: any, isFirst: boolean, isLast: boolean, currentDate: Date, previousDate: Date): any {
-        const result = {
+        return {
             'msg': true,
             [message.direction]: true,
             'message': true,
@@ -16,7 +16,6 @@ export class MessengerMessageClassPipe implements PipeTransform {
             'last-from-direction': (nextMessage && (nextMessage.direction !== message.direction)) || isLast,
             'last-from-user': (nextMessage && (nextMessage.user_id !== message.user_id)) || isLast
         };
-        return result;
     }
 
     private static isDifferentDate(currentDate: Date, previousDate: Date) {
