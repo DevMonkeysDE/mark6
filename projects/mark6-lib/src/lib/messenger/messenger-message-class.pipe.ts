@@ -1,15 +1,36 @@
 import {Pipe, PipeTransform} from '@angular/core';
+import {MessengerInterface} from "./messenger.interface";
+
+interface MessengerMessageClassPipeInterface {
+    msg: boolean;
+    others: boolean;
+    me: boolean;
+    message: boolean;
+    'first-message-this-day': boolean;
+    'first-from-direction': boolean;
+    'first-from-user': boolean;
+    'last-from-direction': boolean;
+    'last-from-user': boolean;
+}
 
 @Pipe({
     name: 'messengerClass'
 })
 export class MessengerMessageClassPipe implements PipeTransform {
 
-    transform(message: any, previousMessage: any, nextMessage: any, isFirst: boolean, isLast: boolean, currentDate: Date, previousDate: Date): any {
+    transform(
+        message: MessengerInterface,
+        previousMessage: MessengerInterface,
+        nextMessage: MessengerInterface,
+        isFirst: boolean,
+        isLast: boolean,
+        currentDate: Date,
+        previousDate: Date): MessengerMessageClassPipeInterface {
         return {
-            'msg': true,
-            [message.direction]: true,
-            'message': true,
+            me: message.direction === 'me',
+            others: message.direction === 'others',
+            msg: true,
+            message: true,
             'first-message-this-day': MessengerMessageClassPipe.isDifferentDate(currentDate, previousDate),
             'first-from-direction': (previousMessage && (previousMessage.direction !== message.direction)) || isFirst,
             'first-from-user': (previousMessage && (previousMessage.user_id !== message.user_id)) || isFirst,
@@ -25,3 +46,6 @@ export class MessengerMessageClassPipe implements PipeTransform {
         return c !== p;
     }
 }
+
+// 3 ausrufezeichen if you work with any else like strings, objects etc...
+// 1 ausrufezeichen if you work only with boolean
