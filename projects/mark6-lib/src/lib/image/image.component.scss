@@ -11,16 +11,21 @@
 
     img {
         width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
         display: block;
 
         &.mark6-image-preview {
-            filter: blur(10px);
+            filter: blur(3px);
         }
 
         &.mark6-image-success {
-            top: 0;
-            left: 0;
-            position: absolute;
+
+        }
+
+        &.mark6-image-failed {
+
         }
     }
 }

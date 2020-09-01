@@ -46,6 +46,3 @@ export class MessengerMessageClassPipe implements PipeTransform {
         return c !== p;
     }
 }
-
-// 3 ausrufezeichen if you work with any else like strings, objects etc...
-// 1 ausrufezeichen if you work only with boolean

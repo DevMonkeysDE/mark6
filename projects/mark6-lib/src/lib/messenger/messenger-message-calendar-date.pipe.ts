@@ -9,7 +9,7 @@ export class MessengerCalendarDatePipe implements PipeTransform {
 
     transform(currentDate: Date, previousDate: Date): any {
 
-        if (!!!previousDate) {
+/*        if (!!!previousDate) {
             const c = moment(currentDate).hours(0).minutes(0).seconds(0).milliseconds(0).diff(moment(), 'days');
             return this.getFormat(c, currentDate);
         }
@@ -22,15 +22,15 @@ export class MessengerCalendarDatePipe implements PipeTransform {
             }
         }
 
-        return false;
+        return false;*/
     }
 
     private getFormat(c: number, date: Date) {
-        if (c === 0) { return 'Heute'; }
+/*        if (c === 0) { return 'Heute'; }
         if (c === -1) { return 'Gestern'; }
         if (c === -2) { return 'Vorgestern'; }
         if (c < -2 && c > -6) { return moment(date).hours(0).minutes(0).seconds(0).milliseconds(0).locale('de').format('dddd'); }
-        if (c < -5) { return moment(date).hours(0).minutes(0).seconds(0).milliseconds(0).locale('de').format('DD. MMMM YYYY'); }
+        if (c < -5) { return moment(date).hours(0).minutes(0).seconds(0).milliseconds(0).locale('de').format('DD. MMMM YYYY'); }*/
     }
 
 }
