@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'mark6-messenger-content',
-  templateUrl: './messenger-content.component.html',
-  styleUrls: ['./messenger-content.component.scss']
+    selector: 'mark6-messenger-content',
+    templateUrl: './messenger-content.component.html',
+    styleUrls: ['./messenger-content.component.scss']
 })
 export class Mark6MessengerContentComponent implements OnInit {
 
-  constructor() { }
+    // TODO @Murhaf: Please make it possible to enable / disable VirtualScroll with this variable.
+    @Input() public virtualScroll = false;
 
-  ngOnInit(): void {
-  }
+    constructor() {
+    }
+
+    ngOnInit(): void {
+    }
 
 }
