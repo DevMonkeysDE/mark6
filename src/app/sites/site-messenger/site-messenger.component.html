@@ -8,6 +8,11 @@
 </mat-toolbar>
 
 <mark6-messenger [ngClass]="messengerMode === 'fullscreen' ? 'fullscreen' : 'boxed'">
+
+    <mark6-messenger-header>
+        asd
+    </mark6-messenger-header>
+
     <mark6-messenger-content>
         <mark6-messenger-messages
             [messages]="messages"
@@ -16,5 +21,17 @@
             [avatarOthers]="true">
         </mark6-messenger-messages>
     </mark6-messenger-content>
-</mark6-messenger>
 
+    <mark6-messenger-footer>
+        asd
+        <!--<mark6-messenger-textarea></mark6-messenger-textarea>
+        <mark6-messenger-actions>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+            </button>
+        </mark6-messenger-actions>-->
+    </mark6-messenger-footer>
+
+</mark6-messenger>

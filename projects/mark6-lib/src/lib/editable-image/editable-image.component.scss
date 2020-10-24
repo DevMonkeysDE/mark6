@@ -1,9 +1,9 @@
-@import "~@devmonkeys/scss-elements/style";
+@import "~@devmonkeys/scss-elements/loader";
 
 .mark6-editable-image {
     display: block;
     position: relative;
-    @include mediaMin($resDesktop) {
+    @include mediaMin($resMat-lg) {
         // For <mark6-avatar-upload> Child Component
         /* TODO - Maybe not needed anymore...
         &:hover:not(.uploading) {

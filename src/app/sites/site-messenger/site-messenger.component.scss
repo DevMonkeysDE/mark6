@@ -1,4 +1,4 @@
-@import "~@devmonkeys/scss-elements/style";
+@import "~@devmonkeys/scss-elements/loader";
 
 .mat-toolbar {
 
@@ -21,7 +21,7 @@
 .mark6-messenger {
     &.fullscreen {
         height: calc(100% - (56px * 2));
-        @include mediaMin($resMobileLarge) {
+        @include mediaMin($resMat-sm) {
             height: calc(100% - (64px * 2));
         }
     }

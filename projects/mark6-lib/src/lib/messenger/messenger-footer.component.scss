@@ -1,0 +1,7 @@
+.mark6-messenger-footer {
+    display: grid;
+    grid-template-columns: auto min-content;
+    grid-template-rows: auto;
+    // grid-template-areas: "messenger-textarea" "messenger-actions";
+    align-items: end;
+}

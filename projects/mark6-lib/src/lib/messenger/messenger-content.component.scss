@@ -1,0 +1,8 @@
+@import "~@devmonkeys/scss-elements/loader";
+
+:host {
+    padding: 16px;
+    overflow-y: auto;
+    // overflow-x: none;
+    @include scrollbarStyleMacOSLion();
+}

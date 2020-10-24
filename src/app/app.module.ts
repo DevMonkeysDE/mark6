@@ -23,6 +23,7 @@ import {Mark6ImageModule} from "../../projects/mark6-lib/src/lib/image/image.mod
 import {Mark6EditableImageModule} from "../../projects/mark6-lib/src/lib/editable-image/editable-image.module";
 import {Mark6DropDownModule} from "../../projects/mark6-lib/src/lib/drop-down/drop-down.module";
 import {Mark6MessengerModule} from "../../projects/mark6-lib/src/lib/messenger/messenger.module";
+import {Mark6ContentWrapperModule} from "../../projects/mark6-lib/src/lib/content-wrapper/content-wrapper.module";
 
 @NgModule({
     declarations: [
@@ -44,6 +45,7 @@ import {Mark6MessengerModule} from "../../projects/mark6-lib/src/lib/messenger/m
         MatButtonModule,
         MatToolbarModule,
         // Mark6
+        Mark6ContentWrapperModule,
         Mark6ImageModule,
         Mark6EditableImageModule,
         Mark6DropDownModule,

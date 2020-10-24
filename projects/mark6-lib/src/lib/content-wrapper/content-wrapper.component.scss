@@ -1,0 +1,7 @@
+@import "~@devmonkeys/scss-elements/loader";
+
+:host {
+    .inner {
+        @include innerSpace();
+    }
+}

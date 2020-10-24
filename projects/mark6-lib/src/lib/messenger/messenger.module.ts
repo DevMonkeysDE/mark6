@@ -5,12 +5,17 @@ import {Mark6ImageModule} from "../image/image.module";
 // Components
 import {Mark6MessengerComponent} from "./messenger.component";
 import {Mark6MessengerMessagesComponent} from "./messenger-messages.component";
+import {Mark6MessengerHeaderComponent} from "./messenger-header.component";
 import {Mark6MessengerContentComponent} from "./messenger-content.component";
-import {MessengerEmotePickerComponent} from './messenger-emote-picker.component';
+import {Mark6MessengerFooterComponent} from "./messenger-footer.component";
+import {Mark6MessengerEmotePickerComponent} from './messenger-emote-picker.component';
+
 
 // Pipes
 import {MessengerMessageClassPipe} from "./messenger-message-class.pipe";
 import {MessengerCalendarDatePipe} from "./messenger-message-calendar-date.pipe";
+
+
 
 @NgModule({
     imports: [
@@ -20,8 +25,10 @@ import {MessengerCalendarDatePipe} from "./messenger-message-calendar-date.pipe"
     declarations: [
         Mark6MessengerComponent,
         Mark6MessengerMessagesComponent,
+        Mark6MessengerHeaderComponent,
         Mark6MessengerContentComponent,
-        MessengerEmotePickerComponent,
+        Mark6MessengerFooterComponent,
+        Mark6MessengerEmotePickerComponent,
         // Pipes
         MessengerMessageClassPipe,
         MessengerCalendarDatePipe
@@ -29,8 +36,10 @@ import {MessengerCalendarDatePipe} from "./messenger-message-calendar-date.pipe"
     exports: [
         Mark6MessengerComponent,
         Mark6MessengerMessagesComponent,
+        Mark6MessengerHeaderComponent,
         Mark6MessengerContentComponent,
-        MessengerEmotePickerComponent,
+        Mark6MessengerFooterComponent,
+        Mark6MessengerEmotePickerComponent,
         // Pipes
         MessengerMessageClassPipe,
         MessengerCalendarDatePipe
