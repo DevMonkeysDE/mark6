@@ -40,7 +40,7 @@ export class Mark6ImageComponent implements OnChanges {
     @HostBinding('class') classes = this.hostClass;
 
     @Input() public backgroundImage: string;
-    @Input() public aspectRatio: string;
+    @Input() public aspectRatio: string | number;
     @Input() public srcSet: string;
     @Input() public alt: string;
     @Input() public addClass: string;
@@ -101,6 +101,9 @@ export class Mark6ImageComponent implements OnChanges {
     }
 
     private parseRation(value) {
+        if ( typeof value === 'number'){
+            return value;
+        }
         let separator;
         if (value.includes('/')) {
             separator = '/';
