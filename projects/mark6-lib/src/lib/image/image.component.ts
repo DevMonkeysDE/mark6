@@ -111,7 +111,7 @@ export class Mark6ImageComponent implements OnChanges {
         if (values.length === 2) {
             const w = +values[0];
             const h = +values[1];
-            return Math.floor(w / h);
+            return w / h;
         }
     }
 }
