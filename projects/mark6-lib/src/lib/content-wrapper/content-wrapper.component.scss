@@ -1,7 +1,8 @@
 @import "~@devmonkeys/scss-elements/loader";
 
-:host {
+.mark6-content-wrapper {
     .inner {
+        @include innerSpaceAlignments();
         @include innerSpace();
     }
 }
