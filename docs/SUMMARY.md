@@ -2,9 +2,9 @@
 
 * [Getting Started](README.md)
 
-## Components <a id="components-1"></a>
+## Components
 
-* [Image](components-1/image.md)
-* [Editable Image](components-1/editable-image.md)
-* [Content Wrapper](components-1/content-wrapper.md)
+* [Image](components/image.md)
+* [Editable Image](components/editable-image.md)
+* [Content Wrapper](components/content-wrapper.md)
 
