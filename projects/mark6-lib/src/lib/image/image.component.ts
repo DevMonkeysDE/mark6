@@ -57,7 +57,7 @@ export class Mark6ImageComponent implements OnChanges {
 
     /* Image loading state */
     public state: 'loading' | 'success' | 'failed' = 'loading';
-    public aspectRatioNumber = this.parseRation('1 / 1');
+    public aspectRatioNumber = this.parseRation(1);
 
     constructor(private ref: ChangeDetectorRef) {
     }
@@ -82,10 +82,6 @@ export class Mark6ImageComponent implements OnChanges {
             }
         }
         this.ref.detectChanges();
-    }
-
-    test() {
-        this.aspectRatioNumber = this.parseRation('16 / 5');
     }
 
     loadSuccess() {

@@ -1,6 +1,13 @@
 @import "~@devmonkeys/scss-elements/loader";
 
 .mark6-content-wrapper {
+    display: block;
+    box-sizing: border-box;
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
     .inner {
         @include innerSpaceAlignments();
         @include innerSpace();

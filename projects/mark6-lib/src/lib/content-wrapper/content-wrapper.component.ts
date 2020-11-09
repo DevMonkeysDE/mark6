@@ -1,13 +1,10 @@
 import {
     ChangeDetectionStrategy,
-    ChangeDetectorRef,
     Component,
     HostBinding,
     Input,
-    OnInit,
     ViewEncapsulation
 } from '@angular/core';
-import {SimpleChanges} from '@angular/core';
 
 @Component({
     selector: 'mark6-content-wrapper',
@@ -16,15 +13,16 @@ import {SimpleChanges} from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None
 })
-export class Mark6ContentWrapperComponent implements OnInit {
+export class Mark6ContentWrapperComponent {
 
     private hostClass = 'mark6-content-wrapper';
     @HostBinding('class') classes = this.hostClass;
 
-    constructor() {
-    }
+    @Input() public removeSpacing: 'all' | 'vertical' | 'horizontal' | 'top' | 'right' | 'bottom' | 'left' | string;
 
-    ngOnInit(): void {
+    @HostBinding('style.background') @Input() private backgroundColor = null;
+
+    constructor() {
     }
 
 }

@@ -4,6 +4,11 @@
     position: relative;
     display: block;
     overflow: hidden;
+    box-sizing: border-box;
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
 
     .mark6-image-placeholder {
 

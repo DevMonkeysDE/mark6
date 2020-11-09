@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {Mark6ContentWrapperComponent} from "./content-wrapper.component";
+import {ResolveSpaceClassPipe} from "./resolve-space-class.pipe";
 
 
 @NgModule({
@@ -8,7 +9,8 @@ import {Mark6ContentWrapperComponent} from "./content-wrapper.component";
         CommonModule
     ],
     declarations: [
-        Mark6ContentWrapperComponent
+        Mark6ContentWrapperComponent,
+        ResolveSpaceClassPipe
     ],
     exports: [
         Mark6ContentWrapperComponent

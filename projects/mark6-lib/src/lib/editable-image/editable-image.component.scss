@@ -3,7 +3,8 @@
 .mark6-editable-image {
     display: block;
     position: relative;
-    @include mediaMin($resMat-lg) {
+    box-sizing: border-box;
+    @include mediaMin($res-mat-lg) {
         // For <mark6-avatar-upload> Child Component
         /* TODO - Maybe not needed anymore...
         &:hover:not(.uploading) {
@@ -20,6 +21,10 @@
                 background-color: rgba(255, 255, 255, 0.48);
             }
         }
+    }
+
+    *, *:before, *:after {
+        box-sizing: inherit;
     }
 
     img {
