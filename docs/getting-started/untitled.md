@@ -11,12 +11,6 @@ description: >-
 
 Becoming a super hero is a fairly straight forward process:
 
-{% tabs %}
-{% tab %}
-
-{% endtab %}
-{% endtabs %}
-
 {% hint style="info" %}
 Super-powers are granted randomly so please submit an issue if you're not happy with yours.
 {% endhint %}
