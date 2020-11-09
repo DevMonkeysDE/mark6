@@ -4,6 +4,11 @@
 
 ## Getting Started
 
-* [Install Mark6](getting-started/untitled/README.md)
-  * [Untitled](getting-started/untitled/untitled.md)
+* [Installation](getting-started/untitled.md)
+
+## Components
+
+* [Content Wrapper](components/content-wrapper.md)
+* [Image](components/image.md)
+* [Editable Image](components/editable-image.md)
 
