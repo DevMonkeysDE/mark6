@@ -95,6 +95,16 @@ description: >-
       </td>
       <td style="text-align:left">Depricated. Use regular class instead of addClass!</td>
     </tr>
+    <tr>
+      <td style="text-align:left">@Output()
+        <br />failed</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">@Output()
+        <br />loaded</td>
+      <td style="text-align:left"></td>
+    </tr>
   </tbody>
 </table>
 
