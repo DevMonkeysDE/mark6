@@ -7,7 +7,7 @@ description: >-
 
 # Image
 
-![](../.gitbook/assets/mark6-image-example.gif)
+![Fading animation after loading the src or srcset.](../.gitbook/assets/mark6-image-example.gif)
 
 ```markup
 
