@@ -7,6 +7,10 @@ description: >-
 
 # Image
 
+### Demo
+
+[https://mark6-demo.web.app/image](https://mark6-demo.web.app/image)
+
 ![Fading animation after loading the src or srcset.](../.gitbook/assets/mark6-image-example.gif)
 
 ```markup
