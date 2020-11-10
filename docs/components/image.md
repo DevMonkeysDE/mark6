@@ -7,6 +7,12 @@ description: >-
 
 # Image
 
+{% code title="API reference" %}
+```typescript
+import {Mark6ImageModule} from "@devmonkeys/mark6";
+```
+{% endcode %}
+
 ### Demo
 
 [https://mark6-demo.web.app/image](https://mark6-demo.web.app/image)
@@ -14,11 +20,9 @@ description: >-
 ![Fading animation after loading the src or srcset.](../.gitbook/assets/mark6-image-example.gif)
 
 ```markup
-
 <mark6-image [aspectRatio]="16 / 9"
              src="https://dummyimage.com/1920x1080/000/fff.jpg">
 </mark6-image>
-
 ```
 
 **Properties**
