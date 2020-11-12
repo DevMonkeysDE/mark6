@@ -30,18 +30,18 @@ import {Mark6ImageModule} from "@devmonkeys/mark6";
         <section class="demo">
             <aside>
                 <mark6-image [aspectRatio]="1 / 1"
-                             [src]="dummy.avatar" 
-                             [alt]="dummy.alt"></mark6-image>
+                             [src]="demo.avatar"
+                             [alt]="demo.alt"></mark6-image>
 
                 <mark6-image [aspectRatio]="1 / 2"
-                             [src]="dummy.demo"
-                             [alt]="dummy.alt"></mark6-image>
+                             [src]="demo.demo"
+                             [alt]="demo.alt"></mark6-image>
             </aside>
 
             <main>
                 <mark6-image [aspectRatio]="16 / 9"
-                             [src]="dummy.cover"
-                             [alt]="dummy.alt"></mark6-image>
+                             [src]="demo.cover"
+                             [alt]="demo.alt"></mark6-image>
             </main>
         </section>
 
@@ -52,7 +52,7 @@ import {Mark6ImageModule} from "@devmonkeys/mark6";
 
 {% tab title="TypeScript" %}
 ```typescript
-public dummy = {
+public demo = {
     avatar: 'assets/demo/avatar-female-asian.jpg',
     cover: 'assets/demo/cover-nature.jpg',
     demo: 'assets/demo/demo.jpg',
