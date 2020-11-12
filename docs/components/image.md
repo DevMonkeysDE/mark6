@@ -29,12 +29,19 @@ import {Mark6ImageModule} from "@devmonkeys/mark6";
 
         <section class="demo">
             <aside>
-                <mark6-image [aspectRatio]="1 / 1" [src]="dummy.avatar" [alt]="dummy.alt"></mark6-image>
-                <mark6-image [aspectRatio]="1 / 2" [src]="dummy.demo" [alt]="dummy.alt"></mark6-image>
+                <mark6-image [aspectRatio]="1 / 1"
+                             [src]="dummy.avatar" 
+                             [alt]="dummy.alt"></mark6-image>
+
+                <mark6-image [aspectRatio]="1 / 2"
+                             [src]="dummy.demo"
+                             [alt]="dummy.alt"></mark6-image>
             </aside>
 
             <main>
-                <mark6-image [aspectRatio]="16 / 9" [src]="dummy.cover" [alt]="dummy.alt"></mark6-image>
+                <mark6-image [aspectRatio]="16 / 9"
+                             [src]="dummy.cover"
+                             [alt]="dummy.alt"></mark6-image>
             </main>
         </section>
 
