@@ -15,7 +15,7 @@ import {Mark6ImageModule} from "@devmonkeys/mark6";
 
 ### Demo
 
-Demo: [https://mark6-demo.web.app/image](https://mark6-demo.web.app/image) - Checkout Demo Code [here](https://github.com/DevMonkeysDE/mark6/blob/master/src/app/sites/site-image/site-image.component.html).
+[https://mark6-demo.web.app/image](https://mark6-demo.web.app/image) - Checkout Demo Code [here](https://github.com/DevMonkeysDE/mark6/blob/master/src/app/sites/site-image/site-image.component.html).
 
 ![Fading animation after loading the src or srcset.](../.gitbook/assets/mark6-image-example.gif)
 
