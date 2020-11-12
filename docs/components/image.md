@@ -134,7 +134,7 @@ public demo = {
         <p>@Input()</p>
         <p>addClass: string</p>
       </td>
-      <td style="text-align:left">Depricated. Use regular class instead of addClass!</td>
+      <td style="text-align:left">Deprecated. Use regular class instead of addClass!</td>
     </tr>
     <tr>
       <td style="text-align:left">@Output()
