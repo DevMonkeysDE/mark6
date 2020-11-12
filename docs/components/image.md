@@ -52,13 +52,6 @@ import {Mark6ImageModule} from "@devmonkeys/mark6";
 
 {% tab title="TypeScript" %}
 ```typescript
-srcSet = of(`https://via.placeholder.com/300x150 300w,
-    https://via.placeholder.com/600x300 600w,
-    https://via.placeholder.com/960x480 960w,
-    https://via.placeholder.com/1400x700 1400w`).pipe(
-    delay(5000)
-);
-
 public dummy = {
     avatar: 'assets/demo/avatar-female-asian.jpg',
     cover: 'assets/demo/cover-nature.jpg',
