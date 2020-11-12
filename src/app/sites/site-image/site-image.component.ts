@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 
 export class SiteImageComponent {
 
-    public dummy = {
+    public demo = {
         avatar: 'assets/demo/avatar-female-asian.jpg',
         cover: 'assets/demo/cover-nature.jpg',
         demo: 'assets/demo/demo.jpg',
