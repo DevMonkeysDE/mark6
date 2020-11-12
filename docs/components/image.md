@@ -15,15 +15,52 @@ import {Mark6ImageModule} from "@devmonkeys/mark6";
 
 ### Demo
 
-[https://mark6-demo.web.app/image](https://mark6-demo.web.app/image)
+Demo: [https://mark6-demo.web.app/image](https://mark6-demo.web.app/image) - Checkout Demo Code [here](https://github.com/DevMonkeysDE/mark6/blob/master/src/app/sites/site-image/site-image.component.html).
 
 ![Fading animation after loading the src or srcset.](../.gitbook/assets/mark6-image-example.gif)
 
+{% tabs %}
+{% tab title="HTML" %}
 ```markup
-<mark6-image [aspectRatio]="16 / 9"
-             src="https://dummyimage.com/1920x1080/000/fff.jpg">
-</mark6-image>
+<section class="site-image">
+    <div class="site-image-inner">
+
+        <h1>mark6-image</h1>
+
+        <section class="demo">
+            <aside>
+                <mark6-image [aspectRatio]="1 / 1" [src]="dummy.avatar" [alt]="dummy.alt"></mark6-image>
+                <mark6-image [aspectRatio]="1 / 2" [src]="dummy.demo" [alt]="dummy.alt"></mark6-image>
+            </aside>
+
+            <main>
+                <mark6-image [aspectRatio]="16 / 9" [src]="dummy.cover" [alt]="dummy.alt"></mark6-image>
+            </main>
+        </section>
+
+    </div>
+</section>
 ```
+{% endtab %}
+
+{% tab title="TypeScript" %}
+```typescript
+srcSet = of(`https://via.placeholder.com/300x150 300w,
+    https://via.placeholder.com/600x300 600w,
+    https://via.placeholder.com/960x480 960w,
+    https://via.placeholder.com/1400x700 1400w`).pipe(
+    delay(5000)
+);
+
+public dummy = {
+    avatar: 'assets/demo/avatar-female-asian.jpg',
+    cover: 'assets/demo/cover-nature.jpg',
+    demo: 'assets/demo/demo.jpg',
+    alt: 'Alt Text',
+};
+```
+{% endtab %}
+{% endtabs %}
 
 **Properties**
 
