@@ -24,6 +24,7 @@ import {Mark6EditableImageModule} from "../../projects/mark6-lib/src/lib/editabl
 import {Mark6DropDownModule} from "../../projects/mark6-lib/src/lib/drop-down/drop-down.module";
 import {Mark6MessengerModule} from "../../projects/mark6-lib/src/lib/messenger/messenger.module";
 import {Mark6ContentWrapperModule} from "../../projects/mark6-lib/src/lib/content-wrapper/content-wrapper.module";
+import {SiteImageComponent} from "./sites/site-image/site-image.component";
 
 @NgModule({
     declarations: [
@@ -31,6 +32,7 @@ import {Mark6ContentWrapperModule} from "../../projects/mark6-lib/src/lib/conten
         // Sites
         SiteUserProfileComponent,
         SiteMessengerComponent,
+        SiteImageComponent
     ],
     imports: [
         BrowserModule,

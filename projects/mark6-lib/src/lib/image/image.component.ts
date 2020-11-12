@@ -39,16 +39,16 @@ export class Mark6ImageComponent implements OnChanges {
     private hostClass = 'mark6-image';
     @HostBinding('class') classes = this.hostClass;
 
-    @Input() public backgroundImage: string;
-    @Input() public aspectRatio: string | number;
-    @Input() public srcSet: string;
-    @Input() public alt: string;
-    @Input() public addClass: string;
-    @Input() public default: string;
-    @Input() public emitSize = false;
-    @Input() public preview: string;
-    @Input() public failedSrc = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN0+A8AAYUBQcxKiF0AAAAASUVORK5CYII=';
     @Input() public src: string;
+    @Input() public alt: string;
+    @Input() public srcSet: string;
+    @Input() public aspectRatio: string | number;
+    @Input() public preview: string;
+    @Input() public default: string;
+    @Input() public failedSrc = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN0+A8AAYUBQcxKiF0AAAAASUVORK5CYII=';
+    @Input() public backgroundImage: string;
+    @Input() public addClass: string;
+    // @Input() public emitSize = false;
 
     @Output() public failed = new EventEmitter<void>();
     @Output() public loaded = new EventEmitter<void>();
