@@ -20,7 +20,7 @@ export class Mark6ContentWrapperComponent {
 
     @Input() public removeSpacing: 'all' | 'vertical' | 'horizontal' | 'top' | 'right' | 'bottom' | 'left' | string;
 
-    @HostBinding('style.background') @Input() private backgroundColor = null;
+    @HostBinding('style.background') @Input() public backgroundColor = null;
 
     constructor() {
     }
