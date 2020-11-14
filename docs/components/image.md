@@ -9,7 +9,7 @@ description: >-
 
 {% code title="API reference" %}
 ```typescript
-import {Mark6ImageModule} from "@devmonkeys/mark6";
+import {Mark6ImageModule} from "@devmonkeys/mark6/image";
 ```
 {% endcode %}
 
