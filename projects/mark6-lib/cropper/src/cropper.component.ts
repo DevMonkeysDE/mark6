@@ -1,7 +1,17 @@
-import { Component, ViewEncapsulation, ElementRef, ViewChild, Input, EventEmitter, Output, OnDestroy, AfterViewInit } from '@angular/core';
+import {
+    Component,
+    ViewEncapsulation,
+    ElementRef,
+    ViewChild,
+    Input,
+    EventEmitter,
+    Output,
+    OnDestroy,
+    AfterViewInit
+} from '@angular/core';
 import Cropper from 'cropperjs';
-import { fromEvent, Subscription } from 'rxjs';
-import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
+import {fromEvent, Subscription} from 'rxjs';
+import {debounceTime, distinctUntilChanged, tap} from 'rxjs/operators';
 
 const defaultOptions: Cropper.Options = {
     // All options at https://github.com/fengyuanchen/cropperjs#options
@@ -60,7 +70,7 @@ export class Mark6CropperComponent implements AfterViewInit, OnDestroy {
         this.image.nativeElement.addEventListener('ready', () => this._ready());
 
         // Set cropperjs
-        const options = { ...defaultOptions, ...this.options };
+        const options = {...defaultOptions, ...this.options};
         this.cropper = new Cropper(this.image.nativeElement, options);
     }
 
