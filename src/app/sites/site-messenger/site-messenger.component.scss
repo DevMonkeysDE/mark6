@@ -21,7 +21,7 @@
 .mark6-messenger {
     &.fullscreen {
         height: calc(100% - (56px * 2));
-        @include mediaMin(var(--resMat-sm)) {
+        @include media-min(var(--resMat-sm)) {
             height: calc(100% - (64px * 2));
         }
     }

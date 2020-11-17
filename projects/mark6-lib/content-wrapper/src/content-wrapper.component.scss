@@ -9,7 +9,7 @@
     }
 
     .inner {
-        @include innerSpaceAlignments();
-        @include innerSpace();
+        @include inner-space-alignments();
+        @include inner-space();
     }
 }

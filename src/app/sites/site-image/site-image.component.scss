@@ -5,13 +5,13 @@ section.site-image {
         max-width: 960px;
         margin: auto;
         padding: 40px;
-        @include mediaMin($res-mat-lg) {
+        @include media-min($res-mat-lg) {
             max-width: 1280px;
             margin: auto;
         }
 
         section.demo {
-            @include mediaMin($res-mat-lg) {
+            @include media-min($res-mat-lg) {
                 display: flex;
                 flex-wrap: wrap;
             }
@@ -28,7 +28,7 @@ section.site-image {
         }
 
         main {
-            @include mediaMin($res-mat-lg) {
+            @include media-min($res-mat-lg) {
                 width: calc(100% - 200px - 40px);
                 margin-left: 20px;
             }
