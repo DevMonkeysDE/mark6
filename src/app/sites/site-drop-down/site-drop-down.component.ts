@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Mark6DropDownService } from 'projects/mark6-lib/src/public_api';
+import {Component} from '@angular/core';
+import {Mark6DropDownService} from "../../../../projects/mark6-lib/drop-down/src/drop-down.service";
 
 
 @Component({
@@ -8,24 +8,25 @@ import { Mark6DropDownService } from 'projects/mark6-lib/src/public_api';
     styleUrls: ['./site-drop-down.component.scss'],
     providers: [Mark6DropDownService]
 })
-
-
 export class SiteDropDownComponent {
+
     constructor(private dropDownService: Mark6DropDownService) {
     }
 
     public demoEntries = [
         {
-            title: 'Entrie 1'
+            title: 'Entry 1'
         },
         {
-            title: 'Entrie 2'
+            title: 'Entry 2'
         },
         {
-            title: 'Entrie 3'
+            title: 'Entry 3'
         }
     ];
+
     close() {
         this.dropDownService.close(null);
     }
+
 }

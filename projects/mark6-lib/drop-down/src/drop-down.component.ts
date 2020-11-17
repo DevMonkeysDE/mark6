@@ -31,13 +31,9 @@ import { Mark6DropDownService } from './drop-down.service';
 export class Mark6DropDownComponent implements OnInit, OnDestroy, OnChanges {
 
     @HostBinding('class') classes = 'mark6-drop-down';
-
     @HostBinding('class.pos-x-right') a;
-
     @HostBinding('class.pos-x-left') b;
-
     @HostBinding('class.pos-y-top') c;
-
     @HostBinding('class.pos-y-bottom') d;
 
     @Input() public addClass: string;
@@ -110,6 +106,7 @@ export class Mark6DropDownComponent implements OnInit, OnDestroy, OnChanges {
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }
+
     ngOnChanges(changes: SimpleChanges) {
         if (changes.positionX) {
             this.a = changes.positionX.currentValue === 'right';
@@ -130,8 +127,7 @@ export class Mark6DropDownComponent implements OnInit, OnDestroy, OnChanges {
     selector: 'mark6-drop-down-trigger',
     templateUrl: 'drop-down-trigger.component.html',
     styleUrls: ['./drop-down-trigger.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush
+    encapsulation: ViewEncapsulation.None
 })
 export class Mark6DropDownTriggerComponent {
     @HostBinding('class') classes = 'mark6-drop-down-trigger';
@@ -139,12 +135,14 @@ export class Mark6DropDownTriggerComponent {
 
 @Directive({ selector: '[mark6DropDownCloseTrigger]' })
 export class Mark6DropDownCloseTriggerDirective {
+
     constructor(private _dropDownService: Mark6DropDownService) {
     }
 
     @HostListener('click') onClick() {
         this._dropDownService.close(null);
     }
+
 }
 
 /**
@@ -154,8 +152,7 @@ export class Mark6DropDownCloseTriggerDirective {
     selector: 'mark6-drop-down-origin',
     templateUrl: 'drop-down-origin.component.html',
     styleUrls: ['./drop-down-origin.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush
+    encapsulation: ViewEncapsulation.None
 })
 export class Mark6DropDownOriginComponent {
     @HostBinding('class') classes = 'mark6-drop-down-origin';
@@ -169,8 +166,7 @@ export class Mark6DropDownOriginComponent {
     selector: 'mark6-drop-down-content',
     template: 'drop-down-content.html',
     styleUrls: ['./drop-down-content.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush
+    encapsulation: ViewEncapsulation.None
 })
 export class Mark6DropDownContentComponent {
     @HostBinding('class') classes = 'mark6-drop-down-content';

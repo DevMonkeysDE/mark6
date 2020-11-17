@@ -17,14 +17,16 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 // Sites
 import {SiteUserProfileComponent} from "./sites/site-user-profile/site-user-profile.component";
 import {SiteMessengerComponent} from './sites/site-messenger/site-messenger.component';
+import {SiteImageComponent} from "./sites/site-image/site-image.component";
 
 // Mark6
-import {Mark6ImageModule} from "../../projects/mark6-lib/src/lib/image/image.module";
-import {Mark6EditableImageModule} from "../../projects/mark6-lib/src/lib/editable-image/editable-image.module";
-import {Mark6DropDownModule} from "../../projects/mark6-lib/src/lib/drop-down/drop-down.module";
-import {Mark6MessengerModule} from "../../projects/mark6-lib/src/lib/messenger/messenger.module";
-import {Mark6ContentWrapperModule} from "../../projects/mark6-lib/src/lib/content-wrapper/content-wrapper.module";
-import {SiteImageComponent} from "./sites/site-image/site-image.component";
+import {Mark6ImageModule} from "../../projects/mark6-lib/image/src";
+import {Mark6MessengerModule} from "../../projects/mark6-lib/messenger/src";
+import {Mark6ContentWrapperModule} from "../../projects/mark6-lib/content-wrapper/src";
+import {Mark6EditableImageModule} from "../../projects/mark6-lib/editable-image/src";
+import {Mark6DropDownModule} from "../../projects/mark6-lib/drop-down/src";
+import {Mark6CropperModule} from "../../projects/mark6-lib/cropper/src";
+
 
 @NgModule({
     declarations: [
@@ -52,7 +54,7 @@ import {SiteImageComponent} from "./sites/site-image/site-image.component";
         Mark6EditableImageModule,
         Mark6DropDownModule,
         Mark6MessengerModule,
-        // Mark6CropperModule
+        Mark6CropperModule
     ],
     providers: [],
     bootstrap: [AppComponent]

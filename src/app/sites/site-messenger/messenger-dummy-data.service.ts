@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {MessengerInterface} from "../../../../projects/mark6-lib/src/lib/messenger/messenger.interface";
+import {MessengerInterface} from "../../../../projects/mark6-lib/messenger/src/messenger.interface";
 
 @Injectable({
     providedIn: 'root'

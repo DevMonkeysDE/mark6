@@ -1,6 +1,8 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {Mark6ImageModule} from "../image/image.module";
+
+// Modules
+import {Mark6ImageModule} from "../../image/src";
 
 // Components
 import {Mark6MessengerComponent} from "./messenger.component";
@@ -10,10 +12,10 @@ import {Mark6MessengerContentComponent} from "./messenger-content.component";
 import {Mark6MessengerFooterComponent} from "./messenger-footer.component";
 import {Mark6MessengerEmotePickerComponent} from './messenger-emote-picker.component';
 
-
 // Pipes
 import {MessengerMessageClassPipe} from "./messenger-message-class.pipe";
 import {MessengerCalendarDatePipe} from "./messenger-message-calendar-date.pipe";
+
 
 
 
