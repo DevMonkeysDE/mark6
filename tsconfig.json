@@ -16,6 +16,9 @@
       "dom"
     ],
     "paths": {
+      "@devmonkeys/mark6/image":[
+        "projects/mark6-lib/image/src"
+      ],
       "mark6-lib": [
         "dist/mark6-lib/mark6-lib",
         "dist/mark6-lib"
