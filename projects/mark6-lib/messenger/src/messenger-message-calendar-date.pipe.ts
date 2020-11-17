@@ -1,11 +1,15 @@
-import { ChangeDetectorRef, NgZone, Pipe, PipeTransform } from '@angular/core';
+import {ChangeDetectorRef, NgZone, Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
     name: 'messengerCalendarDate'
 })
 export class MessengerCalendarDatePipe implements PipeTransform {
+
     private timer: number;
-    constructor(private changeDetectorRef: ChangeDetectorRef, private ngZone: NgZone) { }
+
+    constructor(private changeDetectorRef: ChangeDetectorRef, private ngZone: NgZone) {
+    }
+
     transform(d: Date) {
         this.removeTimer();
         const now = new Date();
@@ -50,15 +54,14 @@ export class MessengerCalendarDatePipe implements PipeTransform {
             return `${years} years ago`;
         }
     }
-    ngOnDestroy(): void {
-        this.removeTimer();
-    }
+
     private removeTimer() {
         if (this.timer) {
             window.clearTimeout(this.timer);
             this.timer = null;
         }
     }
+
     private getSecondsUntilUpdate(seconds: number) {
         let min = 60;
         let hr = min * 60;
@@ -72,6 +75,10 @@ export class MessengerCalendarDatePipe implements PipeTransform {
         } else { // update every hour
             return 3600;
         }
+    }
+
+    ngOnDestroy(): void {
+        this.removeTimer();
     }
 
 }

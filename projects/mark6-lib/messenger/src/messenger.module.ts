@@ -17,8 +17,6 @@ import {MessengerMessageClassPipe} from "./messenger-message-class.pipe";
 import {MessengerCalendarDatePipe} from "./messenger-message-calendar-date.pipe";
 
 
-
-
 @NgModule({
     imports: [
         CommonModule,

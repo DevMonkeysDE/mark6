@@ -210,12 +210,14 @@ export class MessengerDummyDataService {
     constructor() {
     }
 
-    getDummyData() {
+    public getDummyData() {
         return this.dummyData;
     }
+
     private getRandomDate() {
         const d = new Date();
         d.setHours(d.getHours() - 2);
         return d;
     }
+
 }
