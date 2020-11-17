@@ -15,6 +15,7 @@ import {Mark6MessengerEmotePickerComponent} from './messenger-emote-picker.compo
 // Pipes
 import {MessengerMessageClassPipe} from "./messenger-message-class.pipe";
 import {MessengerCalendarDatePipe} from "./messenger-message-calendar-date.pipe";
+import {Mark6MessengerTextarea} from "./messenger-textarea.component";
 
 
 @NgModule({
@@ -24,22 +25,24 @@ import {MessengerCalendarDatePipe} from "./messenger-message-calendar-date.pipe"
     ],
     declarations: [
         Mark6MessengerComponent,
-        Mark6MessengerMessagesComponent,
-        Mark6MessengerHeaderComponent,
         Mark6MessengerContentComponent,
-        Mark6MessengerFooterComponent,
         Mark6MessengerEmotePickerComponent,
+        Mark6MessengerFooterComponent,
+        Mark6MessengerHeaderComponent,
+        Mark6MessengerMessagesComponent,
+        Mark6MessengerTextarea,
         // Pipes
         MessengerMessageClassPipe,
         MessengerCalendarDatePipe
     ],
     exports: [
         Mark6MessengerComponent,
-        Mark6MessengerMessagesComponent,
-        Mark6MessengerHeaderComponent,
         Mark6MessengerContentComponent,
-        Mark6MessengerFooterComponent,
         Mark6MessengerEmotePickerComponent,
+        Mark6MessengerFooterComponent,
+        Mark6MessengerHeaderComponent,
+        Mark6MessengerMessagesComponent,
+        Mark6MessengerTextarea
     ]
 })
 export class Mark6MessengerModule {

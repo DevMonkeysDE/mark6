@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostBinding, ViewEncapsulation} from '@angular/core';
 
 @Component({
-  selector: 'mark6-messenger-footer',
-  templateUrl: './messenger-footer.component.html',
-  styleUrls: ['./messenger-footer.component.scss']
+    selector: 'mark6-messenger-footer',
+    templateUrl: './messenger-footer.component.html',
+    styleUrls: ['./messenger-footer.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
-export class Mark6MessengerFooterComponent implements OnInit {
+export class Mark6MessengerFooterComponent {
 
-  constructor() { }
+    private hostClass = 'mark6-messenger-footer';
+    @HostBinding('class') classes = this.hostClass;
 
-  ngOnInit(): void {
-  }
+    constructor() {
+    }
 
 }
