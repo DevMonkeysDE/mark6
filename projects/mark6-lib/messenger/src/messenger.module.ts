@@ -42,9 +42,6 @@ import {MessengerCalendarDatePipe} from "./messenger-message-calendar-date.pipe"
         Mark6MessengerContentComponent,
         Mark6MessengerFooterComponent,
         Mark6MessengerEmotePickerComponent,
-        // Pipes
-        MessengerMessageClassPipe,
-        MessengerCalendarDatePipe
     ]
 })
 export class Mark6MessengerModule {

@@ -10,5 +10,3 @@ export * from './messenger-footer.component';
 export * from './messenger-header.component';
 export * from './messenger-messages.component';
 export * from './messenger.component';
-export * from './messenger-message-class.pipe';
-export * from './messenger-message-calendar-date.pipe';
