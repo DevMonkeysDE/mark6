@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 // Modules
-import {Mark6ImageModule} from "../../image/src";
+import {Mark6ImageModule} from '@devmonkeys/mark6/image';
 
 // Components
 import {Mark6MessengerComponent} from "./messenger.component";
