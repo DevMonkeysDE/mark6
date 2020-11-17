@@ -4,7 +4,7 @@
                       let index = index;
                       trackBy: trackByMessageId">
 
-    <div class="msg-date" *ngIf="message.created_at as date">{{date}}</div>
+    <div class="msg-date" *ngIf="message.created_at as date">{{date | messengerCalendarDate}}</div>
     <!-- From Anime Chat - Shows how the Date Pile was loaded
     <div class="msg-date" *ngIf="message.value.postedAt | messengerCalendarDate:messages[i-1]?.value.postedAt as d">{{d}}</div>
     -->

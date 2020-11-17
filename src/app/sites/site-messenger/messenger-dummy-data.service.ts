@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {MessengerInterface} from "../../../../projects/mark6-lib/messenger/src/messenger.interface";
+import { Injectable } from '@angular/core';
+import { MessengerInterface } from "../../../../projects/mark6-lib/messenger/src/messenger.interface";
 
 @Injectable({
     providedIn: 'root'
@@ -184,7 +184,7 @@ export class MessengerDummyDataService {
             message: 'On the other hand, I do not want it scrolling down, for example, when I scrolled up in <messenger-history> to look something'
         },
         {
-            created_at: new Date(1592821512887),
+            created_at: this.getRandomDate(),
             direction: 'others',
             user_id: 3,
             user_name: 'Lulu',
@@ -195,7 +195,7 @@ export class MessengerDummyDataService {
             message: 'Thats really a complicated thing... Maybe thats why the Facebookmessenger dont have this functionality? Because its simply not possible?'
         },
         {
-            created_at: new Date(1592821517326),
+            created_at: new Date(),
             direction: 'others',
             user_id: 2,
             user_name: 'ShyGuy',
@@ -213,5 +213,9 @@ export class MessengerDummyDataService {
     getDummyData() {
         return this.dummyData;
     }
-
+    private getRandomDate() {
+        const d = new Date();
+        d.setHours(d.getHours() - 2);
+        return d;
+    }
 }
