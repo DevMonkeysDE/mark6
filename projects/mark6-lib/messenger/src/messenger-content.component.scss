@@ -4,5 +4,5 @@
     padding: 16px;
     overflow-y: auto;
     // overflow-x: none;
-    @include scrollbarStyleMacOSLion();
+    @include scrollbar-style-mac-os-lion();
 }
