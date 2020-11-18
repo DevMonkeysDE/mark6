@@ -8,7 +8,7 @@ export class MessengerDummyDataService {
 
     public dummyData: MessengerInterface[] = [
         {
-            created_at: new Date(1592821389970),
+            created_at: this.getRandomDate(0, 0, 0, 0, 32),
             direction: 'me',
             user_id: 1,
             user_name: 'Sven',
@@ -19,7 +19,7 @@ export class MessengerDummyDataService {
             message: 'I wish that this chat where a bit more awesome! Its cool allready, but it still dont handle every magic i need! <3'
         },
         {
-            created_at: new Date(1592821452407),
+            created_at: this.getRandomDate(0, 0, 0, 0, 32),
             direction: 'others',
             user_id: 2,
             user_name: 'ShyGuy',
@@ -30,7 +30,7 @@ export class MessengerDummyDataService {
             message: 'What are you missing?'
         },
         {
-            created_at: new Date(1592821460031),
+            created_at: this.getRandomDate(0, 0, 0, 0, 32),
             direction: 'others',
             user_id: 2,
             user_name: 'ShyGuy',
@@ -41,7 +41,7 @@ export class MessengerDummyDataService {
             message: 'I mean... What you think this messenger must have, that its better than most common messengers like the Facebook messenger?'
         },
         {
-            created_at: new Date(1592821467605),
+            created_at: this.getRandomDate(0, 0, 0, 0, 32),
             direction: 'others',
             user_id: 3,
             user_name: 'Lulu',
@@ -52,7 +52,7 @@ export class MessengerDummyDataService {
             message: 'I think i know what i mean...'
         },
         {
-            created_at: new Date(1592821473552),
+            created_at: this.getRandomDate(0, 0, 0, 0, 32),
             direction: 'others',
             user_id: 3,
             user_name: 'Lulu',
@@ -63,7 +63,7 @@ export class MessengerDummyDataService {
             message: 'A very big problem is that when this messenger window is max Scrolled bottom, and i enter something to the <textarea> that makes a linebreak because its a long message... Then it overlay the last message in the <messenger-history>'
         },
         {
-            created_at: new Date(1592821477322),
+            created_at: this.getRandomDate(0, 0, 0, 0, 32),
             direction: 'others',
             user_id: 3,
             user_name: 'Lulu',
@@ -74,7 +74,7 @@ export class MessengerDummyDataService {
             message: 'That is a bit anoying... Because i everytime while writing a reply, must take my hand on the mouse and scroll this damn window down to see / remember what you wrote in your last message...'
         },
         {
-            created_at: new Date(1592821480838),
+            created_at: this.getRandomDate(0, 0, 0, 0, 32),
             direction: 'others',
             user_id: 3,
             user_name: 'Lulu',
@@ -85,7 +85,7 @@ export class MessengerDummyDataService {
             message: 'On the other hand, I do not want it scrolling down, for example, when I scrolled up in <messenger-history> to look something'
         },
         {
-            created_at: new Date(1592821484330),
+            created_at: this.getRandomDate(0, 0, 0, 0, 32),
             direction: 'others',
             user_id: 3,
             user_name: 'Lulu',
@@ -96,7 +96,7 @@ export class MessengerDummyDataService {
             message: 'Thats really a complicated thing... Maybe thats why the Facebookmessenger dont have this functionality? Because its simply not possible?'
         },
         {
-            created_at: new Date(1592821487574),
+            created_at: this.getRandomDate(0, 0, 0, 0, 32),
             direction: 'others',
             user_id: 2,
             user_name: 'ShyGuy',
@@ -107,7 +107,7 @@ export class MessengerDummyDataService {
             message: 'That make sense... But dont worry, we are awesome! WE FIND A WAY! ;)'
         },
         {
-            created_at: new Date(1592821490899),
+            created_at: this.getRandomDate(0, 0, 0, 0, 32),
             direction: 'me',
             user_id: 1,
             user_name: 'Sven',
@@ -118,7 +118,7 @@ export class MessengerDummyDataService {
             message: 'I wish that this chat where a bit more awesome! Its cool allready, but it still dont handle every magic i need! <3'
         },
         {
-            created_at: new Date(1592821494033),
+            created_at: this.getRandomDate(0, 0, 0, 0, 32),
             direction: 'others',
             user_id: 2,
             user_name: 'ShyGuy',
@@ -129,7 +129,7 @@ export class MessengerDummyDataService {
             message: 'What are you missing?'
         },
         {
-            created_at: new Date(1592821496833),
+            created_at: this.getRandomDate(0, 0, 0, 0, 32),
             direction: 'others',
             user_id: 2,
             user_name: 'ShyGuy',
@@ -140,7 +140,7 @@ export class MessengerDummyDataService {
             message: 'I mean... What you think this messenger must have, that its better than most common messengers like the Facebook messenger?'
         },
         {
-            created_at: new Date(1592821499985),
+            created_at: this.getRandomDate(0, 0, 0, 0, 32),
             direction: 'others',
             user_id: 3,
             user_name: 'Lulu',
@@ -151,7 +151,7 @@ export class MessengerDummyDataService {
             message: 'I think i know what i mean...'
         },
         {
-            created_at: new Date(1592821502571),
+            created_at: this.getRandomDate(0, 0, 0, 0, 32),
             direction: 'others',
             user_id: 3,
             user_name: 'Lulu',
@@ -162,7 +162,7 @@ export class MessengerDummyDataService {
             message: 'A very big problem is that when this messenger window is max Scrolled bottom, and i enter something to the <textarea> that makes a linebreak because its a long message... Then it overlay the last message in the <messenger-history>'
         },
         {
-            created_at: new Date(1592821507499),
+            created_at: this.getRandomDate(0, 0, 0, 0, 32),
             direction: 'others',
             user_id: 3,
             user_name: 'Lulu',
@@ -173,7 +173,7 @@ export class MessengerDummyDataService {
             message: 'Thats a bit anoying... Because i everytime while writing a reply, must take my hand on the mouse and scroll this damn window down to see / remember what you wrote in your last message...'
         },
         {
-            created_at: new Date(1592821510532),
+            created_at: this.getRandomDate(0, 0, 0, 0, 32),
             direction: 'others',
             user_id: 3,
             user_name: 'Lulu',
@@ -184,7 +184,7 @@ export class MessengerDummyDataService {
             message: 'On the other hand, I do not want it scrolling down, for example, when I scrolled up in <messenger-history> to look something'
         },
         {
-            created_at: this.getRandomDate(),
+            created_at: this.getRandomDate(0, 0, 0, 0, 2),
             direction: 'others',
             user_id: 3,
             user_name: 'Lulu',
@@ -213,10 +213,15 @@ export class MessengerDummyDataService {
     public getDummyData() {
         return this.dummyData;
     }
-
-    private getRandomDate() {
+    private getRandomDate(substractYears?: number, substractMonths?: number, substractDays?: number, substractHours?: number, substractMinutes?: number) {
         const d = new Date();
-        d.setHours(d.getHours() - 2);
+        if (substractYears) { d.setFullYear(d.getFullYear() - substractYears); }
+        if (substractMonths) { d.setMonth(d.getMonth() - substractMonths); }
+        if (substractDays) { d.setDate(d.getDate() - substractDays); }
+        if (substractHours) { d.setHours(d.getHours() - substractHours); }
+        if (substractMinutes) { d.setMinutes(d.getMilliseconds() - substractMinutes); }
+        console.log(d);
+
         return d;
     }
 
