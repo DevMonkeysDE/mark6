@@ -3,6 +3,7 @@ import {AfterViewInit, Directive, ElementRef, HostListener} from '@angular/core'
 
 @Directive({
     selector: 'textarea[Mark6MessengerAutoSize]',
+    // TODO :host is deprecated. solve it in the modern way
     host: {
         'rows': '1',
         'style': 'overflow: hidden'
