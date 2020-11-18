@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { getCssClasses, getFormat, samePeriod, test } from './messenger.helper';
+import { getCssClasses, isDifferentDate, } from './messenger.helper';
 import { InternalMessengerInterface, MessengerInterface } from './messenger.interface';
 
 @Pipe({
@@ -8,7 +8,6 @@ import { InternalMessengerInterface, MessengerInterface } from './messenger.inte
 export class MessengerMessageMagicPipe implements PipeTransform {
 
     transform(messages: MessengerInterface[]) {
-        test();
 
 
         for (let index = 0; index < messages.length; index++) {
@@ -24,13 +23,13 @@ export class MessengerMessageMagicPipe implements PipeTransform {
 
             const message = messages[index] as InternalMessengerInterface;
 
-            message.showDate = firstMessage || !samePeriod(previousMessage.created_at, message.created_at);
+            message.showDate = firstMessage || isDifferentDate(message.created_at, previousMessage.created_at);
             message.showTimestamp = false;
             message.firstMessage = firstMessage;
             message.lastMessage = lastMessage;
             message.classes = getCssClasses(message, previousMessage, nextMessage);
         }
-        return messages as InternalMessengerInterface[] ;
+        return messages as InternalMessengerInterface[];
     }
 
 

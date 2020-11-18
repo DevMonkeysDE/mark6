@@ -23,5 +23,4 @@ export interface InternalMessengerInterface extends MessengerInterface {
     showTimestamp: boolean;
     firstMessage: boolean;
     lastMessage: boolean;
-    
 }

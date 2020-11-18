@@ -1,5 +1,6 @@
+import { DatePipe } from '@angular/common';
 import { ChangeDetectorRef, NgZone, Pipe, PipeTransform } from '@angular/core';
-import { getFormat } from './messenger.helper';
+import { getDiffDaysFromNow } from './messenger.helper';
 
 @Pipe({
     name: 'messengerCalendarDate',
@@ -9,7 +10,7 @@ export class MessengerCalendarDatePipe implements PipeTransform {
 
     private timer: number;
 
-    constructor(private changeDetectorRef: ChangeDetectorRef, private ngZone: NgZone) {
+    constructor(private changeDetectorRef: ChangeDetectorRef, private ngZone: NgZone, private datePipe: DatePipe) {
     }
 
     transform(d: Date) {
@@ -26,7 +27,13 @@ export class MessengerCalendarDatePipe implements PipeTransform {
             return null;
         });
 
-        return getFormat(d);
+        const diffOfDays = getDiffDaysFromNow(d);
+        if (diffOfDays === 0) return 'Todays';
+        if (diffOfDays === 1) return 'Yesterday';
+        if (diffOfDays === 2) return 'Before yesterday';
+        if (diffOfDays > 2 && diffOfDays < 6) return this.datePipe.transform(d, 'EEEE');
+        if (diffOfDays > 5) return this.datePipe.transform(d, 'shortDate');
+
 
 
     }

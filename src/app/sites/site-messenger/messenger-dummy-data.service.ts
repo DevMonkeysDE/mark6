@@ -47,12 +47,23 @@ export class MessengerDummyDataService {
 
     public get dummyData(): MessengerInterface[] {
         const result = [];
-        for (let index = 0; index < 200; index++) {
+        for (let index = 0; index < 50; index++) {
             const rnd = this.randomIntFromInterval(1, 3);
             const user = rnd === 1 ? this.sven : rnd === 3 ? this.shyGuy : this.luLu;
             result.push({
                 ...user,
                 created_at: this.getRandomDate(),
+                message: txtgen.sentence(),
+                key: this.randomKey()
+            });
+
+        }
+        for (let index = 0; index < 50; index++) {
+            const rnd = this.randomIntFromInterval(1, 3);
+            const user = rnd === 1 ? this.sven : rnd === 3 ? this.shyGuy : this.luLu;
+            result.push({
+                ...user,
+                created_at: this.getRandomDateForThisWeek(),
                 message: txtgen.sentence(),
                 key: this.randomKey()
             });
@@ -87,7 +98,7 @@ export class MessengerDummyDataService {
         const currentHours = new Date().getHours();
         const currentMinutes = new Date().getMinutes();
         const currentSeconds = new Date().getSeconds();
-        const randomYear = this.randomIntFromInterval((currentYear - 3), currentYear);
+        const randomYear = this.randomIntFromInterval((currentYear - 1), currentYear);
 
         const randomMonth = this.randomIntFromInterval(1, currentYear === randomYear ? currentMonth : 12);
         const randomDay = this.randomIntFromInterval(1, currentMonth === randomMonth ? currentDate : 28);
@@ -100,5 +111,25 @@ export class MessengerDummyDataService {
         return d;
 
     }
+    private getRandomDateForThisWeek() {
 
+        const currentYear = new Date().getFullYear();
+        const currentMonth = new Date().getMonth();
+        const currentDate = new Date().getDate();
+        const currentHours = new Date().getHours();
+        const currentMinutes = new Date().getMinutes();
+        const currentSeconds = new Date().getSeconds();
+        const randomYear = this.randomIntFromInterval((currentYear), currentYear);
+
+        const randomMonth = this.randomIntFromInterval(currentMonth, currentMonth);
+        const randomDay = this.randomIntFromInterval(1, currentDate);
+        const randomHours = this.randomIntFromInterval(0, currentDate === randomDay ? currentHours : 24);
+        const randomMinutes = this.randomIntFromInterval(0, currentHours === randomHours ? currentMinutes : 60);
+        const randomSeconds = this.randomIntFromInterval(0, currentMinutes === randomMinutes ? currentSeconds : 60);
+
+
+        const d = new Date(randomYear, randomMonth, randomDay, randomHours, randomMinutes, randomSeconds);
+        return d;
+
+    }
 }
