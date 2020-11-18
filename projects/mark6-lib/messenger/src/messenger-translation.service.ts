@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 
 @Injectable()
-export class Mark6MessengerService {
+export class Mark6MessengerTranslationService {
 
 }
