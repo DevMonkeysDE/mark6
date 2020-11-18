@@ -2,6 +2,9 @@ $spaceBetweenMessages: 2px;
 $spaceBetweenMessageGroups: 24px;
 
 .mark6-messenger-messages {
+    padding: 16px;
+    display: block;
+
     .msg {
         max-width: 95%;
         padding: $spaceBetweenMessages / 2 0;

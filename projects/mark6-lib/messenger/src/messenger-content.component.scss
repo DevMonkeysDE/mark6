@@ -1,8 +1,8 @@
 @import "~@devmonkeys/scss-elements/loader";
 
 .mark6-messenger-content {
-    padding: 16px;
+    // padding: 16px;
     overflow-y: auto;
     // overflow-x: none;
-    @include scrollbar-style-mac-os-lion();
+    // @include scrollbar-style-mac-os-lion();
 }
