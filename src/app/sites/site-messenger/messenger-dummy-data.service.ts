@@ -47,7 +47,7 @@ export class MessengerDummyDataService {
 
     public get dummyData(): MessengerInterface[] {
         const result = [];
-        for (let index = 0; index < 100; index++) {
+        for (let index = 0; index < 200; index++) {
             const rnd = this.randomIntFromInterval(1, 3);
             const user = rnd === 1 ? this.sven : rnd === 3 ? this.shyGuy : this.luLu;
             result.push({
@@ -82,12 +82,18 @@ export class MessengerDummyDataService {
     private getRandomDate() {
 
         const currentYear = new Date().getFullYear();
+        const currentMonth = new Date().getMonth();
+        const currentDate = new Date().getDate();
+        const currentHours = new Date().getHours();
+        const currentMinutes = new Date().getMinutes();
+        const currentSeconds = new Date().getSeconds();
         const randomYear = this.randomIntFromInterval((currentYear - 3), currentYear);
-        const randomMonth = this.randomIntFromInterval(1, 12);
-        const randomDay = this.randomIntFromInterval(1, 28);
-        const randomHours = this.randomIntFromInterval(0, 24);
-        const randomMinutes = this.randomIntFromInterval(0, 60);
-        const randomSeconds = this.randomIntFromInterval(0, 60);
+
+        const randomMonth = this.randomIntFromInterval(1, currentYear === randomYear ? currentMonth : 12);
+        const randomDay = this.randomIntFromInterval(1, currentMonth === randomMonth ? currentDate : 28);
+        const randomHours = this.randomIntFromInterval(0, currentDate === randomDay ? currentHours : 24);
+        const randomMinutes = this.randomIntFromInterval(0, currentHours === randomHours ? currentMinutes : 60);
+        const randomSeconds = this.randomIntFromInterval(0, currentMinutes === randomMinutes ? currentSeconds : 60);
 
 
         const d = new Date(randomYear, randomMonth, randomDay, randomHours, randomMinutes, randomSeconds);
