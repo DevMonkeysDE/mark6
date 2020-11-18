@@ -1,7 +1,8 @@
 import { ChangeDetectorRef, NgZone, Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'messengerCalendarDate'
+    name: 'messengerCalendarDate',
+    pure:false
 })
 export class MessengerCalendarDatePipe implements PipeTransform {
     private timer: number;
