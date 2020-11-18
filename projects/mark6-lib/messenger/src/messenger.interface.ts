@@ -14,3 +14,14 @@ export interface AvatarInterface {
     srcset?: string;
     default?: string;
 }
+
+export interface InternalMessengerInterface extends MessengerInterface {
+    showDate: boolean;
+    showAvatar: boolean;
+    classes: any;
+    formatedDate: string;
+    showTimestamp: boolean;
+    firstMessage: boolean;
+    lastMessage: boolean;
+    
+}

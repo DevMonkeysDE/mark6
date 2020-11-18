@@ -1,35 +1,60 @@
-<ng-container *ngFor="let message of messages;
+<ng-container *ngFor="let message of messages | magicPipe;trackBy: trackByMessageId">
+
+
+
+    <div class="msg-date" *ngIf="message.showDate">{{message.created_at | messengerCalendarDate}}</div>
+
+    <div [ngClass]="message.classes">
+
+        <div class="msg-avatar" *ngIf="(avatarMe && message.direction === 'me') || (avatarOthers && message.direction === 'others')">
+            <mark6-image [preview]="message.user_avatar.preview" [default]="message.user_avatar.default"
+                [src]="message.user_avatar.src" [alt]="message.user_name">
+            </mark6-image>
+        </div>
+
+        <div class="msg-content" (click)="message.showTimestamp = !message.showTimestamp">
+            <div class="msg-message" [ngClass]="{temporary : message.message_sent}">
+                <div class="header" *ngIf="type === 'group' && message.direction === 'others'">{{message.user_name}}
+                </div>
+                <span>{{message.message |json}}</span>
+                <div class="footer" *ngIf="message.showTimestamp" @fade>
+                    <span>{{message.created_at |date:'long'}}</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</ng-container>
+<!-- <ng-container *ngFor="let message of messages;
                       let isLast = last;
                       let isFirst = first;
                       let index = index;
                       trackBy: trackByMessageId">
+    <div class="msg-date" *ngIf="message.created_at| messengerCalendarDate:messages[index-1]?.created_at as date">
+        {{date}}</div>
 
-    <div class="msg-date" *ngIf="message.created_at as date">{{date | messengerCalendarDate}}</div>
-    <!-- From Anime Chat - Shows how the Date Pile was loaded
-    <div class="msg-date" *ngIf="message.value.postedAt | messengerCalendarDate:messages[i-1]?.value.postedAt as d">{{d}}</div>
-    -->
 
-    <div [ngClass]="message | messengerClass : messages[index-1] : messages[index+1] : isFirst : isLast : message.created_at : messages[index-1]?.created_at">
+    <div
+        [ngClass]="message | messengerClass : messages[index-1] : messages[index+1] : isFirst : isLast : message.created_at : messages[index-1]?.created_at">
 
-        <div class="msg-avatar" *ngIf="(avatarMe && message.direction === 'me') || (avatarOthers && message.direction === 'others')">
-            <mark6-image
-                [preview]="message.user_avatar.preview"
-                [default]="message.user_avatar.default"
-                [src]="message.user_avatar.src"
-                [alt]="message.user_name">
+        <div class="msg-avatar"
+            *ngIf="(avatarMe && message.direction === 'me') || (avatarOthers && message.direction === 'others')">
+            <mark6-image [preview]="message.user_avatar.preview" [default]="message.user_avatar.default"
+                [src]="message.user_avatar.src" [alt]="message.user_name">
             </mark6-image>
         </div>
 
         <div class="msg-content" (click)="toggleTimestamp(index)">
             <div class="msg-message" [ngClass]="{temporary : message.message_sent}">
-                <div class="header" *ngIf="type === 'group' && message.direction === 'others'">{{message.user_name}}</div>
+                <div class="header" *ngIf="type === 'group' && message.direction === 'others'">{{message.user_name}}
+                </div>
                 <span>{{message.message}}</span>
                 <div class="footer" *ngIf="showTimestamp[index]" @fade>
-                    <span>{{message.created_at }}</span>
+                    <span>{{message.created_at |date:'long'}}</span>
                 </div>
             </div>
         </div>
 
     </div>
 
-</ng-container>
+</ng-container> -->

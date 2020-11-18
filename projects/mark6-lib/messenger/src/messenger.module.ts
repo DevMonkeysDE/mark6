@@ -20,6 +20,7 @@ import {Mark6MessengerTextarea} from "./messenger-textarea.component";
 // Directives
 import {Mark6MessengerAutoSizeDirective} from "./messenger-textarea-auto-size.directive";
 import {Mark6MessengerActionsComponent} from "./messenger-actions.component";
+import { MessengerMessageMagicPipe } from './messenger-message-magic.pipe';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import {Mark6MessengerActionsComponent} from "./messenger-actions.component";
         // Pipes
         MessengerMessageClassPipe,
         MessengerCalendarDatePipe,
+        MessengerMessageMagicPipe,
         // Directives
         Mark6MessengerAutoSizeDirective
     ],
