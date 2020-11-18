@@ -8,10 +8,9 @@ import {AfterViewInit, Directive, ElementRef, HostListener} from '@angular/core'
         'style': 'overflow: hidden'
     }
 })
-
-
 export class Mark6MessengerAutoSizeDirective implements AfterViewInit {
 
+    // TODO ALEX - Please add Max count for row Auto grow
     constructor(private elem: ElementRef) {
     }
 
