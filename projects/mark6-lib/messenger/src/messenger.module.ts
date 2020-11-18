@@ -15,8 +15,11 @@ import {Mark6MessengerEmotePickerComponent} from './messenger-emote-picker.compo
 // Pipes
 import {MessengerMessageClassPipe} from "./messenger-message-class.pipe";
 import {MessengerCalendarDatePipe} from "./messenger-message-calendar-date.pipe";
+import {Mark6MessengerTextarea} from "./messenger-textarea.component";
 
-
+// Directives
+import {Mark6MessengerAutoSizeDirective} from "./messenger-textarea-auto-size.directive";
+import {Mark6MessengerActionsComponent} from "./messenger-actions.component";
 
 
 @NgModule({
@@ -26,22 +29,30 @@ import {MessengerCalendarDatePipe} from "./messenger-message-calendar-date.pipe"
     ],
     declarations: [
         Mark6MessengerComponent,
-        Mark6MessengerMessagesComponent,
-        Mark6MessengerHeaderComponent,
+        Mark6MessengerActionsComponent,
         Mark6MessengerContentComponent,
-        Mark6MessengerFooterComponent,
         Mark6MessengerEmotePickerComponent,
+        Mark6MessengerFooterComponent,
+        Mark6MessengerHeaderComponent,
+        Mark6MessengerMessagesComponent,
+        Mark6MessengerTextarea,
         // Pipes
         MessengerMessageClassPipe,
-        MessengerCalendarDatePipe
+        MessengerCalendarDatePipe,
+        // Directives
+        Mark6MessengerAutoSizeDirective
     ],
     exports: [
         Mark6MessengerComponent,
-        Mark6MessengerMessagesComponent,
-        Mark6MessengerHeaderComponent,
+        Mark6MessengerActionsComponent,
         Mark6MessengerContentComponent,
-        Mark6MessengerFooterComponent,
         Mark6MessengerEmotePickerComponent,
+        Mark6MessengerFooterComponent,
+        Mark6MessengerHeaderComponent,
+        Mark6MessengerMessagesComponent,
+        Mark6MessengerTextarea,
+        // Directives
+        Mark6MessengerAutoSizeDirective
     ]
 })
 export class Mark6MessengerModule {

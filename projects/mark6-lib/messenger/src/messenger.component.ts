@@ -4,7 +4,7 @@ import {ChangeDetectionStrategy, Component, HostBinding, ViewEncapsulation} from
     selector: 'mark6-messenger',
     templateUrl: './messenger.component.html',
     styleUrls: ['./messenger.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    // changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None
 })
 export class Mark6MessengerComponent {

@@ -210,7 +210,7 @@ export class MessengerDummyDataService {
     constructor() {
     }
 
-    getDummyData() {
+    public getDummyData() {
         return this.dummyData;
     }
     private getRandomDate(substractYears?: number, substractMonths?: number, substractDays?: number, substractHours?: number, substractMinutes?: number) {
@@ -224,4 +224,5 @@ export class MessengerDummyDataService {
 
         return d;
     }
+
 }

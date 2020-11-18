@@ -1,4 +1,9 @@
+@import "~@devmonkeys/scss-elements/loader";
+
 .mat-toolbar {
+    @include media-max($res-mat-sm) {
+        display: none;
+    }
 
     ul {
         margin: 0;

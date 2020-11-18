@@ -1,12 +1,4 @@
-.mark6-messenger {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    // grid-template-rows: min-content auto min-content;
-    grid-template-columns: auto;
-    grid-template-rows: auto min-content;
-    // grid-template-areas: "messenger-content" "messenger-footer";
-
+:root {
     /** Messenger **/
     --messenger-textarea-background: #ffffff;
     --messenger-textarea-placeholder: #a8a8a8;
@@ -37,4 +29,19 @@
     --emoji-picker-footer-background: #e3e7e8;
     --emoji-picker-footer-contrast: #6f7a80;
     --emoji-picker-footer-contrast-active: var(--ion-color-primary);
+}
+
+.mark6-messenger {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    box-sizing: border-box;
+    // grid-template-rows: min-content auto min-content;
+    grid-template-columns: auto;
+    grid-template-rows: min-content auto min-content;
+    grid-template-areas: "messenger-header" "messenger-content" "messenger-footer";
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
 }

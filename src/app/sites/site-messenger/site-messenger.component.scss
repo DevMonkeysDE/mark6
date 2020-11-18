@@ -1,6 +1,9 @@
 @import "~@devmonkeys/scss-elements/loader";
 
 .mat-toolbar {
+    @include media-max($res-mat-sm) {
+        display: none;
+    }
 
     ul {
         margin: 0;
@@ -20,19 +23,18 @@
 
 .mark6-messenger {
     &.fullscreen {
-        height: calc(100% - (56px * 2));
-        @include media-min(var(--resMat-sm)) {
+        height: 100%;
+        // height: calc(100% - (56px * 2));
+        @include media-min($res-mat-sm) {
             height: calc(100% - (64px * 2));
         }
     }
     &.boxed {
         width: 420px;
-        height: 600px;
-        right: 24px;
+        height: 500px;
+        right: 16px;
         bottom: 0;
-        position: fixed;
-        border-color: red;
-        border-style: solid;
-        border-width: 1px 1px 0 1px;
+        position: absolute;
+        box-shadow: 0 0 3px 0 #000;
     }
 }
