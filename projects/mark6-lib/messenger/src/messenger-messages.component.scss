@@ -5,10 +5,10 @@ $spaceBetweenMessageGroups: 24px;
     padding: 16px;
     display: block;
     virtual-scroller {
-        height: 300px;
+        height: 100%;
         .item {
             min-height: 100px;
-            height: 100px;
+            height: auto;
         }
     }
     .msg {
