@@ -9,7 +9,7 @@ export class MessengerMessageMagicPipe implements PipeTransform {
 
     transform(messages: MessengerInterface[]) {
 
-
+        if (!!!messages) return null;
         for (let index = 0; index < messages.length; index++) {
 
 

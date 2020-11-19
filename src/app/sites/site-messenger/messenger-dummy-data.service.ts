@@ -69,7 +69,7 @@ export class MessengerDummyDataService {
             });
 
         }
-        return result.sort((n1, n2) => {
+        return [].concat(result || []).sort((n1, n2) => {
             if (n1.created_at > n2.created_at) {
                 return 1;
             }
