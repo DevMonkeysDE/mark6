@@ -22,6 +22,9 @@
 }
 
 .mark6-messenger {
+    mark6-messenger-messages{
+        height: 100%;
+    }
     &.fullscreen {
         height: 100%;
         // height: calc(100% - (56px * 2));

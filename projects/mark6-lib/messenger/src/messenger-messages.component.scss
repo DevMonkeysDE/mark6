@@ -4,8 +4,8 @@ $spaceBetweenMessageGroups: 24px;
 .mark6-messenger-messages {
     padding: 16px;
     display: block;
-    cdk-virtual-scroll-viewport{
-        height: 300px;
+    virtual-scroller {
+        height: 100%;
     }
     .msg {
         max-width: 95%;
@@ -106,7 +106,7 @@ $spaceBetweenMessageGroups: 24px;
                 }
 
                 &.temporary {
-                    opacity: .6;
+                    opacity: 0.6;
                 }
 
                 &:first-child {
@@ -135,7 +135,6 @@ $spaceBetweenMessageGroups: 24px;
                     .footer {
                         margin-left: auto;
                     }
-
                 }
             }
         }
@@ -155,12 +154,13 @@ $spaceBetweenMessageGroups: 24px;
                 .msg-message {
                     margin-right: auto;
                     color: var(--messenger-message-others-contrast);
-                    background-color: var(--messenger-message-others-background);
+                    background-color: var(
+                        --messenger-message-others-background
+                    );
 
                     .footer {
                         margin-right: auto;
                     }
-
                 }
             }
         }
@@ -176,6 +176,5 @@ $spaceBetweenMessageGroups: 24px;
                 }
             }
         }
-
     }
 }

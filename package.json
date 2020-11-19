@@ -30,6 +30,7 @@
         "@angular/router": "~11.0.0",
         "@devmonkeys/scss-elements": "^3.1.14",
         "cropperjs": "1.5.9",
+        "ngx-virtual-scroller": "^4.0.3",
         "rxjs": "~6.6.3",
         "tslib": "^2.0.3",
         "txtgen": "^2.2.8",
