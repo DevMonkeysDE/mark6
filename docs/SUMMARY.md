@@ -7,4 +7,5 @@
 * [Image](components/image.md)
 * [Editable Image](components/editable-image.md)
 * [Content Wrapper](components/content-wrapper.md)
+* [Messenger](components/messenger.md)
 
