@@ -22,11 +22,16 @@ import { Mark6MessengerAutoSizeDirective } from "./messenger-textarea-auto-size.
 import { Mark6MessengerActionsComponent } from "./messenger-actions.component";
 import { MessengerMessageMagicPipe } from './messenger-message-magic.pipe';
 
+import {ScrollingModule as ExperimentalScrollingModule } from '@angular/cdk-experimental/scrolling';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+
 
 @NgModule({
     imports: [
         CommonModule,
-        Mark6ImageModule
+        Mark6ImageModule,
+        ScrollingModule,
+        ExperimentalScrollingModule,
     ],
     declarations: [
         Mark6MessengerComponent,

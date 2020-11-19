@@ -4,7 +4,9 @@ $spaceBetweenMessageGroups: 24px;
 .mark6-messenger-messages {
     padding: 16px;
     display: block;
-
+    cdk-virtual-scroll-viewport{
+        height: 300px;
+    }
     .msg {
         max-width: 95%;
         padding: $spaceBetweenMessages / 2 0;
