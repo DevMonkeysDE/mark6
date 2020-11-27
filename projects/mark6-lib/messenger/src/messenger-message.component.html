@@ -1,0 +1,23 @@
+<div class="msg-date" *ngIf="message.showDate">{{message.created_at | messengerCalendarDate}}</div>
+
+<div [ngClass]="message.classes">
+
+    <div class="msg-avatar"
+        *ngIf="(avatarMe && message.direction === 'me') || (avatarOthers && message.direction === 'others')">
+        <mark6-image [preview]="message.user_avatar.preview" [default]="message.user_avatar.default"
+            [src]="message.user_avatar.src" [alt]="message.user_name">
+        </mark6-image>
+    </div>
+
+    <div class="msg-content" (click)="message.showTimestamp = !message.showTimestamp">
+        <div class="msg-message" [ngClass]="{temporary : message.message_sent}">
+            <div class="header" *ngIf="type === 'group' && message.direction === 'others'">{{message.user_name}}
+            </div>
+            <span>{{message.message |json}}</span>
+            <div class="footer" *ngIf="message.showTimestamp" @fade>
+                <span>{{message.created_at | date : 'HH.mm'}}</span>
+            </div>
+        </div>
+    </div>
+
+</div>

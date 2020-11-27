@@ -4,10 +4,10 @@ $spaceBetweenMessageGroups: 24px;
 .mark6-messenger-messages {
     padding: 16px;
     display: block;
-    .viewport {
+
+    virtual-scroller{
         height: 100%;
     }
-   
     mark6-messenger-message{
         display: block;
     }

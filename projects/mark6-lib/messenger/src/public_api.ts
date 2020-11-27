@@ -11,6 +11,7 @@ export * from './messenger-emote-picker.component';
 export * from './messenger-footer.component';
 export * from './messenger-header.component';
 export * from './messenger-messages.component';
+export * from './messenger-messages-virtual-scroller.component';
 export * from './messenger-textarea.component';
 
 export * from './messenger-textarea-auto-size.directive';

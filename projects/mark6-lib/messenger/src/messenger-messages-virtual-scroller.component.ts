@@ -7,9 +7,9 @@ import { MessengerInterface } from "./messenger.interface";
 import { Mark6MessengerService } from './messenger.service';
 
 @Component({
-    selector: 'mark6-messenger-messages',
-    templateUrl: './messenger-messages.component.html',
-    styleUrls: ['./messenger-messages.component.scss'],
+    selector: 'mark6-messenger-messages-virtual-scroller',
+    templateUrl: './messenger-messages-virtual-scroller.component.html',
+    styleUrls: ['./messenger-messages-virtual-scroller.component.scss'],
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     animations: [
@@ -20,7 +20,7 @@ import { Mark6MessengerService } from './messenger.service';
         ])
     ]
 })
-export class Mark6MessengerMessagesComponent implements AfterViewInit {
+export class Mark6MessengerMessagesVirtualScrollerComponent implements AfterViewInit {
     @Input() public messages: MessengerInterface[] = null;
     @Input() public type: 'single' | 'group';
     @Input() public avatarMe = false;

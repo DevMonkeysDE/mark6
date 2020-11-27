@@ -19,7 +19,7 @@
     "dependencies": {
         "@angular/animations": "~11.0.0",
         "@angular/cdk": "~11.0.0",
-        "@angular/cdk-experimental": "^11.0.0",
+        "@angular/cdk-experimental": "^11.0.1",
         "@angular/common": "~11.0.0",
         "@angular/compiler": "~11.0.0",
         "@angular/core": "~11.0.0",
@@ -30,11 +30,12 @@
         "@angular/router": "~11.0.0",
         "@devmonkeys/scss-elements": "^3.1.14",
         "cropperjs": "1.5.9",
-        "ngx-virtual-scroller": "^4.0.3",
         "rxjs": "~6.6.3",
         "tslib": "^2.0.3",
         "txtgen": "^2.2.8",
-        "zone.js": "~0.11.3"
+        "zone.js": "~0.11.3",
+        "@tweenjs/tween.js": "17.4.0",
+        "@types/tween.js": "17.2.0"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "~0.1100.1",
