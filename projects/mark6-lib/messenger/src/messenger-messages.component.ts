@@ -1,10 +1,18 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
-import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
-import { Component, Input, Output, EventEmitter, ViewEncapsulation, HostBinding, ViewChild, OnInit, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Inject, Self } from '@angular/core';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
-import { MessengerInterface } from "./messenger.interface";
-import { Mark6MessengerService } from './messenger.service';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+import {
+    Component,
+    Input,
+    Output,
+    EventEmitter,
+    ViewEncapsulation,
+    HostBinding,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+} from '@angular/core';
+import {Observable} from 'rxjs';
+import {tap} from 'rxjs/operators';
+import {MessengerInterface} from "./messenger.interface";
+import {Mark6MessengerService} from './messenger.service';
 
 @Component({
     selector: 'mark6-messenger-messages',
@@ -14,13 +22,14 @@ import { Mark6MessengerService } from './messenger.service';
     changeDetection: ChangeDetectionStrategy.OnPush,
     animations: [
         trigger('fade', [
-            state('in', style({ opacity: 1 })),
-            transition(':enter', [style({ opacity: 0 }), animate(250)]),
-            transition(':leave', animate(250, style({ opacity: 0 })))
+            state('in', style({opacity: 1})),
+            transition(':enter', [style({opacity: 0}), animate(250)]),
+            transition(':leave', animate(250, style({opacity: 0})))
         ])
     ]
 })
-export class Mark6MessengerMessagesComponent implements AfterViewInit {
+export class Mark6MessengerMessagesComponent
+{
     @Input() public messages: MessengerInterface[] = null;
     @Input() public type: 'single' | 'group';
     @Input() public avatarMe = false;
@@ -30,16 +39,15 @@ export class Mark6MessengerMessagesComponent implements AfterViewInit {
     private hostClass = 'mark6-messenger-messages';
     @HostBinding('class') classes = this.hostClass;
 
-
     public showTimestamp = {};
     maxHeight: Observable<number>;
+
     constructor(private messengerService: Mark6MessengerService, private ref: ChangeDetectorRef) {
         this.maxHeight = messengerService.getMaxHeight().pipe(tap((f) => {
 
         }));
     }
-    ngAfterViewInit() {
-    }
+
     toggleTimestamp(index) {
         this.showTimestamp[index] = !!!this.showTimestamp[index] ? true : !this.showTimestamp[index];
         this.timeToggled.emit(this.showTimestamp[index]);

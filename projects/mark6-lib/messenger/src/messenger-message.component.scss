@@ -1,5 +1,15 @@
 $spaceBetweenMessages: 2px;
 $spaceBetweenMessageGroups: 24px;
+
+:host {
+    // Very last message should be padding-bottom: 0;
+    &:last-of-type {
+        .msg {
+            padding-bottom: 0;
+        }
+    }
+}
+
 .msg {
     max-width: 95%;
     padding: $spaceBetweenMessages / 2 0;
@@ -27,11 +37,6 @@ $spaceBetweenMessageGroups: 24px;
         .msg-avatar {
             visibility: unset;
         }
-    }
-
-    // Very last message should be padding-bottom: 0;
-    &:last-of-type {
-        padding-bottom: 0;
     }
 
     &:not(.first-from-user) {

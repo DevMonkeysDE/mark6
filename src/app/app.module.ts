@@ -14,10 +14,15 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
+// CDK
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { ScrollingModule as ScrollingModuleExp } from '@angular/cdk-experimental/scrolling';
+
 // Sites
-import {SiteUserProfileComponent} from "./sites/site-user-profile/site-user-profile.component";
+import {SiteUserProfileComponent} from './sites/site-user-profile/site-user-profile.component';
 import {SiteMessengerComponent} from './sites/site-messenger/site-messenger.component';
-import {SiteImageComponent} from "./sites/site-image/site-image.component";
+import {SiteImageComponent} from './sites/site-image/site-image.component';
+import { SiteMessengerVirtualScrollerComponent } from './sites/site-messenger-virtual-scroller/site-messenger.component';
 
 // Mark6
 import {Mark6ImageModule} from '@devmonkeys/mark6/image';
@@ -26,7 +31,6 @@ import {Mark6ContentWrapperModule} from '../../projects/mark6-lib/content-wrappe
 import {Mark6EditableImageModule} from '../../projects/mark6-lib/editable-image/src';
 import {Mark6DropDownModule} from '../../projects/mark6-lib/drop-down/src';
 import {Mark6CropperModule} from '../../projects/mark6-lib/cropper/src';
-import { SiteMessengerVirtualScrollerComponent } from './sites/site-messenger-virtual-scroller/site-messenger.component';
 
 
 @NgModule({
@@ -50,6 +54,9 @@ import { SiteMessengerVirtualScrollerComponent } from './sites/site-messenger-vi
         MatInputModule,
         MatButtonModule,
         MatToolbarModule,
+        // CDK
+        ScrollingModule,
+        ScrollingModuleExp,
         // Mark6
         Mark6ContentWrapperModule,
         Mark6ImageModule,

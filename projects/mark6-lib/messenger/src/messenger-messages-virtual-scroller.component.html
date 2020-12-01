@@ -1,7 +1,0 @@
-<pre>{{maxHeight | async}}</pre>
-<!-- [calculateDimensionsAutomatically]="true" make it not workign -->
-<virtual-scroller #scroll [items]="messages" [calculateDimensionsAutomatically]="true" [enableUnequalChildrenSizes]="true">
-    <mark6-messenger-message  [message]="message" [avatarMe]="avatarMe" [avatarOthers]="avatarOthers" [type]="type"
-        *ngFor="let message of scroll.viewPortItems| magicPipe;trackBy: trackByMessageId">
-    </mark6-messenger-message>
-</virtual-scroller>

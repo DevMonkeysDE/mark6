@@ -1,8 +1,13 @@
-<pre>{{maxHeight | async}}</pre>
-<cdk-virtual-scroll-viewport autosize class="viewport">
-    <mark6-messenger-message [message]="message"
-        *cdkVirtualFor="let message of messages | magicPipe;trackBy: trackByMessageId" [avatarMe]="avatarMe"
-        [avatarOthers]="avatarOthers" [type]="type"></mark6-messenger-message>
-</cdk-virtual-scroll-viewport>
+<!--<cdk-virtual-scroll-viewport autosize class="viewport">
+
+    <mark6-messenger-message
+        [message]="message"
+        *cdkVirtualFor="let message of messages | magicPipe;trackBy: trackByMessageId"
+        [avatarMe]="avatarMe"
+        [avatarOthers]="avatarOthers"
+        [type]="type">
+    </mark6-messenger-message>
+
+</cdk-virtual-scroll-viewport>-->
 
 

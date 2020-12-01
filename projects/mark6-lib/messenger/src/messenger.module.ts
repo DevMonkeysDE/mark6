@@ -3,8 +3,6 @@ import { CommonModule, DatePipe } from '@angular/common';
 
 // Modules
 import { Mark6ImageModule } from '@devmonkeys/mark6/image';
-import { ScrollingModule } from '@angular/cdk/scrolling';
-import { ScrollingModule as ScrollingModuleExp } from '@angular/cdk-experimental/scrolling';
 
 // Components
 import { Mark6MessengerComponent } from "./messenger.component";
@@ -26,16 +24,10 @@ import { MessengerMessageMagicPipe } from './messenger-message-magic.pipe';
 import { Mark6MessengerEmitItemHeightDirective } from './messenger-emit-item-height.directive';
 import { Mark6MessengerService } from './messenger.service';
 import { Mark6MessengerMessageComponent } from './messenger-message.component';
-import { VirtualScrollerModule } from './virtual-scroller';
-import { Mark6MessengerMessagesVirtualScrollerComponent } from './messenger-messages-virtual-scroller.component';
-
 
 
 @NgModule({
     imports: [
-        ScrollingModule,
-        ScrollingModuleExp,
-        VirtualScrollerModule,
         CommonModule,
         Mark6ImageModule,
     ],
@@ -46,9 +38,8 @@ import { Mark6MessengerMessagesVirtualScrollerComponent } from './messenger-mess
         Mark6MessengerEmotePickerComponent,
         Mark6MessengerFooterComponent,
         Mark6MessengerHeaderComponent,
-        Mark6MessengerMessagesComponent,
-        Mark6MessengerMessagesVirtualScrollerComponent,
         Mark6MessengerMessageComponent,
+        Mark6MessengerMessagesComponent,
         Mark6MessengerTextarea,
         // Pipes
         MessengerMessageClassPipe,
@@ -65,8 +56,8 @@ import { Mark6MessengerMessagesVirtualScrollerComponent } from './messenger-mess
         Mark6MessengerEmotePickerComponent,
         Mark6MessengerFooterComponent,
         Mark6MessengerHeaderComponent,
+        Mark6MessengerMessageComponent,
         Mark6MessengerMessagesComponent,
-        Mark6MessengerMessagesVirtualScrollerComponent,
         Mark6MessengerTextarea,
         // Directives
         Mark6MessengerAutoSizeDirective
