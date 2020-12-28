@@ -1,7 +1,30 @@
-import { InternalMessengerInterface } from "./messenger.interface";
+import { InternalMessengerInterface, MessengerInterface } from "./messenger.interface";
+
+
+export const transform = (messages: MessengerInterface[]) => {
+
+    if (!!!messages) return null;
+    for (let index = 0; index < messages.length; index++) {
+
+
+        const previousMessage = index === 0 ? null : messages[index - 1] as InternalMessengerInterface;
+        const nextMessage = index === messages.length - 1 ? null : messages[index + 1] as InternalMessengerInterface;
 
 
 
+        const firstMessage = index === 0;
+        const lastMessage = index === messages.length - 1;
+
+        const message = messages[index] as InternalMessengerInterface;
+
+        message.showDate = firstMessage || isDifferentDate(message.created_at, previousMessage.created_at);
+        message.showTimestamp = false;
+        message.firstMessage = firstMessage;
+        message.lastMessage = lastMessage;
+        message.classes = getCssClasses(message, previousMessage, nextMessage);
+    }
+    return messages as InternalMessengerInterface[];
+}
 
 export const getCssClasses =
     (
