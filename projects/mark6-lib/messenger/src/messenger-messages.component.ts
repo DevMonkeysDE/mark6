@@ -53,14 +53,12 @@ export class Mark6MessengerMessagesComponent implements AfterViewInit {
 
     constructor(private messengerService: Mark6MessengerService, private ref: ChangeDetectorRef) {
         this.maxHeight = messengerService.getMaxHeight().pipe(tap((f) => {
-
         }));
     }
     ngAfterViewInit() {
         const b = this.bottomRef.nativeElement as HTMLElement;
-        const t = this.topRef.nativeElement as HTMLElement;
         b.scrollIntoView({behavior:'smooth'});
-        setTimeout(() => { t.scrollIntoView({ behavior: 'smooth' }); }, 5000);
+        
     }
     toggleTimestamp(index) {
         this.showTimestamp[index] = !!!this.showTimestamp[index] ? true : !this.showTimestamp[index];
