@@ -1,4 +1,4 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 import {
     Component,
     Input,
@@ -9,15 +9,14 @@ import {
     ChangeDetectionStrategy,
     ChangeDetectorRef,
     ViewChild,
-    OnInit,
     AfterViewInit,
     ElementRef,
 } from '@angular/core';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
-import { transform } from './messenger.helper';
-import { InternalMessengerInterface, MessengerInterface } from "./messenger.interface";
-import { Mark6MessengerService } from './messenger.service';
+import {Observable} from 'rxjs';
+import {tap} from 'rxjs/operators';
+import {transform} from './messenger.helper';
+import {InternalMessengerInterface, MessengerInterface} from "./messenger.interface";
+import {Mark6MessengerService} from './messenger.service';
 
 @Component({
     selector: 'mark6-messenger-messages',
@@ -27,18 +26,19 @@ import { Mark6MessengerService } from './messenger.service';
     changeDetection: ChangeDetectionStrategy.OnPush,
     animations: [
         trigger('fade', [
-            state('in', style({ opacity: 1 })),
-            transition(':enter', [style({ opacity: 0 }), animate(250)]),
-            transition(':leave', animate(250, style({ opacity: 0 })))
+            state('in', style({opacity: 1})),
+            transition(':enter', [style({opacity: 0}), animate(250)]),
+            transition(':leave', animate(250, style({opacity: 0})))
         ])
     ]
 })
 export class Mark6MessengerMessagesComponent implements AfterViewInit {
+
     @Input() public set messages(values: MessengerInterface[]) {
-        console.log(values);
         this._messages = transform(values);
         // this.bottomRef.nativeElement.scrollIntoView();
     }
+
     @Input() public type: 'single' | 'group';
     @Input() public avatarMe = false;
     @Input() public avatarOthers = false;
@@ -55,11 +55,13 @@ export class Mark6MessengerMessagesComponent implements AfterViewInit {
         this.maxHeight = messengerService.getMaxHeight().pipe(tap((f) => {
         }));
     }
+
     ngAfterViewInit() {
         const b = this.bottomRef.nativeElement as HTMLElement;
-        b.scrollIntoView({behavior:'smooth'});
-        
+        b.scrollIntoView({behavior: 'smooth'});
+
     }
+
     toggleTimestamp(index) {
         this.showTimestamp[index] = !!!this.showTimestamp[index] ? true : !this.showTimestamp[index];
         this.timeToggled.emit(this.showTimestamp[index]);
