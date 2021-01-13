@@ -13,7 +13,7 @@
     <div class="msg-content" (click)="message.showTimestamp = !message.showTimestamp">
         <div class="msg-message" [ngClass]="{temporary : message.message_sent}">
             <div class="header" *ngIf="type === 'group' && message.direction === 'others'">{{message.user_name}}</div>
-            <span>{{message.message |json}}</span>
+            <span>{{message.message}}</span>
             <div class="footer" *ngIf="message.showTimestamp" @fade>
                 <span>{{message.created_at | date : 'HH.mm'}}</span>
             </div>
