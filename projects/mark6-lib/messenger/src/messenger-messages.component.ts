@@ -59,7 +59,6 @@ export class Mark6MessengerMessagesComponent implements AfterViewInit {
     ngAfterViewInit() {
         const b = this.bottomRef.nativeElement as HTMLElement;
         b.scrollIntoView({behavior: 'smooth'});
-
     }
 
     toggleTimestamp(index) {
