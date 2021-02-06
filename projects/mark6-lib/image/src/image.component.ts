@@ -55,9 +55,9 @@ export class Mark6ImageComponent implements OnChanges {
 
     @ViewChild('imgPreview', { static: false }) previewImg: ElementRef;
 
-    /* Image loading state */
     public state: 'loading' | 'success' | 'failed' = 'loading';
     public aspectRatioNumber = this.parseRation(1);
+
     private timeoutId: number;
 
     constructor(private ref: ChangeDetectorRef) {
