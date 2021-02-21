@@ -2,13 +2,14 @@
 
 <div [ngClass]="message.classes">
 
+    <!-- TODO WAS BEFORE HERE, BUT MOVED NOW TO <messenger-message-group>
     <div class="msg-avatar" *ngIf="(avatarMe && message.direction === 'me') || (avatarOthers && message.direction === 'others')">
         <mark6-image [preview]="message.user_avatar.preview"
                      [default]="message.user_avatar.default"
                      [src]="message.user_avatar.src"
                      [alt]="message.user_name">
         </mark6-image>
-    </div>
+    </div>-->
 
     <div class="msg-content" (click)="message.showTimestamp = !message.showTimestamp">
         <div class="msg-message" [ngClass]="{temporary : message.message_sent}">

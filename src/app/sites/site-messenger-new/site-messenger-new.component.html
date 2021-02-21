@@ -85,3 +85,37 @@
     </mark6-messenger-footer>
 
 </mark6-messenger>
+
+<!-- TODO ALEX THIS IS OUR NEW STRUCTURE -->
+<mark6-messenger>
+
+    <!-- or instead of <mark6-messenger-content> they can use <virtual-scroll>-->
+    <mark6-messenger-content>
+
+        <!-- TODO JUST DONT USE <mark6-messenger-message-group> AND CREATE WITH <ng-container> YOUR OWN GROUP STYLE -->
+        <!-- TODO WE MUST MOVE ALL CLASS FOR DIRECTIONS ETC TO <mark6-messenger-message-group> -->
+        <mark6-messenger-message-group *ngFor="let group of messageGroup">
+
+            <mark6-messenger-info *ngIf="group.type === 'info'"></mark6-messenger-info>
+            <mark6-messenger-timestamp *ngIf="group.type === 'date'" [options]="messengerOptions"></mark6-messenger-timestamp>
+
+            <mark6-messenger-message *ngFor="let message of group.messages" [message]="msg"><!-- Export Pipe or something like that to sort by date -->
+                <!-- we also place a place where people can pass any custom element -->
+                <div class="attachment"></div>
+                <div class="google-map"></div>
+                <div class="share-contact"></div>
+            </mark6-messenger-message>
+        </mark6-messenger-message-group>
+
+        <div class="very-special-component-i-place-direct-in-project"></div>
+
+    </mark6-messenger-content>
+
+</mark6-messenger>
+
+<!-- TODO ALEX
+    messengerOptions = {
+        days: ['today', 'yesterday', 'day before yesterday'],
+        format: 'de'
+    };
+-->

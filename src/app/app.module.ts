@@ -21,6 +21,7 @@ import { ScrollingModule as ScrollingModuleExp } from '@angular/cdk-experimental
 // Sites
 import {SiteUserProfileComponent} from './sites/site-user-profile/site-user-profile.component';
 import {SiteMessengerComponent} from './sites/site-messenger/site-messenger.component';
+import {SiteMessengerNewComponent} from './sites/site-messenger-new/site-messenger-new.component';
 import {SiteImageComponent} from './sites/site-image/site-image.component';
 
 // Mark6
@@ -38,6 +39,7 @@ import {Mark6CropperModule} from '../../projects/mark6-lib/cropper/src';
         // Sites
         SiteUserProfileComponent,
         SiteMessengerComponent,
+        SiteMessengerNewComponent,
         SiteImageComponent
     ],
     imports: [
