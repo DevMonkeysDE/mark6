@@ -86,7 +86,9 @@
 
 </mark6-messenger>
 
-<!-- TODO ALEX THIS IS OUR NEW STRUCTURE -->
+<!-- TODO ALEX THIS IS OUR NEW STRUCTURE
+ALL COMPONENTS ARE JUST UI COMPONENTS, JUST mark6-messenger-message-group CONTAINS LOGICS
+-->
 <mark6-messenger>
 
     <!-- or instead of <mark6-messenger-content> they can use <virtual-scroll>-->
@@ -94,12 +96,11 @@
 
         <!-- TODO JUST DONT USE <mark6-messenger-message-group> AND CREATE WITH <ng-container> YOUR OWN GROUP STYLE -->
         <!-- TODO WE MUST MOVE ALL CLASS FOR DIRECTIONS ETC TO <mark6-messenger-message-group> -->
-        <mark6-messenger-message-group *ngFor="let group of messageGroup">
+        <mark6-messenger-message-group *ngFor="let message of messageGroup">
 
-            <mark6-messenger-info *ngIf="group.type === 'info'"></mark6-messenger-info>
-            <mark6-messenger-timestamp *ngIf="group.type === 'date'" [options]="messengerOptions"></mark6-messenger-timestamp>
-
-            <mark6-messenger-message *ngFor="let message of group.messages" [message]="msg"><!-- Export Pipe or something like that to sort by date -->
+            <mark6-messenger-message *ngFor="let msg of message.messages" [message]="msg"><!-- Export Pipe or something like that to sort by date -->
+                <!--<mark6-messenger-info *ngIf="message.info"></mark6-messenger-info>
+                <mark6-messenger-timestamp *ngIf="message.timestamp" [options]="messengerOptions"></mark6-messenger-timestamp>-->
                 <!-- we also place a place where people can pass any custom element -->
                 <div class="attachment"></div>
                 <div class="google-map"></div>

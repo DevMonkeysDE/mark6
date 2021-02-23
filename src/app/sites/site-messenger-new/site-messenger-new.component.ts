@@ -61,7 +61,7 @@ export class SiteMessengerNewComponent implements OnInit {
 
     ngOnInit(): void {
         // this.messages = this.messengerDummyDataService.getDummyData();
-        console.log(this.messages);
+        // console.log(this.messages);
     }
 
 }
