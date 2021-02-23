@@ -1,4 +1,4 @@
-export interface MessengerInterface {
+/*export interface MessengerInterface {
     created_at: Date;
     direction: 'others' | 'me';
     user_id: number;
@@ -23,4 +23,24 @@ export interface InternalMessengerInterface extends MessengerInterface {
     showTimestamp: boolean;
     firstMessage: boolean;
     lastMessage: boolean;
+}*/
+
+export interface MessengerMessageGroupInterface {
+    type: string;
+    direction?: string;
+    user_name?: string;
+    user_avatar?: AvatarInterface;
+    messages?: MessengerMessageInterface;
+}
+
+export interface AvatarInterface {
+    preview?: string;
+    src?: string;
+    srcset?: string;
+    default?: string;
+}
+
+export interface MessengerMessageInterface {
+    created_at?: number;
+    message: string;
 }

@@ -1,20 +1,16 @@
-import { InternalMessengerInterface, MessengerInterface } from "./messenger.interface";
+import {InternalMessengerInterface, MessengerInterface} from './messenger.interface';
 
 
 export const transform = (messages: MessengerInterface[]) => {
 
-    if (!!!messages) return null;
+    if (!!!messages) {
+        return null;
+    }
     for (let index = 0; index < messages.length; index++) {
-
-
         const previousMessage = index === 0 ? null : messages[index - 1] as InternalMessengerInterface;
         const nextMessage = index === messages.length - 1 ? null : messages[index + 1] as InternalMessengerInterface;
-
-
-
         const firstMessage = index === 0;
         const lastMessage = index === messages.length - 1;
-
         const message = messages[index] as InternalMessengerInterface;
 
         message.showDate = firstMessage || isDifferentDate(message.created_at, previousMessage.created_at);
@@ -24,7 +20,7 @@ export const transform = (messages: MessengerInterface[]) => {
         message.classes = getCssClasses(message, previousMessage, nextMessage);
     }
     return messages as InternalMessengerInterface[];
-}
+};
 
 export const getCssClasses =
     (
@@ -48,14 +44,15 @@ export const getDiffDaysFromNow = (date: Date) => {
     const d = new Date();
     const diff = Math.abs(d.getTime() - date.getTime());
     const diffDays = Math.ceil(diff / (1000 * 3600 * 24));
-
     return diffDays;
-}
+};
 
 
 export const isDifferentDate = (currentDate: Date, previousDate: Date) => {
-    if (!!!currentDate || !!!previousDate) { return false; }
+    if (!!!currentDate || !!!previousDate) {
+        return false;
+    }
     const c = `${currentDate.getFullYear()}-${currentDate.getMonth()}-${currentDate.getDay()}`;
     const p = `${previousDate.getFullYear()}-${previousDate.getMonth()}-${previousDate.getDay()}`;
     return c !== p;
-}
+};

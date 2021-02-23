@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {MessengerDummyDataService} from "./messenger-dummy-data.service";
+// import {MessengerDummyDataService} from './messenger-dummy-data.service';
 
 @Component({
     selector: 'app-site-messenger',
@@ -11,7 +11,7 @@ export class SiteMessengerComponent implements OnInit {
     public messages = [];
     public messengerMode: 'fullscreen' | 'boxed' = 'fullscreen';
 
-    constructor(public messengerDummyDataService: MessengerDummyDataService) {
+    constructor() {
     }
 
     setMessengerMode(mode) {
@@ -19,7 +19,7 @@ export class SiteMessengerComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.messages = this.messengerDummyDataService.getDummyData();
+        // this.messages = this.messengerDummyDataService.getDummyData();
         console.log(this.messages);
     }
 
