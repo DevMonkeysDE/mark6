@@ -1,0 +1,37 @@
+<mat-toolbar color="accent">
+    <h1>Messenger Config</h1>
+    <div style="flex: auto;"></div>
+    <ul>
+        <li><button (click)="setMessengerMode('fullscreen')">Mode: Fullscreen</button></li>
+        <li><button (click)="setMessengerMode('boxed')">Mode: Boxed</button></li>
+    </ul>
+</mat-toolbar>
+
+<!-- TODO ALEX THIS IS OUR NEW STRUCTURE
+ALL COMPONENTS ARE JUST UI COMPONENTS, JUST mark6-messenger-message-group CONTAINS LOGICS
+-->
+<mark6-messenger>
+
+    <!-- or instead of <mark6-messenger-content> they can use <virtual-scroll>-->
+    <mark6-messenger-content>
+
+         TODO JUST DONT USE <mark6-messenger-message-group> AND CREATE WITH <ng-container> YOUR OWN GROUP STYLE
+        <!-- TODO WE MUST MOVE ALL CLASS FOR DIRECTIONS ETC TO <mark6-messenger-message-group> -->
+        <mark6-messenger-message-group *ngFor="let message of messageGroup">
+            <mark6-messenger-info *ngIf="message.type === 'info'"></mark6-messenger-info>
+            <mark6-messenger-timestamp *ngIf="message.type === 'date'" [options]="dateFormatOptions"></mark6-messenger-timestamp>
+            <ng-container *ngIf="message.type === 'message'" *ngFor="let msg of message.messages">
+                <mark6-messenger-message [message]="msg"></mark6-messenger-message>
+            </ng-container>
+        </mark6-messenger-message-group>
+
+    </mark6-messenger-content>
+
+</mark6-messenger>
+
+<!-- TODO ALEX
+    dateFormatOptions = {
+        days: ['today', 'yesterday', 'day before yesterday'],
+        format: 'de'
+    };
+-->

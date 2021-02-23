@@ -7,18 +7,7 @@ import { InternalMessengerInterface } from './messenger.interface';
     templateUrl: './messenger-message.component.html',
     styleUrls: ['./messenger-message.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    animations: [
-        trigger('fade', [
-            state('in', style({ opacity: 1 })),
-            transition(':enter', [style({ opacity: 0 }), animate(250)]),
-            transition(':leave', animate(250, style({ opacity: 0 })))
-        ])
-    ]
 })
 export class Mark6MessengerMessageComponent {
-    @Input() public message: InternalMessengerInterface;
-    @Input() public avatarMe = false;
-    @Input() public avatarOthers = false;
-    @Input() public type: 'single' | 'group';
+    @Input() public message: string;
 }

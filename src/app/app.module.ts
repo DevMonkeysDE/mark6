@@ -30,6 +30,7 @@ import {Mark6ContentWrapperModule} from '../../projects/mark6-lib/content-wrappe
 import {Mark6EditableImageModule} from '../../projects/mark6-lib/editable-image/src';
 import {Mark6DropDownModule} from '../../projects/mark6-lib/drop-down/src';
 import {Mark6CropperModule} from '../../projects/mark6-lib/cropper/src';
+import {SiteMessengerNewComponent} from './sites/site-messenger-new/site-messenger-new.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import {Mark6CropperModule} from '../../projects/mark6-lib/cropper/src';
         // Sites
         SiteUserProfileComponent,
         SiteMessengerComponent,
+        SiteMessengerNewComponent,
         SiteImageComponent
     ],
     imports: [
