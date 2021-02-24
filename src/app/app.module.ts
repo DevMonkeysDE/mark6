@@ -15,8 +15,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
 // CDK
-import { ScrollingModule } from '@angular/cdk/scrolling';
-import { ScrollingModule as ScrollingModuleExp } from '@angular/cdk-experimental/scrolling';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {ScrollingModule as ScrollingModuleExp} from '@angular/cdk-experimental/scrolling';
 
 // Sites
 import {SiteUserProfileComponent} from './sites/site-user-profile/site-user-profile.component';
