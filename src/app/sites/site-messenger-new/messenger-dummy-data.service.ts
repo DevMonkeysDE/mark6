@@ -49,15 +49,11 @@ export class MessengerDummyDataService {
         for (let index = 0; index < 0; index++) {
             const rnd = this.randomIntFromInterval(1, 3);
             const user = rnd === 1 ? this.sven : rnd === 3 ? this.shyGuy : this.luLu;
-            const userMessages = [];
-            const rndMessages = this.randomIntFromInterval(1, 5);
-            for (let index = 0; index < rndMessages; index++) {
-                userMessages.push(txtgen.sentence());
-            }
+            
             messages.push({
                 ...user,
                 created_at: this.getRandomDate(),
-                messages: userMessages,
+                message: txtgen.sentence(),
                 key: this.randomKey()
             });
 
@@ -65,15 +61,11 @@ export class MessengerDummyDataService {
         for (let index = 0; index < 50; index++) {
             const rnd = this.randomIntFromInterval(1, 3);
             const user = rnd === 1 ? this.sven : rnd === 3 ? this.shyGuy : this.luLu;
-            const userMessages = [];
-            const rndMessages = this.randomIntFromInterval(1, 5);
-            for (let index = 0; index < rndMessages; index++) {
-                userMessages.push({message: txtgen.sentence(), created_at: this.getRandomDateForThisWeek()});
-            }
+            
             messages.push({
                 ...user,
                 created_at: this.getRandomDateForThisWeek(),
-                messages: userMessages,
+                message: txtgen.sentence(),
                 key: this.randomKey()
             });
 
@@ -98,6 +90,38 @@ export class MessengerDummyDataService {
             if (d.values.length === 1) {
                 result.push(d);
             }
+        }
+        for (const group of result) {
+            let lastUser = null;
+            let messagesWithAvatar = { messages: [] } as any;
+            group.messageGroups = [];
+            for (const message of group.values) {
+                const msg = { message: message.message, created_at: message.created_at };
+                if (lastUser === message.user_id) {
+                    messagesWithAvatar.messages.push(msg);
+                } else if (lastUser === null) {
+                    messagesWithAvatar.direction = message.direction;
+                    messagesWithAvatar.user_id = message.user_id;
+                    messagesWithAvatar.user_name = message.user_name;
+                    messagesWithAvatar.user_avatar = message.user_avatar;
+                    messagesWithAvatar.messages.push(msg);
+                } else if (lastUser !== message.user_id) {
+                    group.messageGroups.push(messagesWithAvatar);
+                    messagesWithAvatar = { messages: [] } as any;
+                    messagesWithAvatar.direction = message.direction;
+                    messagesWithAvatar.user_id = message.user_id;
+                    messagesWithAvatar.user_name = message.user_name;
+                    messagesWithAvatar.user_avatar = message.user_avatar;
+                    messagesWithAvatar.messages.push(msg);
+
+                }
+                lastUser = message.user_id
+            }
+            group.messageGroups.push(messagesWithAvatar);
+            delete group.values;
+            delete group.new;
+            delete group.evenDay;
+
         }
         return result;
     }
