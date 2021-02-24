@@ -1,10 +1,10 @@
-<div class="msg-avatar" *ngIf="(avatarMe && message.direction === 'me') || (avatarOthers && message.direction === 'others')">
+<!-- <div class="msg-avatar" *ngIf="(avatarMe && message.direction === 'me') || (avatarOthers && message.direction === 'others')">
     <mark6-image [preview]="message.user_avatar.preview"
                  [default]="message.user_avatar.default"
                  [src]="message.user_avatar.src"
                  [alt]="message.user_name">
     </mark6-image>
-</div>
+</div> -->
 
 <div>
     <ng-content select="mark6-messenger-message"></ng-content>

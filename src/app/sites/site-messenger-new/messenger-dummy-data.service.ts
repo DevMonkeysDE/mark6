@@ -1,7 +1,5 @@
-import {Injectable} from '@angular/core';
-import {MessengerInterface} from '../../../../projects/mark6-lib/messenger/src/messenger.interface';
+import { Injectable } from '@angular/core';
 import * as txtgen from 'txtgen';
-import {RecursiveTemplateAstVisitor} from '@angular/compiler';
 
 @Injectable({
     providedIn: 'root'
@@ -46,15 +44,20 @@ export class MessengerDummyDataService {
         return Math.floor(Math.random());
     }
 
-    public get dummyData(): MessengerInterface[] {
-        const result = [];
-        for (let index = 0; index < 50; index++) {
+    public get dummyData(): any[] {
+        const messages = [];
+        for (let index = 0; index < 0; index++) {
             const rnd = this.randomIntFromInterval(1, 3);
             const user = rnd === 1 ? this.sven : rnd === 3 ? this.shyGuy : this.luLu;
-            result.push({
+            const userMessages = []
+            const rndMessages = this.randomIntFromInterval(1, 5);
+            for (let index = 0; index < rndMessages; index++) {
+                userMessages.push(txtgen.sentence());
+            }
+            messages.push({
                 ...user,
                 created_at: this.getRandomDate(),
-                message: txtgen.sentence(),
+                messages: userMessages,
                 key: this.randomKey()
             });
 
@@ -62,15 +65,20 @@ export class MessengerDummyDataService {
         for (let index = 0; index < 50; index++) {
             const rnd = this.randomIntFromInterval(1, 3);
             const user = rnd === 1 ? this.sven : rnd === 3 ? this.shyGuy : this.luLu;
-            result.push({
+            const userMessages = []
+            const rndMessages = this.randomIntFromInterval(1, 5);
+            for (let index = 0; index < rndMessages; index++) {
+                userMessages.push({ message: txtgen.sentence(), created_at: this.getRandomDateForThisWeek() });
+            }
+            messages.push({
                 ...user,
                 created_at: this.getRandomDateForThisWeek(),
-                message: txtgen.sentence(),
+                messages: userMessages,
                 key: this.randomKey()
             });
 
         }
-        return [].concat(result || []).sort((n1, n2) => {
+        messages.sort((n1, n2) => {
             if (n1.created_at > n2.created_at) {
                 return 1;
             }
@@ -81,8 +89,22 @@ export class MessengerDummyDataService {
 
             return 0;
         });
+        const users = [this.sven, this.shyGuy, this.luLu]
+        const result = [];
+        for (const r of messages) {
+            const evenDay = this.getEvenDaysDiff(r.created_at);
+            const d = result.find(r => r.evenDay === evenDay) || { evenDay: evenDay, values: [] as any[], new: true, date: r.created_at };
+            d.values.push(r);
+            if (d.values.length === 1) { result.push(d); }
+        }
+        return result;
     }
-
+    getEvenDaysDiff = (d: Date) => {
+        const now = new Date();
+        now.setHours(0, 0, 0, 0);
+        d.setHours(0, 0, 0, 0);
+        return Math.round((now.getTime() - d.getTime()) / 8.64e7);
+    }
 
     constructor() {
     }
