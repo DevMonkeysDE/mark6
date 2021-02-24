@@ -11,16 +11,24 @@
 ALL COMPONENTS ARE JUST UI COMPONENTS, JUST mark6-messenger-message-group CONTAINS LOGICS
 -->
 
-<div *ngFor="let group of messageGroups"><pre>{{group|json}}</pre></div>
-
-
-
+<!-- <div *ngFor="let group of messageGroups"><pre>{{group|json}}</pre></div> -->
+    <ng-container *ngFor="let group of messageGroups">
+        <div>this will be a mark6 messenger timestamp {{group.date}}</div>
+        <ng-container *ngFor="let msg of group.messageGroups">
+            <div>this will be a group
+                <pre>{{msg.user_avatar |json}}</pre>
+            </div>
+            <ng-container *ngFor="let m of msg.messages">
+                <pre>{{m |json}}</pre>
+            </ng-container>
+        </ng-container>
+    </ng-container>
 <mark6-messenger>
 
     <!-- or instead of <mark6-messenger-content> they can use <virtual-scroll>-->
     <mark6-messenger-content>
 
-         <!-- TODO JUST DONT USE <mark6-messenger-message-group> AND CREATE WITH <ng-container> YOUR OWN GROUP STYLE -->
+        <!-- TODO JUST DONT USE <mark6-messenger-message-group> AND CREATE WITH <ng-container> YOUR OWN GROUP STYLE -->
         <!-- TODO WE MUST MOVE ALL CLASS FOR DIRECTIONS ETC TO <mark6-messenger-message-group> -->
         <!-- <mark6-messenger-message-group *ngFor="let message of messageGroup">
             <mark6-messenger-info *ngIf="message.type === 'info'"></mark6-messenger-info>

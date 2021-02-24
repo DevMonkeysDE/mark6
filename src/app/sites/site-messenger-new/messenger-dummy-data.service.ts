@@ -81,7 +81,6 @@ export class MessengerDummyDataService {
 
             return 0;
         });
-        const users = [this.sven, this.shyGuy, this.luLu];
         const result = [];
         for (const r of messages) {
             const evenDay = this.getEvenDaysDiff(r.created_at);
