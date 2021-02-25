@@ -34,12 +34,14 @@ ALL COMPONENTS ARE JUST UI COMPONENTS, JUST mark6-messenger-message-group CONTAI
         <ng-container *ngFor="let block of messageBlock">
             <div class="date">{{block.date}}</div>
             <mark6-messenger-message-group *ngFor="let group of block.messageGroup">
+
+                <mark6-messenger-avatar></mark6-messenger-avatar>
+
                 <mark6-messenger-message *ngFor="let message of group.messages">
                     <div>{{message.created_at}}</div>
                     <div>{{message.message}}</div>
                 </mark6-messenger-message>
 
-                <mark6-messenger-message *ngFor="let message of group.messages" [message]="message"></mark6-messenger-message>
             </mark6-messenger-message-group>
         </ng-container>
 

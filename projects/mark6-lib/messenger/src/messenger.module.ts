@@ -6,9 +6,11 @@ import {Mark6ImageModule} from '@devmonkeys/mark6/image';
 
 // Components
 import {Mark6MessengerComponent} from './messenger/messenger.component';
+import {Mark6MessengerAvatarComponent} from './messenger-avatar/messenger-avatar.component';
 import {Mark6MessengerContentComponent} from './messenger-content/messenger-content.component';
 import {Mark6MessengerMessageComponent} from './messenger-message/messenger-message.component';
 import {Mark6MessengerMessageGroupComponent} from './messenger-message-group/messenger-message-group.component';
+
 // import { Mark6MessengerMessagesComponent } from "./messenger-messages.component";
 // import { Mark6MessengerHeaderComponent } from "./messenger-header.component";
 // import { Mark6MessengerContentComponent } from "./messenger-content.component";
@@ -29,22 +31,26 @@ import {Mark6MessengerMessageGroupComponent} from './messenger-message-group/mes
 // import { Mark6MessengerMessageComponent } from './messenger-message.component';
 
 
+// Declare Components here:
+const components = [
+    Mark6MessengerComponent,
+    Mark6MessengerAvatarComponent,
+    Mark6MessengerContentComponent,
+    Mark6MessengerMessageComponent,
+    Mark6MessengerMessageGroupComponent
+];
+
+
 @NgModule({
     imports: [
         CommonModule,
         Mark6ImageModule,
     ],
     declarations: [
-        Mark6MessengerComponent,
-        Mark6MessengerContentComponent,
-        Mark6MessengerMessageComponent,
-        Mark6MessengerMessageGroupComponent
+        components
     ],
     exports: [
-        Mark6MessengerComponent,
-        Mark6MessengerContentComponent,
-        Mark6MessengerMessageComponent,
-        Mark6MessengerMessageGroupComponent
+        components
     ],
     providers: []
 })
