@@ -48,6 +48,7 @@ export class Mark6ImageComponent implements OnChanges {
     @Input() public failedSrc = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN0+A8AAYUBQcxKiF0AAAAASUVORK5CYII=';
     @Input() public backgroundImage: string;
     @Input() public addClass: string;
+    @Input() public round = false;
     // @Input() public emitSize = false;
 
     @Output() public failed = new EventEmitter<void>();
