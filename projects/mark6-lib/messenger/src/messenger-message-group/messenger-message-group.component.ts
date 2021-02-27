@@ -1,4 +1,4 @@
-import {Component, HostBinding, ViewEncapsulation} from '@angular/core';
+import {Component, HostBinding, Input, ViewEncapsulation} from '@angular/core';
 
 @Component({
     selector: 'mark6-messenger-message-group',
@@ -8,7 +8,10 @@ import {Component, HostBinding, ViewEncapsulation} from '@angular/core';
 })
 export class Mark6MessengerMessageGroupComponent {
 
-    private hostClass = 'mark6-messenger-message-group';
+    @Input() private direction: 'left' | 'right' = 'left';
+
+    // TODO Alex - Direction class is not working
+    private hostClass = `mark6-messenger-message-group direction-${this.direction}`;
     @HostBinding('class') classes = this.hostClass;
 
 }

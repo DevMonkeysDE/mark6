@@ -8,7 +8,6 @@ export class MessengerDummyDataService {
 
     private sven = {
         type: 'message',
-        direction: 'me',
         user_id: 1,
         user_name: 'Sven',
         user_avatar: {
@@ -19,7 +18,6 @@ export class MessengerDummyDataService {
 
     private shyGuy = {
         type: 'message',
-        direction: 'others',
         user_id: 2,
         user_name: 'ShyGuy',
         user_avatar: {
@@ -30,7 +28,6 @@ export class MessengerDummyDataService {
 
     private luLu = {
         type: 'message',
-        direction: 'others',
         user_id: 3,
         user_name: 'Lulu',
         user_avatar: {

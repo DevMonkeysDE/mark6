@@ -8,6 +8,7 @@ import {MessengerDummyDataService} from './messenger-dummy-data.service';
 })
 export class SiteMessengerNewComponent implements OnInit {
 
+    public currentUserId = 1;
     public messageBlock = [];
     public messengerMode: 'fullscreen' | 'boxed' = 'fullscreen';
 

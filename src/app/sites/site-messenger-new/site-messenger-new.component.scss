@@ -24,6 +24,14 @@
 }
 
 .mark6-messenger {
+    // Messenger Message Me
+    --mark6-messenger-message-me-background: #4151d0;
+    --mark6-messenger-message-me-contrast: #fff;
+
+    // Messenger Message Others
+    --mark6-messenger-message-others-background: #F5F5F5;
+    --mark6-messenger-message-others-contrast: #212121;
+
     mark6-messenger-messages {
         height: 100%;
     }
@@ -43,5 +51,21 @@
         bottom: 0;
         position: absolute;
         box-shadow: 0 0 3px 0 #000;
+    }
+
+    mark6-messenger-message-group {
+        &.direction-left {
+            mark6-messenger-message {
+                color: var(--mark6-messenger-message-others-contrast);
+                background-color: var(--mark6-messenger-message-others-background);
+            }
+        }
+
+        &.direction-right {
+            mark6-messenger-message {
+                color: var(--mark6-messenger-message-me-contrast);
+                background-color: var(--mark6-messenger-message-me-background);
+            }
+        }
     }
 }

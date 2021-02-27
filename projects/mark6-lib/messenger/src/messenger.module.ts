@@ -7,6 +7,8 @@ import {Mark6ImageModule} from '@devmonkeys/mark6/image';
 // Components
 import {Mark6MessengerComponent} from './messenger/messenger.component';
 import {Mark6MessengerAvatarComponent} from './messenger-avatar/messenger-avatar.component';
+import {Mark6MessengerBlockComponent} from './messenger-block/messenger-block.component';
+import {Mark6MessengerBlockDateComponent} from './messenger-block-date/messenger-block-date.component';
 import {Mark6MessengerContentComponent} from './messenger-content/messenger-content.component';
 import {Mark6MessengerMessageComponent} from './messenger-message/messenger-message.component';
 import {Mark6MessengerMessageGroupComponent} from './messenger-message-group/messenger-message-group.component';
@@ -35,6 +37,8 @@ import {Mark6MessengerMessageGroupComponent} from './messenger-message-group/mes
 const components = [
     Mark6MessengerComponent,
     Mark6MessengerAvatarComponent,
+    Mark6MessengerBlockComponent,
+    Mark6MessengerBlockDateComponent,
     Mark6MessengerContentComponent,
     Mark6MessengerMessageComponent,
     Mark6MessengerMessageGroupComponent

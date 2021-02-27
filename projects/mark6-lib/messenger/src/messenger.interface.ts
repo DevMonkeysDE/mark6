@@ -27,7 +27,6 @@ export interface InternalMessengerInterface extends MessengerInterface {
 
 export interface MessengerMessageGroupInterface {
     type: string;
-    direction?: string;
     user_name?: string;
     user_avatar?: AvatarInterface;
     messages?: MessengerMessageInterface;
@@ -41,6 +40,6 @@ export interface AvatarInterface {
 }
 
 export interface MessengerMessageInterface {
-    created_at?: number;
+    created_at?: string;
     message: string;
 }

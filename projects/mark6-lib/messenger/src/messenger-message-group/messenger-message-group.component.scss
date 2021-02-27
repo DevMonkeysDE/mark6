@@ -1,3 +1,28 @@
 .mark6-messenger-message-group {
+    max-width: 95%;
+    padding: calc(12px * var(--mark6-messenger-spacing-multiplier)) 0;
+    display: flex;
+
+    mark6-messenger-avatar {
+        margin-right: 8px;
+    }
+
+    .mark6-messenger-messages {
+        // width: calc(100% - var(--mark6-messenger-avatar-size));
+        display: flex;
+        flex-direction: column;
+
+        mark6-messenger-message {
+            margin: 1px 0;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
 
 }

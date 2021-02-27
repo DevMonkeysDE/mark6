@@ -26,24 +26,33 @@ ALL COMPONENTS ARE JUST UI COMPONENTS, JUST mark6-messenger-message-group CONTAI
 </ng-container>-->
 
 
-<mark6-messenger>
+<mark6-messenger [ngClass]="messengerMode === 'fullscreen' ? 'fullscreen' : 'boxed'">
 
-    <!-- or instead of <mark6-messenger-content> they can use <virtual-scroll>-->
+    <!-- Scrollable Area - or instead of <mark6-messenger-content> they can use <virtual-scroll>-->
     <mark6-messenger-content>
 
-        <ng-container *ngFor="let block of messageBlock">
-            <div class="date">{{block.date}}</div>
-            <mark6-messenger-message-group *ngFor="let group of block.messageGroup">
+        <mark6-messenger-block *ngFor="let block of messageBlock">
 
-                <mark6-messenger-avatar></mark6-messenger-avatar>
+            <mark6-messenger-block-date><!--{{block.date}}-->
+                <pre>{{currentUserId}}</pre>
+                <pre>{{block | json}}</pre>
+            </mark6-messenger-block-date>
 
-                <mark6-messenger-message *ngFor="let message of group.messages">
-                    <div>{{message.created_at}}</div>
-                    <div>{{message.message}}</div>
-                </mark6-messenger-message>
+            <mark6-messenger-message-group *ngFor="let group of block.messageGroup"
+                                           [direction]="group.user_id === currentUserId ? 'right' : 'left'">
+
+                <mark6-messenger-avatar>
+                    <mark6-image style="border-radius: 50%;" [preview]="group.user_avatar.preview" [src]="group.user_avatar.src"></mark6-image>
+                    <!-- TODO Sven - Allow using regular <img> tags.
+                    <img src="" alt="">
+                    -->
+                </mark6-messenger-avatar>
+
+                <mark6-messenger-message *ngFor="let message of group.messages" [message]="message" [userName]="group.user_name"></mark6-messenger-message>
 
             </mark6-messenger-message-group>
-        </ng-container>
+
+        </mark6-messenger-block>
 
     </mark6-messenger-content>
 
