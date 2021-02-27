@@ -4,13 +4,16 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    font-size: var(--mark6-messenger-base-font-size);
 
     *, *:before, *:after {
         box-sizing: inherit;
     }
 
     // Global
-    --mark6-messenger-spacing-multiplier: 1; // Default:1 - make 1.2, 1.4 etc. small steps for small changes
     --mark6-messenger-avatar-size: 36px;
-
+    --mark6-messenger-base-font-size: 16px;
+    --mark6-messenger-message-background: #F5F5F5;
+    --mark6-messenger-message-contrast: #212121;
+    --mark6-messenger-spacing-multiplier: 1; // Default:1 - make 1.2, 1.4 etc. small steps for small changes
 }

@@ -1,7 +1,8 @@
 <ng-container *ngIf="message">
-    <!--<pre style="margin: 0">{{message | json}}</pre>-->
-    <div class="header" *ngIf="message.user_name">
-        {{message.user_name}} <span class="timestamp">{{message.created_at | date : 'HH:mm'}}</span>
+    <div class="mark6-messenger-message-header" *ngIf="message.user_name">
+        <span class="mark6-messenger-message-header-user-name">{{message.user_name}}</span>
+        <span>&nbsp;</span>
+        <span class="mark6-messenger-message-header-created-at">{{message.created_at | date : 'HH:mm'}}</span>
     </div>
     <span>{{message.text}}</span>
 </ng-container>

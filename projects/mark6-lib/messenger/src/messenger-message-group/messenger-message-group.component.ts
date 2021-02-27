@@ -9,11 +9,11 @@ import { Component, HostBinding, Input, ViewEncapsulation } from '@angular/core'
 export class Mark6MessengerMessageGroupComponent {
 
     @Input() private set direction(value: 'left' | 'right') {
-         this.classes = this.hostClass + ` direction-${value || 'left'}`;
+         this.classes = this.hostClass + ` mark6-message-direction-${value || 'left'}`;
     }
 
     // TODO Alex - Direction class is not working
     private hostClass = `mark6-messenger-message-group`;
-    @HostBinding('class') classes = `mark6-messenger-message-group direction-left`;
+    @HostBinding('class') classes = `mark6-messenger-message-group mark6-message-direction-left`;
 
 }

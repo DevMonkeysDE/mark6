@@ -54,18 +54,28 @@
     }
 
     mark6-messenger-message-group {
-        &.direction-left {
+        &.mark6-message-direction-left {
             mark6-messenger-message {
                 color: var(--mark6-messenger-message-others-contrast);
                 background-color: var(--mark6-messenger-message-others-background);
             }
         }
 
-        &.direction-right {
+        &.mark6-message-direction-right {
             mark6-messenger-message {
                 color: var(--mark6-messenger-message-me-contrast);
                 background-color: var(--mark6-messenger-message-me-background);
             }
+        }
+
+        &.mark6-message-come-from-me {
+            ::ng-deep .mark6-messenger-message-header {
+                display: none;
+            }
+        }
+
+        &.mark6-message-come-from-others {
+
         }
     }
 }
