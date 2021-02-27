@@ -34,14 +34,14 @@ ALL COMPONENTS ARE JUST UI COMPONENTS, JUST mark6-messenger-message-group CONTAI
         <mark6-messenger-block *ngFor="let block of messageBlock">
 
             <mark6-messenger-block-date><!--{{block.date}}-->
-                <pre>{{currentUserId}}</pre>
-                <pre>{{block | json}}</pre>
+                <!--<pre>{{currentUserId}}</pre>
+                <pre>{{block | json}}</pre>-->
             </mark6-messenger-block-date>
 
             <mark6-messenger-message-group *ngFor="let group of block.messageGroup"
                                            [direction]="group.user_id === currentUserId ? 'right' : 'left'">
 
-                <mark6-messenger-avatar >
+                <mark6-messenger-avatar>
                     <mark6-image [round]="true" [preview]="group.user_avatar.preview" [src]="group.user_avatar.src"></mark6-image>
                     <!-- TODO Sven - Allow using regular <img> tags.
                     <img src="" alt="">
