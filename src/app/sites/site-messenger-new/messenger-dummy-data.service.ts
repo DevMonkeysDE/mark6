@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import * as txtgen from 'txtgen';
 
 @Injectable({
@@ -52,17 +52,17 @@ export class MessengerDummyDataService {
             messages.push({
                 ...user,
                 created_at: this.getRandomDate(),
-                message: txtgen.sentence(),
+                text: txtgen.sentence(),
                 key: this.randomKey()
             });
         }
-        for (let index = 0; index < 50; index++) {
+        for (let index = 0; index < 100; index++) {
             const rnd = this.randomIntFromInterval(1, 3);
             const user = rnd === 1 ? this.sven : rnd === 3 ? this.shyGuy : this.luLu;
             messages.push({
                 ...user,
                 created_at: this.getRandomDateForThisWeek(),
-                message: txtgen.sentence(),
+                text: txtgen.sentence(),
                 key: this.randomKey()
             });
         }
@@ -80,7 +80,7 @@ export class MessengerDummyDataService {
         const result = [];
         for (const r of messages) {
             const evenDay = this.getEvenDaysDiff(r.created_at);
-            const d = result.find(r => r.evenDay === evenDay) || {evenDay: evenDay, values: [] as any[], new: true, date: r.created_at};
+            const d = result.find(r => r.evenDay === evenDay) || { evenDay: evenDay, values: [] as any[], new: true, date: r.created_at };
             d.values.push(r);
             if (d.values.length === 1) {
                 result.push(d);
@@ -88,24 +88,25 @@ export class MessengerDummyDataService {
         }
         for (const group of result) {
             let lastUser = null;
-            let messagesWithAvatar = {messages: []} as any;
+            let messagesWithAvatar = { messages: [] } as any;
             group.messageGroup = [];
             for (const message of group.values) {
-                const msg = {message: message.message, created_at: message.created_at};
+                const msg = { text: message.text, created_at: message.created_at, user_name: message.user_name };
                 if (lastUser === message.user_id) {
+                    delete msg.user_name;
                     messagesWithAvatar.messages.push(msg);
                 } else if (lastUser === null) {
                     messagesWithAvatar.direction = message.direction;
                     messagesWithAvatar.user_id = message.user_id;
-                    messagesWithAvatar.user_name = message.user_name;
+                    // messagesWithAvatar.user_name = message.user_name;
                     messagesWithAvatar.user_avatar = message.user_avatar;
                     messagesWithAvatar.messages.push(msg);
                 } else if (lastUser !== message.user_id) {
                     group.messageGroup.push(messagesWithAvatar);
-                    messagesWithAvatar = {messages: []} as any;
+                    messagesWithAvatar = { messages: [] } as any;
                     messagesWithAvatar.direction = message.direction;
                     messagesWithAvatar.user_id = message.user_id;
-                    messagesWithAvatar.user_name = message.user_name;
+                    // messagesWithAvatar.user_name = message.user_name;
                     messagesWithAvatar.user_avatar = message.user_avatar;
                     messagesWithAvatar.messages.push(msg);
                 }
@@ -120,10 +121,12 @@ export class MessengerDummyDataService {
     }
 
     getEvenDaysDiff = (d: Date) => {
+        const copiedDate = new Date(d.getTime());
+
         const now = new Date();
         now.setHours(0, 0, 0, 0);
-        d.setHours(0, 0, 0, 0);
-        return Math.round((now.getTime() - d.getTime()) / 8.64e7);
+        copiedDate.setHours(0, 0, 0, 0);
+        return Math.round((now.getTime() - copiedDate.getTime()) / 8.64e7);
     }
 
     public getDummyData() {
@@ -159,9 +162,9 @@ export class MessengerDummyDataService {
 
         const randomMonth = this.randomIntFromInterval(currentMonth, currentMonth);
         const randomDay = this.randomIntFromInterval(1, currentDate);
-        const randomHours = this.randomIntFromInterval(0, currentDate === randomDay ? currentHours : 24);
-        const randomMinutes = this.randomIntFromInterval(0, currentHours === randomHours ? currentMinutes : 60);
-        const randomSeconds = this.randomIntFromInterval(0, currentMinutes === randomMinutes ? currentSeconds : 60);
+        const randomHours = this.randomIntFromInterval(0, 24);
+        const randomMinutes = this.randomIntFromInterval(0, 60);
+        const randomSeconds = this.randomIntFromInterval(0, 60);
 
         return new Date(randomYear, randomMonth, randomDay, randomHours, randomMinutes, randomSeconds);
     }

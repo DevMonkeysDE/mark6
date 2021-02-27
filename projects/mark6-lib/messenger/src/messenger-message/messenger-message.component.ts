@@ -12,7 +12,6 @@ export class Mark6MessengerMessageComponent {
     private hostClass = 'mark6-messenger-message';
     @HostBinding('class') classes = this.hostClass;
 
-    @Input() public userName: string;
     @Input() public message: MessengerMessageInterface;
     /* TODO ALEX - Optimize the message. Code stolen from here: https://github.com/angular/components/blob/db6511b40dadd614f0bfb22e74f70b19066f2554/src/material/progress-bar/progress-bar.ts#L133
     @Input()

@@ -6,14 +6,18 @@
     overflow: hidden;
     box-sizing: border-box;
 
-    *, *:before, *:after {
+    *,
+    *:before,
+    *:after {
         box-sizing: inherit;
     }
 
     .mark6-image-placeholder {
-
     }
-
+    &.round {
+        overflow: hidden;
+        border-radius: 50%;
+    }
     img {
         width: 100%;
         top: 0;
@@ -26,11 +30,9 @@
         }
 
         &.mark6-image-success {
-
         }
 
         &.mark6-image-failed {
-
         }
     }
 }

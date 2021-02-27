@@ -65,6 +65,9 @@ export class Mark6ImageComponent implements OnChanges {
     }
 
     ngOnChanges(changes: SimpleChanges) {
+        if (changes.round && changes.round.currentValue === true) {
+            this.classes = this.hostClass + ' round';
+        }
         if (changes.addClass) {
             this.classes = this.hostClass + ' ' + changes.addClass.currentValue;
         }

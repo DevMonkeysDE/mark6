@@ -1,5 +1,8 @@
-<pre style="margin: 0">{{message | json}}</pre>
-<div class="header" *ngIf="userName">
-    {{userName}} <span class="timestamp">{{message.created_at | date : 'HH.mm'}}</span>
-</div>
-<span>{{message.message}}</span>
+<ng-container *ngIf="message">
+    <pre style="margin: 0">{{message | json}}</pre>
+    <div class="header" *ngIf="message.user_name">
+        {{message.user_name}} <span class="timestamp">{{message.created_at | date : 'HH:mm'}}</span>
+    </div>
+    <span>{{message.text}}</span>
+</ng-container>
+<ng-content></ng-content>

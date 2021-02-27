@@ -41,5 +41,6 @@ export interface AvatarInterface {
 
 export interface MessengerMessageInterface {
     created_at?: string;
-    message: string;
+    text: string;
+    user_name:string;
 }
