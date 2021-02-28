@@ -12,6 +12,9 @@ import {Mark6MessengerBlockDateComponent} from './messenger-block-date/messenger
 import {Mark6MessengerContentComponent} from './messenger-content/messenger-content.component';
 import {Mark6MessengerMessageComponent} from './messenger-message/messenger-message.component';
 import {Mark6MessengerMessageGroupComponent} from './messenger-message-group/messenger-message-group.component';
+import {Mark6MessengerHeaderComponent} from './messenger-header/messenger-header.component';
+import {Mark6MessengerFooterComponent} from './messenger-footer/messenger-footer.component';
+import {Mark6MessengerAutoSizeDirective} from './messenger-textarea-auto-size.directive';
 
 // import { Mark6MessengerMessagesComponent } from "./messenger-messages.component";
 // import { Mark6MessengerHeaderComponent } from "./messenger-header.component";
@@ -34,14 +37,21 @@ import {Mark6MessengerMessageGroupComponent} from './messenger-message-group/mes
 
 
 // Declare Components here:
-const components = [
+const messengerComponents = [
     Mark6MessengerComponent,
     Mark6MessengerAvatarComponent,
     Mark6MessengerBlockComponent,
     Mark6MessengerBlockDateComponent,
     Mark6MessengerContentComponent,
+    Mark6MessengerFooterComponent,
+    Mark6MessengerHeaderComponent,
     Mark6MessengerMessageComponent,
     Mark6MessengerMessageGroupComponent
+];
+
+// Declare Directives here:
+const messengerDirectives = [
+    Mark6MessengerAutoSizeDirective
 ];
 
 
@@ -51,10 +61,12 @@ const components = [
         Mark6ImageModule,
     ],
     declarations: [
-        components
+        messengerComponents,
+        messengerDirectives
     ],
     exports: [
-        components
+        messengerComponents,
+        messengerDirectives
     ],
     providers: []
 })

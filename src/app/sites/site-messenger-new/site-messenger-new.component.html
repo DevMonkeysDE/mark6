@@ -7,26 +7,9 @@
     </ul>
 </mat-toolbar>
 
-<!-- TODO ALEX THIS IS OUR NEW STRUCTURE
-ALL COMPONENTS ARE JUST UI COMPONENTS, JUST mark6-messenger-message-group CONTAINS LOGICS
--->
-
-<!-- <div *ngFor="let group of messageGroups"><pre>{{group|json}}</pre></div> -->
-
-<!--<ng-container *ngFor="let group of messageGroup">
-    <div>this will be a mark6 messenger timestamp {{group.date}}</div>
-    <ng-container *ngFor="let msg of group.messageGroups">
-        <div>this will be a group
-            <pre>{{msg.user_avatar | json}}</pre>
-        </div>
-        <ng-container *ngFor="let m of msg.messages">
-            <pre>{{m |json}}</pre>
-        </ng-container>
-    </ng-container>
-</ng-container>-->
-
-
 <mark6-messenger [ngClass]="messengerMode === 'fullscreen' ? 'fullscreen' : 'boxed'">
+
+    <mark6-messenger-header>Optional Header</mark6-messenger-header>
 
     <!-- Scrollable Area - or instead of <mark6-messenger-content> they can use <virtual-scroll>-->
     <mark6-messenger-content>
@@ -53,6 +36,10 @@ ALL COMPONENTS ARE JUST UI COMPONENTS, JUST mark6-messenger-message-group CONTAI
         </mark6-messenger-block>
 
     </mark6-messenger-content>
+
+    <mark6-messenger-footer>
+        <textarea placeholder="Type message..." Mark6MessengerAutoSize></textarea>
+    </mark6-messenger-footer>
 
 </mark6-messenger>
 

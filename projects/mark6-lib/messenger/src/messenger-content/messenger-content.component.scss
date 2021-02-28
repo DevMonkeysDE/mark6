@@ -1,6 +1,7 @@
 @import "~@devmonkeys/scss-elements/loader";
 
 .mark6-messenger-content {
+    flex-grow: 1;
     overflow-y: auto;
     overflow-x: hidden;
 }

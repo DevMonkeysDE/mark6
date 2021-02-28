@@ -9,6 +9,8 @@ export * from './messenger-avatar/messenger-avatar.component';
 export * from './messenger-block/messenger-block.component';
 export * from './messenger-block-date/messenger-block-date.component';
 export * from './messenger-content/messenger-content.component';
+export * from './messenger-footer/messenger-footer.component';
+export * from './messenger-header/messenger-header.component';
 export * from './messenger-message/messenger-message.component';
 export * from './messenger-message-group/messenger-message-group.component';
 
