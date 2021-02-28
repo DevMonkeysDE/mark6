@@ -14,10 +14,7 @@
 
     .mark6-image-placeholder {
     }
-    &.round {
-        overflow: hidden;
-        border-radius: 50%;
-    }
+
     img {
         width: 100%;
         top: 0;
@@ -33,6 +30,15 @@
         }
 
         &.mark6-image-failed {
+        }
+    }
+
+    &.round {
+        overflow: hidden;
+        border-radius: 50%;
+
+        img {
+            border-radius: 50%;
         }
     }
 }
