@@ -1,4 +1,4 @@
-import {Component, HostBinding, ViewEncapsulation} from '@angular/core';
+import {Component, HostBinding, Input, ViewEncapsulation} from '@angular/core';
 
 @Component({
     selector: 'mark6-messenger-block-date',
@@ -10,5 +10,7 @@ export class Mark6MessengerBlockDateComponent {
 
     private hostClass = 'mark6-messenger-block-date';
     @HostBinding('class') classes = this.hostClass;
+
+    @Input() public date;
 
 }

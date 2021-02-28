@@ -33,10 +33,7 @@ ALL COMPONENTS ARE JUST UI COMPONENTS, JUST mark6-messenger-message-group CONTAI
 
         <mark6-messenger-block *ngFor="let block of messageBlock">
 
-            <mark6-messenger-block-date><!--{{block.date}}-->
-                <!--<pre>{{currentUserId}}</pre>
-                <pre>{{block | json}}</pre>-->
-            </mark6-messenger-block-date>
+            <mark6-messenger-block-date [date]="block.date"></mark6-messenger-block-date>
 
             <mark6-messenger-message-group *ngFor="let group of block.messageGroup"
                                            [ngClass]="group.user_id === currentUserId ? 'mark6-message-come-from-me' : 'mark6-message-come-from-others'"
