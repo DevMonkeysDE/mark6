@@ -13,9 +13,9 @@ export class Mark6MessengerBlockDateComponent {
 
     @Input() public date;
     @Input() public dateOptions = {
-        days: ['today', 'yesterday', 'day before yesterday'],
+        days: ['Today', 'Yesterday', 'Day before yesterday'],
         format: 'dd MMMM YYYY',
-        locale: 'de-DE'
+        locale: 'en-EN'
     };
 
 }
