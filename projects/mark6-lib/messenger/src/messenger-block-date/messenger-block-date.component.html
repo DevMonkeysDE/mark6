@@ -1,2 +1,2 @@
-<div class="mark6-messenger-block-date-value">{{date | date: dateOptions.format}}</div>
+<div class="mark6-messenger-block-date-value" *ngIf="date">{{date | date: dateOptions.format}}</div>
 <ng-content></ng-content>
