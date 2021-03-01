@@ -15,6 +15,8 @@ import {Mark6MessengerMessageGroupComponent} from './messenger-message-group/mes
 import {Mark6MessengerHeaderComponent} from './messenger-header/messenger-header.component';
 import {Mark6MessengerFooterComponent} from './messenger-footer/messenger-footer.component';
 import {Mark6MessengerAutoSizeDirective} from './messenger-textarea-auto-size.directive';
+import {Mark6MessengerTextareaComponent} from './messenger-textarea/messenger-textarea.component';
+import {Mark6MessengerActionsComponent} from './messenger-actions/messenger-actions.component';
 
 // import { Mark6MessengerMessagesComponent } from "./messenger-messages.component";
 // import { Mark6MessengerHeaderComponent } from "./messenger-header.component";
@@ -39,6 +41,7 @@ import {Mark6MessengerAutoSizeDirective} from './messenger-textarea-auto-size.di
 // Declare Components here:
 const messengerComponents = [
     Mark6MessengerComponent,
+    Mark6MessengerActionsComponent,
     Mark6MessengerAvatarComponent,
     Mark6MessengerBlockComponent,
     Mark6MessengerBlockDateComponent,
@@ -46,7 +49,8 @@ const messengerComponents = [
     Mark6MessengerFooterComponent,
     Mark6MessengerHeaderComponent,
     Mark6MessengerMessageComponent,
-    Mark6MessengerMessageGroupComponent
+    Mark6MessengerMessageGroupComponent,
+    Mark6MessengerTextareaComponent
 ];
 
 // Declare Directives here:

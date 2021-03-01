@@ -1,0 +1,55 @@
+.mark6-messenger-textarea {
+    min-height: calc(40px * var(--mark6-messenger-spacing-multiplier));
+    padding: calc(8px * var(--mark6-messenger-spacing-multiplier)) calc(16px * var(--mark6-messenger-spacing-multiplier));
+
+    order: 2;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: calc(20px * var(--mark6-messenger-spacing-multiplier));
+    background-color: #F5F5F5;
+
+
+    // TODO SVEN ADD ION-TEXTAREA SUPPORT
+    textarea {
+        order: 2;
+        width: 100%;
+        // overflow: hidden;
+        // height: 100px;
+        padding: 0;
+        outline: none;
+        // display: block;
+        border: none;
+        resize: none;
+        font-size: 1em;
+        font-family: inherit;
+        background-color: transparent;
+    }
+
+    .mark6-messenger-actions {
+        height: calc(100% + calc(16px * var(--mark6-messenger-spacing-multiplier)));
+
+        &-position-left {
+            order: 1;
+            margin: calc(-8px * var(--mark6-messenger-spacing-multiplier))
+                    calc(8px * var(--mark6-messenger-spacing-multiplier))
+                    calc(-8px * var(--mark6-messenger-spacing-multiplier))
+                    calc(-16px * var(--mark6-messenger-spacing-multiplier));
+        }
+
+        &-position-right {
+            order: 3;
+            margin: calc(-8px * var(--mark6-messenger-spacing-multiplier))
+                    calc(-16px * var(--mark6-messenger-spacing-multiplier))
+                    calc(-8px * var(--mark6-messenger-spacing-multiplier))
+                    calc(8px * var(--mark6-messenger-spacing-multiplier));
+        }
+
+        > * {
+            margin-top: auto;
+        }
+    }
+
+}

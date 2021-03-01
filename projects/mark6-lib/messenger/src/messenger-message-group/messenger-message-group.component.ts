@@ -12,7 +12,6 @@ export class Mark6MessengerMessageGroupComponent {
          this.classes = this.hostClass + ` mark6-message-direction-${value || 'left'}`;
     }
 
-    // TODO Alex - Direction class is not working
     private hostClass = `mark6-messenger-message-group`;
     @HostBinding('class') classes = `mark6-messenger-message-group mark6-message-direction-left`;
 

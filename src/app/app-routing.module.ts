@@ -9,8 +9,7 @@ import {SiteMessengerNewComponent} from './sites/site-messenger-new/site-messeng
 const routes: Routes = [
     {path: '', pathMatch: 'full', redirectTo: 'profile'},
     {path: 'profile', component: SiteUserProfileComponent},
-    {path: 'messenger', component: SiteMessengerComponent},
-    {path: 'messenger-new', component: SiteMessengerNewComponent},
+    {path: 'messenger', component: SiteMessengerNewComponent},
     {path: 'image', component: SiteImageComponent},
 ];
 
