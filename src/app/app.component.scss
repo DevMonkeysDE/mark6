@@ -2,7 +2,7 @@
 
 .mat-toolbar {
     @include media-max($res-mat-sm) {
-        display: none;
+        // display: none;
     }
 
     ul {

@@ -1,37 +1,69 @@
 @import "~@devmonkeys/scss-elements/loader";
 
-.mat-toolbar {
-    @include media-max($res-mat-sm) {
-        display: none;
+.toggle-demo-editor {
+    top: 8px;
+    left: 8px;
+    z-index: 999;
+    position: absolute;
+    color: #ffffff;
+    border-color: rgb(255 255 255);
+    @include media-min($res-mat-sm) {
+        top: 12px;
+        left: 12px;
+    }
+}
+
+.demo-editor {
+    width: 256px;
+    top: 56px;
+    left: 0;
+    z-index: 999;
+    position: fixed;
+    background-color: #ffc107;
+    transform: translateX(-100%);
+    border-radius: 0 0 8px 0;
+    @include media-min($res-mat-sm) {
+        top: 64px;
     }
 
-    ul {
+    &.open {
+        transform: translateX(0);
+    }
+
+    h2 {
         margin: 0;
-        padding: 0;
-        display: flex;
-        list-style: none;
-        li {
-            margin-left: 16px;
-            a {
-                color: #404040;
-                text-decoration: none;
-            }
-        }
+        padding: 16px;
     }
 
+    mat-list, mat-selection-list {
+        padding: 0;
+    }
+
+    mat-slider {
+        width: 100%;
+    }
 }
 
 .mark6-messenger {
-    mark6-messenger-messages{
+    // Messenger Message Me
+    --mark6-messenger-message-me-background: #4151d0;
+    --mark6-messenger-message-me-contrast: #fff;
+
+    // Messenger Message Others
+    --mark6-messenger-message-others-background: #F5F5F5;
+    --mark6-messenger-message-others-contrast: #212121;
+
+    mark6-messenger-messages {
         height: 100%;
     }
+
     &.fullscreen {
-        height: 100%;
-        // height: calc(100% - (56px * 2));
+        height: calc(100% - (56px * 1));
         @include media-min($res-mat-sm) {
-            height: calc(100% - (64px * 2));
+            height: calc(100% - (64px * 1));
         }
     }
+
     &.boxed {
         width: 420px;
         height: 500px;
@@ -39,5 +71,64 @@
         bottom: 0;
         position: absolute;
         box-shadow: 0 0 3px 0 #000;
+    }
+
+    mark6-messenger-message-group {
+        &.mark6-message-direction-left {
+            mark6-messenger-message {
+                color: var(--mark6-messenger-message-others-contrast);
+                background-color: var(--mark6-messenger-message-others-background);
+            }
+        }
+
+        &.mark6-message-direction-right {
+            mark6-messenger-message {
+                color: var(--mark6-messenger-message-me-contrast);
+                background-color: var(--mark6-messenger-message-me-background);
+            }
+        }
+
+        &.mark6-message-come-from-me {
+            ::ng-deep .mark6-messenger-message-header {
+                display: none;
+            }
+        }
+
+        &.mark6-message-come-from-others {
+
+        }
+    }
+
+    mark6-messenger-footer {
+        > .mark6-messenger-actions {
+            &-position-left {
+
+            }
+
+            &-position-right {
+                width: 0;
+                overflow: hidden;
+                margin-left: 0;
+                transition-duration: 200ms;
+                transition-timing-function: ease;
+                transition-property: width, margin-left;
+
+                &.visible {
+                    width: calc(40px * var(--mark6-messenger-spacing-multiplier));
+                    margin-left: calc(8px * var(--mark6-messenger-spacing-multiplier));
+                }
+            }
+        }
+
+        mark6-messenger-textarea {
+            .mark6-messenger-actions {
+                &-position-right {
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
     }
 }

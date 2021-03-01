@@ -14,6 +14,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 // CDK
 import {ScrollingModule} from '@angular/cdk/scrolling';
@@ -22,7 +23,6 @@ import {ScrollingModule as ScrollingModuleExp} from '@angular/cdk-experimental/s
 // Sites
 import {SiteUserProfileComponent} from './sites/site-user-profile/site-user-profile.component';
 import {SiteMessengerComponent} from './sites/site-messenger/site-messenger.component';
-import {SiteMessengerNewComponent} from './sites/site-messenger-new/site-messenger-new.component';
 import {SiteImageComponent} from './sites/site-image/site-image.component';
 
 // Mark6
@@ -35,13 +35,13 @@ import {Mark6CropperModule} from '../../projects/mark6-lib/cropper/src';
 import {FormsModule} from '@angular/forms';
 
 
+
 @NgModule({
     declarations: [
         AppComponent,
         // Sites
         SiteUserProfileComponent,
         SiteMessengerComponent,
-        SiteMessengerNewComponent,
         SiteImageComponent
     ],
     imports: [
@@ -58,6 +58,7 @@ import {FormsModule} from '@angular/forms';
         MatButtonModule,
         MatToolbarModule,
         MatSliderModule,
+        MatSidenavModule,
         // CDK
         ScrollingModule,
         ScrollingModuleExp,
