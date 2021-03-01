@@ -103,6 +103,13 @@ public demo = {
     <tr>
       <td style="text-align:left">
         <p>@Input()</p>
+        <p>round: boolean</p>
+      </td>
+      <td style="text-align:left">Makes the image round.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>@Input()</p>
         <p>preview: string</p>
       </td>
       <td style="text-align:left">Sets a preview image that is shown before the src or srcset is loaded.</td>
