@@ -11,10 +11,12 @@ export class SiteMessengerComponent {
 
     public currentUserId = 1;
     public messageBlock = [];
-    public messengerBoxed = false;
     public textareaValue = '';
 
     // Demo Editor
+    public messengerBoxed = false;
+    public avatarMe = true;
+    public avatarOthers = true;
     public demoEditorState = false;
     public defaultElementSize = 1;
     public defaultFontSize = 16;
@@ -24,8 +26,16 @@ export class SiteMessengerComponent {
         this.messageBlock = this.messengerDummyDataService.getDummyData();
     }
 
-    selectionChange(option: MatListOption) {
+    toggleMessengerMode(option: MatListOption) {
         this.messengerBoxed = option.selected;
+    }
+
+    toggleAvatarMe(option: MatListOption) {
+        this.avatarMe = option.selected;
+    }
+
+    toggleAvatarOthers(option: MatListOption) {
+        this.avatarOthers = option.selected;
     }
 
 }

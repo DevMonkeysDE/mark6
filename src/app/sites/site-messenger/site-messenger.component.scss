@@ -90,7 +90,7 @@
 
         &.mark6-message-come-from-me {
             ::ng-deep .mark6-messenger-message-header {
-                display: none;
+                // display: none;
             }
         }
 
@@ -121,11 +121,28 @@
         }
 
         mark6-messenger-textarea {
+            svg {
+                fill: #6f6f6f;
+            }
+
             .mark6-messenger-actions {
                 &-position-right {
                     svg {
-                        width: 20px;
-                        height: 20px;
+                        // width: 20px;
+                        // height: 20px;
+                    }
+                    button {
+                        &:last-child {
+                            width: 0;
+                            overflow: hidden;
+                            transition-duration: 200ms;
+                            transition-timing-function: ease;
+                            transition-property: width, margin-left;
+
+                            &.visible {
+                                width: calc(40px * var(--mark6-messenger-spacing-multiplier));
+                            }
+                        }
                     }
                 }
             }
