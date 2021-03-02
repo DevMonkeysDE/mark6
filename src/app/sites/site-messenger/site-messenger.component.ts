@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {MessengerDummyDataService} from './messenger-dummy-data.service';
 import {MatListOption} from '@angular/material/list';
+import {DomSanitizer} from '@angular/platform-browser';
+import {MatIconRegistry} from '@angular/material/icon';
 
 @Component({
     selector: 'app-site-messenger',
@@ -22,8 +24,14 @@ export class SiteMessengerComponent {
     public defaultFontSize = 16;
     public defaultAvatarSize = 36;
 
-    constructor(public messengerDummyDataService: MessengerDummyDataService) {
+    constructor(public messengerDummyDataService: MessengerDummyDataService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
         this.messageBlock = this.messengerDummyDataService.getDummyData();
+        // Material Icons
+        iconRegistry.addSvgIcon('attach_file', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/material/attach_file.svg'));
+        iconRegistry.addSvgIcon('camera', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/material/camera.svg'));
+        iconRegistry.addSvgIcon('emoji_emotions', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/material/emoji_emotions.svg'));
+        // Feather Icons
+        iconRegistry.addSvgIcon('send', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/feather/send.svg'));
     }
 
     toggleMessengerMode(option: MatListOption) {
