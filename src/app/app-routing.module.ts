@@ -6,7 +6,7 @@ import {SiteMessengerComponent} from './sites/site-messenger/site-messenger.comp
 
 
 const routes: Routes = [
-    {path: '', pathMatch: 'full', redirectTo: 'profile'},
+    {path: '', pathMatch: 'full', redirectTo: 'messenger'},
     {path: 'profile', component: SiteUserProfileComponent},
     {path: 'messenger', component: SiteMessengerComponent},
     {path: 'image', component: SiteImageComponent},

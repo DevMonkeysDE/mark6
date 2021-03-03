@@ -100,7 +100,13 @@
     }
 
     mark6-messenger-footer {
+
+        button {
+            color: #212121;
+        }
+
         > .mark6-messenger-actions {
+
             &-position-left {
 
             }
@@ -121,16 +127,8 @@
         }
 
         mark6-messenger-textarea {
-            svg {
-                fill: #6f6f6f;
-            }
-
             .mark6-messenger-actions {
                 &-position-right {
-                    svg {
-                        // width: 20px;
-                        // height: 20px;
-                    }
                     button {
                         &:last-child {
                             width: 0;
