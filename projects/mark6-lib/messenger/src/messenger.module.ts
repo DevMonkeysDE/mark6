@@ -1,24 +1,24 @@
-import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {ModuleWithProviders, NgModule, Optional, SkipSelf} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 // Modules
-import { Mark6ImageModule } from '@devmonkeys/mark6/image';
+import {Mark6ImageModule} from '@devmonkeys/mark6/image';
 
 // Components
-import { Mark6MessengerComponent } from './messenger/messenger.component';
-import { Mark6MessengerAvatarComponent } from './messenger-avatar/messenger-avatar.component';
-import { Mark6MessengerBlockComponent } from './messenger-block/messenger-block.component';
-import { Mark6MessengerBlockDateComponent } from './messenger-block-date/messenger-block-date.component';
-import { Mark6MessengerContentComponent } from './messenger-content/messenger-content.component';
-import { Mark6MessengerMessageComponent } from './messenger-message/messenger-message.component';
-import { Mark6MessengerMessageGroupComponent } from './messenger-message-group/messenger-message-group.component';
-import { Mark6MessengerHeaderComponent } from './messenger-header/messenger-header.component';
-import { Mark6MessengerFooterComponent } from './messenger-footer/messenger-footer.component';
-import { Mark6MessengerAutoSizeDirective } from './messenger-textarea-auto-size.directive';
-import { Mark6MessengerTextareaComponent } from './messenger-textarea/messenger-textarea.component';
-import { Mark6MessengerActionsComponent } from './messenger-actions/messenger-actions.component';
-import { MessengerServiceConfig } from './messenger.service';
-import { DateFormatPipe } from './messenger-message/messenger-message-date-format.pipe';
+import {Mark6MessengerComponent} from './messenger/messenger.component';
+import {Mark6MessengerAvatarComponent} from './messenger-avatar/messenger-avatar.component';
+import {Mark6MessengerBlockComponent} from './messenger-block/messenger-block.component';
+import {Mark6MessengerBlockDateComponent} from './messenger-block-date/messenger-block-date.component';
+import {Mark6MessengerContentComponent} from './messenger-content/messenger-content.component';
+import {Mark6MessengerMessageComponent} from './messenger-message/messenger-message.component';
+import {Mark6MessengerMessageGroupComponent} from './messenger-message-group/messenger-message-group.component';
+import {Mark6MessengerHeaderComponent} from './messenger-header/messenger-header.component';
+import {Mark6MessengerFooterComponent} from './messenger-footer/messenger-footer.component';
+import {Mark6MessengerAutoSizeDirective} from './messenger-textarea-auto-size.directive';
+import {Mark6MessengerTextareaComponent} from './messenger-textarea/messenger-textarea.component';
+import {Mark6MessengerActionsComponent} from './messenger-actions/messenger-actions.component';
+import {MessengerServiceConfig} from './messenger.service';
+import {DateFormatPipe} from './messenger-message/messenger-message-date-format.pipe';
 
 // import { Mark6MessengerMessagesComponent } from "./messenger-messages.component";
 // import { Mark6MessengerHeaderComponent } from "./messenger-header.component";
@@ -77,10 +77,10 @@ const messengerDirectives = [
     providers: []
 })
 export class Mark6MessengerModule {
+
     constructor(@Optional() @SkipSelf() parentModule?: Mark6MessengerModule) {
         if (parentModule) {
-            throw new Error(
-                'GreetingModule is already loaded. Import it in the AppModule only');
+            throw new Error('GreetingModule is already loaded. Import it in the AppModule only');
         }
     }
 
@@ -88,8 +88,9 @@ export class Mark6MessengerModule {
         return {
             ngModule: Mark6MessengerModule,
             providers: [
-                { provide: MessengerServiceConfig, useValue: config }
+                {provide: MessengerServiceConfig, useValue: config}
             ]
         };
     }
+
 }

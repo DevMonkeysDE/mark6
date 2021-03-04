@@ -13,5 +13,6 @@ export class Mark6MessengerMessageComponent {
     @HostBinding('class') classes = this.hostClass;
 
     @Input() public message: MessengerMessageInterface;
+    @Input() public timeStampFormat;
 
 }
