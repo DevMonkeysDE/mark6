@@ -1,4 +1,6 @@
-import {Component, HostBinding, Input, ViewEncapsulation} from '@angular/core';
+import { Component, Host, HostBinding, Input, ViewEncapsulation } from '@angular/core';
+import { MessengerService } from '../messenger.service';
+import { Mark6MessengerComponent } from '../messenger/messenger.component';
 
 @Component({
     selector: 'mark6-messenger-block-date',
@@ -10,12 +12,11 @@ export class Mark6MessengerBlockDateComponent {
 
     private hostClass = 'mark6-messenger-block-date';
     @HostBinding('class') classes = this.hostClass;
+    public formattedDate;
+    @Input() public set date(value: Date) {
+        this.formattedDate = this.messengerService.blockFormat.format(value);
 
-    @Input() public date;
-    @Input() public dateOptions = {
-        days: ['Today', 'Yesterday'],
-        format: 'dd MMMM YYYY',
-        locale: 'en-EN'
     };
-
+    constructor(private messengerService: MessengerService) {
+    }
 }

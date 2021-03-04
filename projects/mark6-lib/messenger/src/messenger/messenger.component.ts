@@ -7,7 +7,6 @@ import {Component, HostBinding, ViewEncapsulation} from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class Mark6MessengerComponent {
-
     private hostClass = 'mark6-messenger';
     @HostBinding('class') classes = this.hostClass;
 

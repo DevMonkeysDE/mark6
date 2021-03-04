@@ -7,7 +7,6 @@ import { AfterViewInit, Directive, ElementRef, HostListener, Input } from '@angu
 export class Mark6MessengerAutoSizeDirective implements AfterViewInit {
 
     @Input() maxHeight = 200;
-    // TODO ALEX - Please add Max count for row Auto grow
     constructor(private elem: ElementRef) {
         elem.nativeElement.style.overflow = 'hidden';
         elem.nativeElement.rows = '1';

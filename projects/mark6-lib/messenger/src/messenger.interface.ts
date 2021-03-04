@@ -40,7 +40,7 @@ export interface AvatarInterface {
 }
 
 export interface MessengerMessageInterface {
-    created_at?: string;
+    created_at?: Date;
     text: string;
-    user_name:string;
+    user_name: string;
 }
