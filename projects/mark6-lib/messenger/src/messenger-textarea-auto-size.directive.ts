@@ -20,7 +20,7 @@ export class Mark6MessengerAutoSizeDirective implements AfterViewInit {
     }
 
     @HostListener('input')
-    private resize() {
+    public resize() {
         const textArea = this.elem.nativeElement as HTMLTextAreaElement;
         // Reset textArea height to auto that correctly calculate the new height
         textArea.style.height = 'auto';

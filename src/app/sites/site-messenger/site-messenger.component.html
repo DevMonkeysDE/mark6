@@ -36,7 +36,7 @@
 
         <div mat-subheader>Font Size</div>
         <mat-list-item>
-            <mat-slider min="16" max="32" step="1" [thumbLabel]="true" [(ngModel)]="defaultFontSize"></mat-slider>
+            <mat-slider min="16" max="32" step="1" [thumbLabel]="true" [(ngModel)]="defaultFontSize" (change)="test()"></mat-slider>
         </mat-list-item>
 
         <mat-divider></mat-divider>
@@ -53,6 +53,7 @@
             <mat-slider min="36" max="256" step="1" [thumbLabel]="true" [(ngModel)]="defaultAvatarSize"></mat-slider>
         </mat-list-item>
     </mat-list>
+    <button (click)="test()">test</button>
 </div>
 
 <mark6-messenger [style.--mark6-messenger-spacing-multiplier]="defaultElementSize"
