@@ -46,7 +46,7 @@ export class MessengerDummyDataService {
 
     public get dummyData(): any[] {
         const messages = [];
-        for (let index = 0; index < 0; index++) {
+        for (let index = 0; index < 100; index++) {
             const rnd = this.randomIntFromInterval(1, 3);
             const user = rnd === 1 ? this.sven : rnd === 3 ? this.shyGuy : this.luLu;
             messages.push({
