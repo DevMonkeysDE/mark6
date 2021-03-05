@@ -40,6 +40,7 @@ export class MessengerService {
     private dateFormats: MessengerServiceDateFormats;
     private blockFormatter: Intl.DateTimeFormat;
     private messageFormatter: Intl.DateTimeFormat;
+    private blockWeekDaysFormatter: Intl.DateTimeFormat;
 
     constructor(@Optional() config: MessengerServiceConfig) {
         const dateFormats = config.dateFormats;
@@ -51,6 +52,7 @@ export class MessengerService {
         };
 
         this.blockFormatter = new Intl.DateTimeFormat(this.dateFormats.locale, this.dateFormats.block.format);
+        this.blockWeekDaysFormatter = new Intl.DateTimeFormat(this.dateFormats.locale, { weekday: 'long' });
         this.messageFormatter = new Intl.DateTimeFormat(this.dateFormats.locale, this.dateFormats.message.format);
     }
 
@@ -62,6 +64,8 @@ export class MessengerService {
             const dayDiff = getEvenDaysDiff(value);
             if (dayDiff < this.dateFormats.block.days.length) {
                 return this.dateFormats.block.days[dayDiff];
+            } else if (dayDiff <= 7) {
+                return this.blockWeekDaysFormatter.format(value);
             }
         }
         return this.blockFormatter.format(value);
