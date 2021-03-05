@@ -8,6 +8,6 @@ import { MessengerService } from '../messenger.service';
 export class DateFormatPipe implements PipeTransform {
     constructor(private messengerService: MessengerService) { }
     transform(value: Date): any {
-        return this.messengerService.messageFormat.format(value);
+        return this.messengerService.formatDateForMessage(value);
     }
 }
