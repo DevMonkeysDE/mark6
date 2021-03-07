@@ -1,28 +1,6 @@
 import { Injectable, Optional } from '@angular/core';
+import { MessengerServiceDateFormats, MessengerServiceConfig } from '.';
 
-// TODO ALEX MOVE ALL INTERFACES TO INTERFACE.TS
-export class MessengerServiceConfig implements IMessengerServiceConfig {
-    dateFormats: MessengerServiceDateFormats;
-}
-
-interface IMessengerServiceConfig {
-    dateFormats?: MessengerServiceDateFormats;
-}
-
-export interface MessengerServiceDateFormats {
-    block?: MessengerServiceBlockDateFormat;
-    message?: MessengerServiceMessageDateFormat;
-    locale?: string;
-}
-
-export interface MessengerServiceBlockDateFormat {
-    days?: string[];
-    format?: Intl.DateTimeFormatOptions;
-}
-
-export interface MessengerServiceMessageDateFormat {
-    format?: Intl.DateTimeFormatOptions;
-}
 
 const defaultDateFormats: MessengerServiceDateFormats = {
     block: {

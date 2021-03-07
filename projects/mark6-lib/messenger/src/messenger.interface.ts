@@ -1,29 +1,25 @@
-/*export interface MessengerInterface {
-    created_at: Date;
-    direction: 'others' | 'me';
-    user_id: number;
-    user_name?: string;
-    user_avatar?: AvatarInterface;
-    message: string;
-    message_sent?: boolean;
+export interface IMessengerServiceConfig {
+    dateFormats?: MessengerServiceDateFormats;
 }
 
-export interface AvatarInterface {
-    preview?: string;
-    src?: string;
-    srcset?: string;
-    default?: string;
+export class MessengerServiceConfig implements IMessengerServiceConfig {
+    dateFormats: MessengerServiceDateFormats;
 }
 
-export interface InternalMessengerInterface extends MessengerInterface {
-    showDate: boolean;
-    showAvatar: boolean;
-    classes: any;
-    formatedDate: string;
-    showTimestamp: boolean;
-    firstMessage: boolean;
-    lastMessage: boolean;
-}*/
+export interface MessengerServiceDateFormats {
+    block?: MessengerServiceBlockDateFormat;
+    message?: MessengerServiceMessageDateFormat;
+    locale?: string;
+}
+
+export interface MessengerServiceBlockDateFormat {
+    days?: string[];
+    format?: Intl.DateTimeFormatOptions;
+}
+
+export interface MessengerServiceMessageDateFormat {
+    format?: Intl.DateTimeFormatOptions;
+}
 
 export interface MessengerMessageGroupInterface {
     type: string;
