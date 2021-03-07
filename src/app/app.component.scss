@@ -1,8 +1,13 @@
 @import "~@devmonkeys/scss-elements/loader";
 
 .mat-toolbar {
-    @include media-max($res-mat-sm) {
-        // display: none;
+    transform: translateY(0);
+    transition-duration: 200ms;
+    transition-timing-function: ease;
+    transition-property: transform;
+
+    &.hidden {
+        transform: translateY(-100%);
     }
 
     ul {

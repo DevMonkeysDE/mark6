@@ -1,4 +1,7 @@
-<button class="toggle-demo-editor" mat-icon-button (click)="demoEditorState = !demoEditorState">
+<button class="toggle-demo-editor" mat-icon-button
+        [matMenuTriggerFor]="menu"
+        [ngClass]="{'toolbar-hidden': !uiService.showToolbar}"
+        [class]="uiService.messengerBackground.theme">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
          class="feather feather-sliders">
@@ -13,9 +16,15 @@
         <line x1="17" y1="16" x2="23" y2="16"></line></svg>
 </button>
 
-<div class="demo-editor" [ngClass]="{open: demoEditorState}">
-    <h2>Demo Editor</h2>
-    <mat-list>
+<mat-menu class="messenger-demo-editor" #menu="matMenu">
+    <h2 (click)="$event.stopPropagation()">Demo Editor</h2>
+    <mat-list (click)="$event.stopPropagation()">
+        <mat-selection-list (selectionChange)="toggleToolbar($event.options[0])">
+            <mat-list-option [selected]="uiService.showToolbar">Toolbar</mat-list-option>
+        </mat-selection-list>
+
+        <mat-divider></mat-divider>
+
         <mat-selection-list (selectionChange)="toggleMessengerMode($event.options[0])">
             <mat-list-option [selected]="messengerBoxed">Boxed</mat-list-option>
         </mat-selection-list>
@@ -52,13 +61,30 @@
         <mat-list-item>
             <mat-slider min="36" max="256" step="1" [thumbLabel]="true" [(ngModel)]="defaultAvatarSize"></mat-slider>
         </mat-list-item>
+
+        <mat-divider></mat-divider>
+
+        <div class="select-background">
+            <ng-container *ngFor="let background of backgroundImages">
+                <button mat-button
+                        color="accent"
+                        (click)="uiService.messengerBackground = background"
+                        [ngStyle]="{'background-image': 'url(' + '/assets/messenger/backgrounds/' + background.image + '.jpg' + ')'}"
+                        [class]="uiService.messengerBackground.theme"
+                        [class.selected]="uiService.messengerBackground === background.image">
+                    <mat-icon svgIcon="check_circle_outline" *ngIf="uiService.messengerBackground === background"></mat-icon>
+                </button>
+            </ng-container>
+        </div>
+
     </mat-list>
-</div>
+</mat-menu>
 
 <mark6-messenger [style.--mark6-messenger-spacing-multiplier]="defaultElementSize"
                  [style.--mark6-messenger-base-font-size.px]="defaultFontSize"
                  [style.--mark6-messenger-avatar-size.px]="defaultAvatarSize"
-                 [ngClass]="messengerBoxed ? 'boxed' : 'fullscreen'">
+                 [ngStyle]="{'background-image': 'url(' + '/assets/messenger/backgrounds/' + uiService.messengerBackground.image + '.jpg' + ')'}"
+                 [ngClass]="{'boxed': messengerBoxed, 'toolbar-hidden': !uiService.showToolbar}">
 
     <!--<mark6-messenger-header>Optional Header</mark6-messenger-header>-->
 
@@ -122,7 +148,7 @@
             </mark6-messenger-actions>
         </mark6-messenger-textarea>
 
-        <mark6-messenger-actions [position]="'right'" [ngClass]="{visible: textareaValue.length !== 0}">
+        <mark6-messenger-actions [position]="'right'" [ngClass]="{visible: textareaValue.length !== 0}" [class]="uiService.messengerBackground.theme">
             <button mat-icon-button><mat-icon svgIcon="send"></mat-icon></button>
         </mark6-messenger-actions>
 

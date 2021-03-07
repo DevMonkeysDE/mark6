@@ -1,3 +1,4 @@
+@import "~@devmonkeys/scss-elements/loader";
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
@@ -34,4 +35,57 @@ html, body {
 body {
     margin: 0;
     font-family: 'Nunito', sans-serif;
+}
+
+.messenger-demo-editor {
+    width: 256px;
+    background-color: #ffc107;
+
+    .mat-menu-content {
+        padding: 0 !important;
+    }
+
+    h2 {
+        margin: 0;
+        padding: 16px;
+    }
+
+    mat-list, mat-selection-list {
+        padding: 0;
+    }
+
+    mat-slider {
+        width: 100%;
+    }
+
+    .select-background {
+        padding: 8px;
+        button {
+            width: calc(50% - 16px);
+            margin: 8px;
+            position: relative;
+            background-size: 100%;
+            background-position: center;
+            @include aspect-ratio(1, 1);
+
+            &.light {
+                color: #202020;
+            }
+
+            &.dark {
+                color: #ffffff;
+            }
+
+            &.mat-button {
+                padding: 0;
+            }
+
+            mat-icon {
+                top: 50%;
+                left: 50%;
+                position: absolute;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
 }

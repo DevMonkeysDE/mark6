@@ -5,6 +5,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material/icon';
 import {Mark6MessengerAutoSizeDirective} from '../../../../projects/mark6-lib/messenger/src/messenger-textarea-auto-size.directive';
 import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
+import {UiService} from '../../services/ui.service';
 
 @Component({
     selector: 'app-site-messenger',
@@ -30,6 +31,16 @@ export class SiteMessengerComponent {
     public defaultElementSize = 1;
     public defaultFontSize = 16;
     public defaultAvatarSize = 36;
+    public backgroundImages = [
+        {
+            theme: 'light',
+            image: 'light-watercolor'
+        },
+        {
+            theme: 'dark',
+            image: 'dark-space'
+        }
+    ];
 
     @ViewChild(Mark6MessengerAutoSizeDirective) Mark6MessengerAutoSize: Mark6MessengerAutoSizeDirective;
 
@@ -37,13 +48,15 @@ export class SiteMessengerComponent {
         public messengerDummyDataService: MessengerDummyDataService,
         private iconRegistry: MatIconRegistry,
         private sanitizer: DomSanitizer,
-        private bottomSheet: MatBottomSheet
+        private bottomSheet: MatBottomSheet,
+        public uiService: UiService
     ) {
         this.messageBlock = this.messengerDummyDataService.getDummyData();
         // Material Icons
         iconRegistry.addSvgIcon('attach_file', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/material/attach_file.svg'));
         iconRegistry.addSvgIcon('camera', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/material/camera.svg'));
         iconRegistry.addSvgIcon('camera_alt', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/material/camera_alt.svg'));
+        iconRegistry.addSvgIcon('check_circle_outline', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/material/check_circle_outline.svg'));
         iconRegistry.addSvgIcon('close', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/material/close.svg'));
         iconRegistry.addSvgIcon('emoji_emotions', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/material/emoji_emotions.svg'));
         // Feather Icons
@@ -58,6 +71,10 @@ export class SiteMessengerComponent {
 
     toggleMessageOptions() {
         this.bottomSheet.open(MessengerMessageOptionsComponent);
+    }
+
+    toggleToolbar(option: MatListOption) {
+        this.uiService.showToolbar = option.selected;
     }
 
     toggleMessengerMode(option: MatListOption) {

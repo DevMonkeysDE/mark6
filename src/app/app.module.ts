@@ -15,6 +15,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatMenuModule} from '@angular/material/menu';
 
 // CDK
 import {ScrollingModule} from '@angular/cdk/scrolling';
@@ -33,7 +35,6 @@ import {Mark6EditableImageModule} from '../../projects/mark6-lib/editable-image/
 import {Mark6DropDownModule} from '../../projects/mark6-lib/drop-down/src';
 import {Mark6CropperModule} from '../../projects/mark6-lib/cropper/src';
 import {FormsModule} from '@angular/forms';
-import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
         MatSliderModule,
         MatSidenavModule,
         MatBottomSheetModule,
+        MatMenuModule,
         // CDK
         ScrollingModule,
         ScrollingModuleExp,

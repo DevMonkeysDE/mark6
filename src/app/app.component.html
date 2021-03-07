@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" [ngClass]="uiService.showToolbar ? 'visible' : 'hidden'">
     <div style="flex: auto;"></div>
     <ul>
         <li><a routerLink="/image">Image</a></li>
