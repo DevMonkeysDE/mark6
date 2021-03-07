@@ -1,4 +1,4 @@
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, HammerModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -22,7 +22,7 @@ import {ScrollingModule as ScrollingModuleExp} from '@angular/cdk-experimental/s
 
 // Sites
 import {SiteUserProfileComponent} from './sites/site-user-profile/site-user-profile.component';
-import {SiteMessengerComponent} from './sites/site-messenger/site-messenger.component';
+import {SiteMessengerComponent, MessengerMessageOptionsComponent} from './sites/site-messenger/site-messenger.component';
 import {SiteImageComponent} from './sites/site-image/site-image.component';
 
 // Mark6
@@ -33,6 +33,7 @@ import {Mark6EditableImageModule} from '../../projects/mark6-lib/editable-image/
 import {Mark6DropDownModule} from '../../projects/mark6-lib/drop-down/src';
 import {Mark6CropperModule} from '../../projects/mark6-lib/cropper/src';
 import {FormsModule} from '@angular/forms';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import {FormsModule} from '@angular/forms';
         // Sites
         SiteUserProfileComponent,
         SiteMessengerComponent,
-        SiteImageComponent
+        SiteImageComponent,
+        MessengerMessageOptionsComponent
     ],
     imports: [
         BrowserModule,
@@ -58,6 +60,7 @@ import {FormsModule} from '@angular/forms';
         MatToolbarModule,
         MatSliderModule,
         MatSidenavModule,
+        MatBottomSheetModule,
         // CDK
         ScrollingModule,
         ScrollingModuleExp,
@@ -66,8 +69,10 @@ import {FormsModule} from '@angular/forms';
         Mark6ImageModule,
         Mark6EditableImageModule,
         Mark6DropDownModule,
-        Mark6MessengerModule.forRoot({dateFormats: {block: {days: ['heute', 'gestern']}}}),
-        Mark6CropperModule
+        Mark6MessengerModule.forRoot({dateFormats: {block: {days: ['Heute', 'Gestern']}}}),
+        Mark6CropperModule,
+        // HammerJS
+        HammerModule
     ],
     providers: [],
     bootstrap: [AppComponent]

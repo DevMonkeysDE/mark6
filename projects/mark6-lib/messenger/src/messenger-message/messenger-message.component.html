@@ -4,6 +4,7 @@
         <span>&nbsp;</span>
         <span class="mark6-messenger-message-header-created-at">{{message.created_at | dateFormat}}</span>
     </div>
+    <mark6-messenger-reply-preview [replyPreview]="replyPreview"></mark6-messenger-reply-preview>
     <span>{{message.text}}</span>
 </ng-container>
 

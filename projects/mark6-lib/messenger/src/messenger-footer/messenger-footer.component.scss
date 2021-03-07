@@ -1,4 +1,23 @@
 .mark6-messenger-footer {
     padding: calc(8px * var(--mark6-messenger-spacing-multiplier));
     display: flex;
+    flex-direction: column;
+
+    mark6-messenger-reply-preview {
+        padding: 8px 8px 0 8px;
+
+        border-top-left-radius: calc(10px * var(--mark6-messenger-spacing-multiplier));
+        border-top-right-radius: calc(10px * var(--mark6-messenger-spacing-multiplier));
+
+        background-color: var(--mark6-messenger-message-footer-background);
+    }
+
+    &-main {
+        display: flex;
+    }
+
+    button {
+        color: var(--mark6-messenger-message-footer-contrast);
+    }
+
 }

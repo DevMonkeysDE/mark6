@@ -16,19 +16,19 @@
 <div class="demo-editor" [ngClass]="{open: demoEditorState}">
     <h2>Demo Editor</h2>
     <mat-list>
-        <mat-selection-list (selectionChange)="toggleMessengerMode($event.option)">
+        <mat-selection-list (selectionChange)="toggleMessengerMode($event.options[0])">
             <mat-list-option [selected]="messengerBoxed">Boxed</mat-list-option>
         </mat-selection-list>
 
         <mat-divider></mat-divider>
 
-        <mat-selection-list (selectionChange)="toggleAvatarMe($event.option)">
+        <mat-selection-list (selectionChange)="toggleAvatarMe($event.options[0])">
             <mat-list-option [selected]="avatarMe">Avatar Me</mat-list-option>
         </mat-selection-list>
 
         <mat-divider></mat-divider>
 
-        <mat-selection-list (selectionChange)="toggleAvatarOthers($event.option)">
+        <mat-selection-list (selectionChange)="toggleAvatarOthers($event.options[0])">
             <mat-list-option [selected]="avatarOthers">Avatar Others</mat-list-option>
         </mat-selection-list>
 
@@ -36,7 +36,7 @@
 
         <div mat-subheader>Font Size</div>
         <mat-list-item>
-            <mat-slider min="16" max="32" step="1" [thumbLabel]="true" [(ngModel)]="defaultFontSize" (change)="test()"></mat-slider>
+            <mat-slider min="16" max="32" step="1" [thumbLabel]="true" [(ngModel)]="defaultFontSize" (change)="updateTextArea()"></mat-slider>
         </mat-list-item>
 
         <mat-divider></mat-divider>
@@ -81,7 +81,7 @@
                     -->
                 </mark6-messenger-avatar>
 
-                <mark6-messenger-message *ngFor="let message of group.messages" [message]="message"></mark6-messenger-message>
+                <mark6-messenger-message *ngFor="let message of group.messages" [message]="message" (click)="toggleMessageOptions()"></mark6-messenger-message>
 
             </mark6-messenger-message-group>
 
@@ -91,7 +91,8 @@
 
     <mark6-messenger-footer>
 
-        <!--<mark6-messenger-actions [position]="'left'">
+        <!--
+        <mark6-messenger-actions [position]="'left'">
             <button mat-icon-button>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -100,9 +101,15 @@
                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                 </svg>
             </button>
-        </mark6-messenger-actions>-->
+        </mark6-messenger-actions>
+        -->
 
-        <mark6-messenger-textarea>
+        <mark6-messenger-reply-preview *ngIf="replyPreview" [replyPreview]="replyPreview" [ngClass]="{visible: textareaValue.length !== 0}">
+            <button mat-icon-button (click)="replyPreview = null"><mat-icon svgIcon="close"></mat-icon></button>
+        </mark6-messenger-reply-preview>
+
+        <!-- TODO - ADD THIS NG STYLE FOR BORDER RADIUS IF <mark6-messenger-reply-preview> IS VISIBLE-->
+        <mark6-messenger-textarea [style.borderTopLeftRadius]="replyPreview ? '0' : null" [style.borderTopRightRadius]="replyPreview ? '0' : null">
             <mark6-messenger-actions [position]="'left'">
                 <button mat-icon-button><mat-icon svgIcon="emoji_emotions"></mat-icon></button>
             </mark6-messenger-actions>

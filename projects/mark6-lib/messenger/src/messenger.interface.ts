@@ -42,5 +42,12 @@ export interface AvatarInterface {
 export interface MessengerMessageInterface {
     created_at?: Date;
     text: string;
+    reply?: MessengerReplyPreviewInterface;
     user_name: string;
+}
+
+export interface MessengerReplyPreviewInterface {
+    user_name: string;
+    text: string;
+    color?: string;
 }

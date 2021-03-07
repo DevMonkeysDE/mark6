@@ -1,0 +1,7 @@
+<div class="mark6-messenger-reply-preview-inner" [ngStyle]="{'border-color': replyPreview.color}">
+    <div class="mark6-messenger-reply-preview-header" [ngStyle]="{'color': replyPreview.color}">
+        <span>{{replyPreview.user_name}}</span>
+        <ng-content></ng-content>
+    </div>
+    <span>{{replyPreview.text}}</span>
+</div>

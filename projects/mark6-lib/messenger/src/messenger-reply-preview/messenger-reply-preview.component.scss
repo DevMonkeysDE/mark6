@@ -1,0 +1,56 @@
+.mark6-messenger-reply-preview {
+    display: block;
+
+    // border-top-left-radius: calc(10px * var(--mark6-messenger-spacing-multiplier));
+    // border-top-right-radius: calc(10px * var(--mark6-messenger-spacing-multiplier));
+
+    &-inner {
+        padding: 6px 8px;
+
+        font-size: 0.625em;
+
+        border-left: 3px solid rgba(black, .48);
+        border-radius: 2px;
+
+        background-color: rgba(black, .08);
+
+        span {
+            // TODO - CLAMP MAYBE NOT WORK EVERYWHERE
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+
+    &-header {
+        display: flex;
+
+        span {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        button {
+            margin-left: auto;
+
+            // Style Support for Angular Material Icon Only Button
+            &.mat-icon-button {
+                width: 14px; // Think about a solution that button scales with font weight. em is not working.
+                height: 14px;
+                line-height: 14px;
+
+                mat-icon {
+                    width: 14px;
+                    height: 14px;
+                    display: block;
+
+                    svg {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+}

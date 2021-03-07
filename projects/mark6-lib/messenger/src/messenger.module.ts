@@ -19,6 +19,7 @@ import {Mark6MessengerTextareaComponent} from './messenger-textarea/messenger-te
 import {Mark6MessengerActionsComponent} from './messenger-actions/messenger-actions.component';
 import {MessengerServiceConfig} from './messenger.service';
 import {DateFormatPipe} from './messenger-message/messenger-message-date-format.pipe';
+import {Mark6MessengerReplyPreviewComponent} from './messenger-reply-preview/messenger-reply-preview.component';
 
 // import { Mark6MessengerMessagesComponent } from "./messenger-messages.component";
 // import { Mark6MessengerHeaderComponent } from "./messenger-header.component";
@@ -52,6 +53,7 @@ const messengerComponents = [
     Mark6MessengerHeaderComponent,
     Mark6MessengerMessageComponent,
     Mark6MessengerMessageGroupComponent,
+    Mark6MessengerReplyPreviewComponent,
     Mark6MessengerTextareaComponent
 ];
 

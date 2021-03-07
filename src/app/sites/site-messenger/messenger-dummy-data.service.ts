@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import * as txtgen from 'txtgen';
 
 @Injectable({
@@ -80,7 +80,7 @@ export class MessengerDummyDataService {
         const result = [];
         for (const r of messages) {
             const evenDay = this.getEvenDaysDiff(r.created_at);
-            const d = result.find(r => r.evenDay === evenDay) || { evenDay: evenDay, values: [] as any[], new: true, date: r.created_at };
+            const d = result.find(r => r.evenDay === evenDay) || {evenDay: evenDay, values: [] as any[], new: true, date: r.created_at};
             d.values.push(r);
             if (d.values.length === 1) {
                 result.push(d);
@@ -88,10 +88,10 @@ export class MessengerDummyDataService {
         }
         for (const group of result) {
             let lastUser = null;
-            let messagesWithAvatar = { messages: [] } as any;
+            let messagesWithAvatar = {messages: []} as any;
             group.messageGroup = [];
             for (const message of group.values) {
-                const msg = { text: message.text, created_at: message.created_at, user_name: message.user_name };
+                const msg = {text: message.text, created_at: message.created_at, user_name: message.user_name};
                 if (lastUser === message.user_id) {
                     delete msg.user_name;
                     messagesWithAvatar.messages.push(msg);
@@ -103,7 +103,7 @@ export class MessengerDummyDataService {
                     messagesWithAvatar.messages.push(msg);
                 } else if (lastUser !== message.user_id) {
                     group.messageGroup.push(messagesWithAvatar);
-                    messagesWithAvatar = { messages: [] } as any;
+                    messagesWithAvatar = {messages: []} as any;
                     messagesWithAvatar.direction = message.direction;
                     messagesWithAvatar.user_id = message.user_id;
                     // messagesWithAvatar.user_name = message.user_name;
@@ -120,7 +120,7 @@ export class MessengerDummyDataService {
         return result;
     }
 
-    getEvenDaysDiff = (d: Date) => {
+    private getEvenDaysDiff = (d: Date) => {
         const copiedDate = new Date(d.getTime());
 
         const now = new Date();
