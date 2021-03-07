@@ -1,10 +1,7 @@
-<button class="toggle-demo-editor" mat-icon-button
-        [matMenuTriggerFor]="menu"
-        [ngClass]="{'toolbar-hidden': !uiService.showToolbar}"
-        [class]="uiService.messengerBackground.theme">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-         class="feather feather-sliders">
+<button class="toggle-demo-editor" mat-icon-button [matMenuTriggerFor]="menu"
+    [ngClass]="{'toolbar-hidden': !uiService.showToolbar}" [class]="uiService.messengerBackground.theme">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sliders">
         <line x1="4" y1="21" x2="4" y2="14"></line>
         <line x1="4" y1="10" x2="4" y2="3"></line>
         <line x1="12" y1="21" x2="12" y2="12"></line>
@@ -13,7 +10,8 @@
         <line x1="20" y1="12" x2="20" y2="3"></line>
         <line x1="1" y1="14" x2="7" y2="14"></line>
         <line x1="9" y1="8" x2="15" y2="8"></line>
-        <line x1="17" y1="16" x2="23" y2="16"></line></svg>
+        <line x1="17" y1="16" x2="23" y2="16"></line>
+    </svg>
 </button>
 
 <mat-menu class="messenger-demo-editor" #menu="matMenu">
@@ -45,7 +43,8 @@
 
         <div mat-subheader>Font Size</div>
         <mat-list-item>
-            <mat-slider min="16" max="32" step="1" [thumbLabel]="true" [(ngModel)]="defaultFontSize" (change)="updateTextArea()"></mat-slider>
+            <mat-slider min="16" max="32" step="1" [thumbLabel]="true" [(ngModel)]="defaultFontSize"
+                (change)="updateTextArea()"></mat-slider>
         </mat-list-item>
 
         <mat-divider></mat-divider>
@@ -66,13 +65,12 @@
 
         <div class="select-background">
             <ng-container *ngFor="let background of backgroundImages">
-                <button mat-button
-                        color="accent"
-                        (click)="uiService.messengerBackground = background"
-                        [ngStyle]="{'background-image': 'url(' + '/assets/messenger/backgrounds/' + background.image + '.jpg' + ')'}"
-                        [class]="uiService.messengerBackground.theme"
-                        [class.selected]="uiService.messengerBackground === background.image">
-                    <mat-icon svgIcon="check_circle_outline" *ngIf="uiService.messengerBackground === background"></mat-icon>
+                <button mat-button color="accent" (click)="uiService.messengerBackground = background"
+                    [ngStyle]="{'background-image': 'url(' + '/assets/messenger/backgrounds/' + background.image + '.jpg' + ')'}"
+                    [class]="uiService.messengerBackground.theme"
+                    [class.selected]="uiService.messengerBackground === background.image">
+                    <mat-icon svgIcon="check_circle_outline" *ngIf="uiService.messengerBackground === background">
+                    </mat-icon>
                 </button>
             </ng-container>
         </div>
@@ -81,10 +79,10 @@
 </mat-menu>
 
 <mark6-messenger [style.--mark6-messenger-spacing-multiplier]="defaultElementSize"
-                 [style.--mark6-messenger-base-font-size.px]="defaultFontSize"
-                 [style.--mark6-messenger-avatar-size.px]="defaultAvatarSize"
-                 [ngStyle]="{'background-image': 'url(' + '/assets/messenger/backgrounds/' + uiService.messengerBackground.image + '.jpg' + ')'}"
-                 [ngClass]="{'boxed': messengerBoxed, 'toolbar-hidden': !uiService.showToolbar}">
+    [style.--mark6-messenger-base-font-size.px]="defaultFontSize"
+    [style.--mark6-messenger-avatar-size.px]="defaultAvatarSize"
+    [ngStyle]="{'background-image': uiService.messengerBackground.image ? 'url(' + '/assets/messenger/backgrounds/' + uiService.messengerBackground.image + '.jpg' + ')':null}"
+    [ngClass]="{'boxed': messengerBoxed, 'toolbar-hidden': !uiService.showToolbar}">
 
     <!--<mark6-messenger-header>Optional Header</mark6-messenger-header>-->
 
@@ -97,17 +95,20 @@
             <mark6-messenger-block-date [date]="block.date"></mark6-messenger-block-date>
 
             <mark6-messenger-message-group *ngFor="let group of block.messageGroup"
-                                           [ngClass]="group.user_id === currentUserId ? 'mark6-message-come-from-me' : 'mark6-message-come-from-others'"
-                                           [direction]="group.user_id === currentUserId ? 'right' : 'left'">
+                [ngClass]="group.user_id === currentUserId ? 'mark6-message-come-from-me' : 'mark6-message-come-from-others'"
+                [direction]="group.user_id === currentUserId ? 'right' : 'left'">
 
-                <mark6-messenger-avatar *ngIf="(group.user_id === currentUserId && avatarMe) || (group.user_id !== currentUserId && avatarOthers)">
-                    <mark6-image [round]="true" [preview]="group.user_avatar.preview" [src]="group.user_avatar.src"></mark6-image>
+                <mark6-messenger-avatar
+                    *ngIf="(group.user_id === currentUserId && avatarMe) || (group.user_id !== currentUserId && avatarOthers)">
+                    <mark6-image [round]="true" [preview]="group.user_avatar.preview" [src]="group.user_avatar.src">
+                    </mark6-image>
                     <!-- TODO Sven - Allow using regular <img> tags.
                     <img src="" alt="">
                     -->
                 </mark6-messenger-avatar>
 
-                <mark6-messenger-message *ngFor="let message of group.messages" [message]="message" (click)="toggleMessageOptions()"></mark6-messenger-message>
+                <mark6-messenger-message *ngFor="let message of group.messages" [message]="message"
+                    (click)="toggleMessageOptions(message)"></mark6-messenger-message>
 
             </mark6-messenger-message-group>
 
@@ -130,26 +131,40 @@
         </mark6-messenger-actions>
         -->
 
-        <mark6-messenger-reply-preview *ngIf="replyPreview" [replyPreview]="replyPreview" [ngClass]="{visible: textareaValue.length !== 0}">
-            <button mat-icon-button (click)="replyPreview = null"><mat-icon svgIcon="close"></mat-icon></button>
+        <mark6-messenger-reply-preview *ngIf="replyPreview" [replyPreview]="replyPreview"
+            [ngClass]="{visible: textareaValue.length !== 0}">
+            <button mat-icon-button (click)="replyPreview = null">
+                <mat-icon svgIcon="close"></mat-icon>
+            </button>
         </mark6-messenger-reply-preview>
 
         <!-- TODO - ADD THIS NG STYLE FOR BORDER RADIUS IF <mark6-messenger-reply-preview> IS VISIBLE-->
-        <mark6-messenger-textarea [style.borderTopLeftRadius]="replyPreview ? '0' : null" [style.borderTopRightRadius]="replyPreview ? '0' : null">
+        <mark6-messenger-textarea [style.borderTopLeftRadius]="replyPreview ? '0' : null"
+            [style.borderTopRightRadius]="replyPreview ? '0' : null">
             <mark6-messenger-actions [position]="'left'">
-                <button mat-icon-button><mat-icon svgIcon="emoji_emotions"></mat-icon></button>
+                <button mat-icon-button>
+                    <mat-icon svgIcon="emoji_emotions"></mat-icon>
+                </button>
             </mark6-messenger-actions>
 
-            <textarea [(ngModel)]="textareaValue" placeholder="Message" [maxHeight]="300" Mark6MessengerAutoSize></textarea>
+            <textarea [(ngModel)]="textareaValue" placeholder="Message" [maxHeight]="300"
+                Mark6MessengerAutoSize></textarea>
 
             <mark6-messenger-actions [position]="'right'">
-                <button mat-icon-button><mat-icon svgIcon="attach_file"></mat-icon></button>
-                <button mat-icon-button [ngClass]="{visible: textareaValue.length === 0}"><mat-icon svgIcon="camera_alt"></mat-icon></button>
+                <button mat-icon-button>
+                    <mat-icon svgIcon="attach_file"></mat-icon>
+                </button>
+                <button mat-icon-button [ngClass]="{visible: textareaValue.length === 0}">
+                    <mat-icon svgIcon="camera_alt"></mat-icon>
+                </button>
             </mark6-messenger-actions>
         </mark6-messenger-textarea>
 
-        <mark6-messenger-actions [position]="'right'" [ngClass]="{visible: textareaValue.length !== 0}" [class]="uiService.messengerBackground.theme">
-            <button mat-icon-button><mat-icon svgIcon="send"></mat-icon></button>
+        <mark6-messenger-actions [position]="'right'" [ngClass]="{visible: textareaValue.length !== 0}"
+            [class]="uiService.messengerBackground.theme">
+            <button mat-icon-button>
+                <mat-icon svgIcon="send"></mat-icon>
+            </button>
         </mark6-messenger-actions>
 
     </mark6-messenger-footer>

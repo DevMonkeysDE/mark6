@@ -1,11 +1,13 @@
-import {Component, ViewChild} from '@angular/core';
-import {MessengerDummyDataService} from './messenger-dummy-data.service';
-import {MatListOption} from '@angular/material/list';
-import {DomSanitizer} from '@angular/platform-browser';
-import {MatIconRegistry} from '@angular/material/icon';
-import {Mark6MessengerAutoSizeDirective} from '../../../../projects/mark6-lib/messenger/src/messenger-textarea-auto-size.directive';
-import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
-import {UiService} from '../../services/ui.service';
+import { Component, Inject, Input, ViewChild } from '@angular/core';
+import { MessengerDummyDataService } from './messenger-dummy-data.service';
+import { MatListOption } from '@angular/material/list';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
+import { Mark6MessengerAutoSizeDirective } from '../../../../projects/mark6-lib/messenger/src/messenger-textarea-auto-size.directive';
+import { MatBottomSheet, MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
+import { UiService } from '../../services/ui.service';
+import { MessengerMessageInterface, MessengerReplyPreviewInterface } from 'projects/mark6-lib/messenger/src/messenger.interface';
+import { take } from 'rxjs/operators';
 
 @Component({
     selector: 'app-site-messenger',
@@ -17,7 +19,7 @@ export class SiteMessengerComponent {
     public currentUserId = 1;
     public messageBlock = [];
     public textareaValue = '';
-    public replyPreview = {
+    public replyPreview: MessengerReplyPreviewInterface = {
         user_name: 'ShyGuy',
         text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
         color: '#4151d0'
@@ -69,8 +71,18 @@ export class SiteMessengerComponent {
         }, 50);
     }
 
-    toggleMessageOptions() {
-        this.bottomSheet.open(MessengerMessageOptionsComponent);
+    toggleMessageOptions(msg: MessengerMessageInterface) {
+        this.bottomSheet.open(MessengerMessageOptionsComponent, { data: msg }).afterDismissed()
+            .pipe(take(1))
+            .subscribe((result: MessengerMessageInterface) => {
+                if (result) {
+                    this.replyPreview = {
+                        text: result.text,
+                        user_name: result.user_name
+                    };
+                }
+            })
+
     }
 
     toggleToolbar(option: MatListOption) {
@@ -97,12 +109,15 @@ export class SiteMessengerComponent {
     templateUrl: 'messenger-message-options.html',
 })
 export class MessengerMessageOptionsComponent {
+    constructor(
+        @Inject(MAT_BOTTOM_SHEET_DATA) public data: MessengerMessageInterface,
+        private bottomSheetRef: MatBottomSheetRef<MessengerMessageOptionsComponent>,
+    ) {
 
-    constructor(private bottomSheetRef: MatBottomSheetRef<MessengerMessageOptionsComponent>) {
     }
 
     openLink(event: MouseEvent): void {
-        this.bottomSheetRef.dismiss();
+        this.bottomSheetRef.dismiss(this.data);
         event.preventDefault();
     }
 
