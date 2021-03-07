@@ -9,7 +9,7 @@
     justify-content: center;
 
     border-radius: calc(24px * var(--mark6-messenger-spacing-multiplier));
-    background-color: var(--mark6-messenger-message-footer-background);
+    background-color: var(--mark6-messenger-footer-background);
 
     // TODO SVEN ADD ION-TEXTAREA SUPPORT
     textarea {
@@ -22,6 +22,7 @@
         // display: block;
         border: none;
         resize: none;
+        color: var(--mark6-messenger-footer-contrast);
         font-size: 1em;
         font-family: inherit;
         background-color: transparent;
@@ -33,7 +34,7 @@
         &-position-left {
             order: 1;
             margin: calc(-8px * var(--mark6-messenger-spacing-multiplier))
-                    calc(8px * var(--mark6-messenger-spacing-multiplier))
+                    calc(0px * var(--mark6-messenger-spacing-multiplier))
                     calc(-8px * var(--mark6-messenger-spacing-multiplier))
                     calc(-16px * var(--mark6-messenger-spacing-multiplier));
         }
@@ -43,7 +44,7 @@
             margin: calc(-8px * var(--mark6-messenger-spacing-multiplier))
                     calc(-16px * var(--mark6-messenger-spacing-multiplier))
                     calc(-8px * var(--mark6-messenger-spacing-multiplier))
-                    calc(8px * var(--mark6-messenger-spacing-multiplier));
+                    calc(0px * var(--mark6-messenger-spacing-multiplier));
         }
 
         > * {
