@@ -121,7 +121,7 @@
             transition-property: margin-right;
 
             &.visible {
-                margin-right: calc((40px + 8px) * var(--mark6-messenger-spacing-multiplier));
+                margin-right: calc((48px + 8px) * var(--mark6-messenger-spacing-multiplier));
             }
         }
 
@@ -144,8 +144,8 @@
                     transition-property: width, min-width, margin-left;
 
                     &.visible {
-                        width: calc(40px * var(--mark6-messenger-spacing-multiplier));
-                        min-width: calc(40px * var(--mark6-messenger-spacing-multiplier));
+                        width: calc(48px * var(--mark6-messenger-spacing-multiplier));
+                        min-width: calc(48px * var(--mark6-messenger-spacing-multiplier));
                         margin-left: calc(8px * var(--mark6-messenger-spacing-multiplier));
                     }
                 }
@@ -164,8 +164,8 @@
                                 transition-property: width, min-width, margin-left;
 
                                 &.visible {
-                                    width: calc(40px * var(--mark6-messenger-spacing-multiplier));
-                                    min-width: calc(40px * var(--mark6-messenger-spacing-multiplier));
+                                    width: calc(48px * var(--mark6-messenger-spacing-multiplier));
+                                    min-width: calc(48px * var(--mark6-messenger-spacing-multiplier));
                                 }
                             }
                         }
