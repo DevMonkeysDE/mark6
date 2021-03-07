@@ -1,5 +1,5 @@
 .mark6-messenger-textarea {
-    min-height: calc(48px * var(--mark6-messenger-spacing-multiplier));
+    min-height: calc(var(--mark6-messenger-footer-size) * var(--mark6-messenger-spacing-multiplier));
     padding: calc(8px * var(--mark6-messenger-spacing-multiplier)) calc(16px * var(--mark6-messenger-spacing-multiplier));
 
     order: 2;
@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: center;
 
-    border-radius: calc(24px * var(--mark6-messenger-spacing-multiplier));
+    border-radius: calc(var(--mark6-messenger-footer-size) / 2 * var(--mark6-messenger-spacing-multiplier));
     background-color: var(--mark6-messenger-footer-background);
 
     // TODO SVEN ADD ION-TEXTAREA SUPPORT

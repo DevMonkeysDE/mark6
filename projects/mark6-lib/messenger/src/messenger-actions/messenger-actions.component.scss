@@ -13,8 +13,12 @@
     }
 
     button {
-        width: calc(48px * var(--mark6-messenger-spacing-multiplier));
-        height: calc(48px * var(--mark6-messenger-spacing-multiplier));
+        // Style Support for Angular Material Icon Only Button
+        &.mat-icon-button {
+            width: calc(var(--mark6-messenger-footer-size) * var(--mark6-messenger-spacing-multiplier));
+            height: calc(var(--mark6-messenger-footer-size) * var(--mark6-messenger-spacing-multiplier));
+            line-height: var(--mark6-messenger-footer-size);
+        }
     }
 
 }
