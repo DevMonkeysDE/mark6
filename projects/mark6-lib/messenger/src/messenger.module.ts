@@ -17,29 +17,9 @@ import {Mark6MessengerFooterComponent} from './messenger-footer/messenger-footer
 import {Mark6MessengerAutoSizeDirective} from './messenger-textarea-auto-size.directive';
 import {Mark6MessengerTextareaComponent} from './messenger-textarea/messenger-textarea.component';
 import {Mark6MessengerActionsComponent} from './messenger-actions/messenger-actions.component';
-import {MessengerServiceConfig} from './messenger.service';
 import {DateFormatPipe} from './messenger-message/messenger-message-date-format.pipe';
 import {Mark6MessengerReplyPreviewComponent} from './messenger-reply-preview/messenger-reply-preview.component';
-
-// import { Mark6MessengerMessagesComponent } from "./messenger-messages.component";
-// import { Mark6MessengerHeaderComponent } from "./messenger-header.component";
-// import { Mark6MessengerContentComponent } from "./messenger-content.component";
-// import { Mark6MessengerFooterComponent } from "./messenger-footer.component";
-// import { Mark6MessengerEmotePickerComponent } from './messenger-emote-picker.component';
-
-// Pipes
-// import { MessengerMessageClassPipe } from "./messenger-message-class.pipe";
-// import { MessengerCalendarDatePipe } from "./messenger-message-calendar-date.pipe";
-// import { Mark6MessengerTextarea } from "./messenger-textarea.component";
-
-// Directives
-// import { Mark6MessengerAutoSizeDirective } from "./messenger-textarea-auto-size.directive";
-// import { Mark6MessengerActionsComponent } from "./messenger-actions.component";
-// import { MessengerMessageMagicPipe } from './messenger-message-magic.pipe';
-// import { Mark6MessengerEmitItemHeightDirective } from './messenger-emit-item-height.directive';
-// import { Mark6MessengerService } from './messenger.service';
-// import { Mark6MessengerMessageComponent } from './messenger-message.component';
-
+import {MessengerServiceConfig} from './messenger.interface';
 
 // Declare Components here:
 const messengerComponents = [

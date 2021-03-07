@@ -1,6 +1,5 @@
-import { Component, Host, HostBinding, Input, ViewEncapsulation } from '@angular/core';
+import { Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
 import { MessengerService } from '../messenger.service';
-import { Mark6MessengerComponent } from '../messenger/messenger.component';
 
 @Component({
     selector: 'mark6-messenger-block-date',

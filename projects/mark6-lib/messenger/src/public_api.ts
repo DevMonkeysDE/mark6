@@ -3,8 +3,8 @@
  * Copyright devMonkeys All Rights Reserved.
  */
 
-export * from './messenger.module';
 export * from './messenger.interface';
+export * from './messenger.module';
 export * from './messenger/messenger.component';
 export * from './messenger-actions/messenger-actions.component';
 export * from './messenger-avatar/messenger-avatar.component';

@@ -1,13 +1,13 @@
-import { Component, Inject, Input, ViewChild } from '@angular/core';
-import { MessengerDummyDataService } from './messenger-dummy-data.service';
-import { MatListOption } from '@angular/material/list';
-import { DomSanitizer } from '@angular/platform-browser';
-import { MatIconRegistry } from '@angular/material/icon';
-import { Mark6MessengerAutoSizeDirective } from '../../../../projects/mark6-lib/messenger/src/messenger-textarea-auto-size.directive';
-import { MatBottomSheet, MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
-import { UiService } from '../../services/ui.service';
-import { MessengerMessageInterface, MessengerReplyPreviewInterface } from 'projects/mark6-lib/messenger/src/messenger.interface';
-import { take } from 'rxjs/operators';
+import {Component, Inject, Input, ViewChild} from '@angular/core';
+import {MessengerDummyDataService} from './messenger-dummy-data.service';
+import {MatListOption} from '@angular/material/list';
+import {DomSanitizer} from '@angular/platform-browser';
+import {MatIconRegistry} from '@angular/material/icon';
+import {Mark6MessengerAutoSizeDirective} from '../../../../projects/mark6-lib/messenger/src/messenger-textarea-auto-size.directive';
+import {MatBottomSheet, MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA} from '@angular/material/bottom-sheet';
+import {UiService} from '../../services/ui.service';
+import {MessengerMessageInterface, MessengerReplyPreviewInterface} from 'projects/mark6-lib/messenger/src/messenger.interface';
+import {take} from 'rxjs/operators';
 
 @Component({
     selector: 'app-site-messenger',
@@ -17,13 +17,9 @@ import { take } from 'rxjs/operators';
 export class SiteMessengerComponent {
 
     public currentUserId = 1;
-    public messageBlock = [];
+    public messageBlock;
     public textareaValue = '';
-    public replyPreview: MessengerReplyPreviewInterface = {
-        user_name: 'ShyGuy',
-        text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
-        color: '#4151d0'
-    };
+    public reply: MessengerReplyPreviewInterface;
 
     // Demo Editor
     public messengerBoxed = false;
@@ -72,17 +68,16 @@ export class SiteMessengerComponent {
     }
 
     toggleMessageOptions(msg: MessengerMessageInterface) {
-        this.bottomSheet.open(MessengerMessageOptionsComponent, { data: msg }).afterDismissed()
+        this.bottomSheet.open(MessengerMessageOptionsComponent, {data: msg}).afterDismissed()
             .pipe(take(1))
             .subscribe((result: MessengerMessageInterface) => {
                 if (result) {
-                    this.replyPreview = {
+                    this.reply = {
                         text: result.text,
                         user_name: result.user_name
                     };
                 }
-            })
-
+            });
     }
 
     toggleToolbar(option: MatListOption) {
