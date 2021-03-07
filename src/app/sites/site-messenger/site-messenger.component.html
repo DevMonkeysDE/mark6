@@ -93,7 +93,7 @@
         <!-- use ng-container instead of <mark6-messenger-block> -->
         <ng-container *ngFor="let block of messageBlock">
 
-            {{block | json}}
+            <pre>{{block | json}}</pre>
 
             <mark6-messenger-block-date [date]="block.date"></mark6-messenger-block-date>
 

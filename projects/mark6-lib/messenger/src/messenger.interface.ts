@@ -21,8 +21,14 @@ export interface MessengerServiceMessageDateFormat {
     format?: Intl.DateTimeFormatOptions;
 }
 
+export interface MessengerMessageBlockInterface {
+    date: Date;
+    messageGroup: MessengerMessageGroupInterface;
+}
+
 export interface MessengerMessageGroupInterface {
     type: string;
+    user_id?: any;
     user_name?: string;
     user_avatar?: AvatarInterface;
     messages?: MessengerMessageInterface;

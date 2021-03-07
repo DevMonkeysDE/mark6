@@ -6,7 +6,11 @@ import {MatIconRegistry} from '@angular/material/icon';
 import {Mark6MessengerAutoSizeDirective} from '../../../../projects/mark6-lib/messenger/src/messenger-textarea-auto-size.directive';
 import {MatBottomSheet, MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA} from '@angular/material/bottom-sheet';
 import {UiService} from '../../services/ui.service';
-import {MessengerMessageInterface, MessengerReplyPreviewInterface} from 'projects/mark6-lib/messenger/src/messenger.interface';
+import {
+    MessengerMessageBlockInterface,
+    MessengerMessageInterface,
+    MessengerReplyPreviewInterface
+} from 'projects/mark6-lib/messenger/src/messenger.interface';
 import {take} from 'rxjs/operators';
 
 @Component({
@@ -17,7 +21,7 @@ import {take} from 'rxjs/operators';
 export class SiteMessengerComponent {
 
     public currentUserId = 1;
-    public messageBlock;
+    public messageBlock: MessengerMessageBlockInterface;
     public textareaValue = '';
     public reply: MessengerReplyPreviewInterface;
 
