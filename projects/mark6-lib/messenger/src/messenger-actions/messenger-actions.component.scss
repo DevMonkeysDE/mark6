@@ -21,4 +21,18 @@
         }
     }
 
+    ion-button {
+        &.button-has-icon-only {
+            width: calc(var(--mark6-messenger-footer-size) * var(--mark6-messenger-spacing-multiplier));
+            height: calc(var(--mark6-messenger-footer-size) * var(--mark6-messenger-spacing-multiplier));
+            margin: 0;
+            --padding-top: 0;
+            --padding-bottom: 0;
+            --padding-start: 0;
+            --padding-end: 0;
+            --box-shadow: none;
+            --border-radius: 50%;
+        }
+    }
+
 }
