@@ -35,6 +35,7 @@ import {Mark6EditableImageModule} from '../../projects/mark6-lib/editable-image/
 import {Mark6DropDownModule} from '../../projects/mark6-lib/drop-down/src';
 import {Mark6CropperModule} from '../../projects/mark6-lib/cropper/src';
 import {FormsModule} from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
 
 
 @NgModule({
@@ -52,6 +53,8 @@ import {FormsModule} from '@angular/forms';
         BrowserAnimationsModule,
         AppRoutingModule,
         FormsModule,
+        // Ionic
+        IonicModule.forRoot(),
         // Material 2
         MatCardModule,
         MatListModule,
