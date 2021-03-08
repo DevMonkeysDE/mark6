@@ -1,5 +1,5 @@
 import {Component, HostBinding, Input, ViewEncapsulation} from '@angular/core';
-import {MessengerReplyPreviewInterface} from '../messenger.interface';
+import {MessengerReplyInterface} from '../messenger.interface';
 
 @Component({
     selector: 'mark6-messenger-reply-preview',
@@ -7,11 +7,11 @@ import {MessengerReplyPreviewInterface} from '../messenger.interface';
     styleUrls: ['./messenger-reply-preview.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class Mark6MessengerReplyPreviewComponent {
+export class Mark6MessengerReplyComponent {
 
     private hostClass = 'mark6-messenger-reply-preview';
     @HostBinding('class') classes = this.hostClass;
 
-    @Input() public replyPreview: MessengerReplyPreviewInterface;
+    @Input() public reply: MessengerReplyInterface;
 
 }

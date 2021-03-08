@@ -44,11 +44,11 @@ export interface AvatarInterface {
 export interface MessengerMessageInterface {
     created_at?: Date;
     text: string;
-    reply?: MessengerReplyPreviewInterface;
+    reply?: MessengerReplyInterface;
     user_name: string;
 }
 
-export interface MessengerReplyPreviewInterface {
+export interface MessengerReplyInterface {
     user_name: string;
     text: string;
     color?: string;

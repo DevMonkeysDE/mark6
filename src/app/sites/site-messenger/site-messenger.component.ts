@@ -9,7 +9,7 @@ import {UiService} from '../../services/ui.service';
 import {
     MessengerMessageBlockInterface,
     MessengerMessageInterface,
-    MessengerReplyPreviewInterface
+    MessengerReplyInterface
 } from 'projects/mark6-lib/messenger/src/messenger.interface';
 import {take} from 'rxjs/operators';
 
@@ -23,7 +23,7 @@ export class SiteMessengerComponent {
     public currentUserId = 1;
     public messageBlock: MessengerMessageBlockInterface[];
     public textareaValue = '';
-    public reply: MessengerReplyPreviewInterface;
+    public reply: MessengerReplyInterface;
 
     // Demo Editor
     public messengerBoxed = false;

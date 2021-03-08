@@ -129,7 +129,7 @@
         </mark6-messenger-actions>
         -->
 
-        <mark6-messenger-reply-preview *ngIf="reply" [replyPreview]="reply" [ngClass]="{visible: textareaValue.length !== 0}">
+        <mark6-messenger-reply-preview *ngIf="reply" [reply]="reply" [ngClass]="{visible: textareaValue.length !== 0}">
             <button mat-icon-button (click)="reply = null"><mat-icon svgIcon="close"></mat-icon></button>
         </mark6-messenger-reply-preview>
 
@@ -139,7 +139,7 @@
                 <button mat-icon-button><mat-icon svgIcon="emoji_emotions"></mat-icon></button>
             </mark6-messenger-actions>
 
-            <textarea [(ngModel)]="textareaValue" placeholder="Message" [maxRows]="10" Mark6MessengerAutoSize></textarea>
+            <textarea [(ngModel)]="textareaValue" placeholder="Message" [maxRows]="6" Mark6MessengerAutoSize></textarea>
 
             <mark6-messenger-actions [position]="'right'">
                 <button mat-icon-button><mat-icon svgIcon="attach_file"></mat-icon></button>
