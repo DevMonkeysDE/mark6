@@ -110,12 +110,10 @@
 
                 <mark6-messenger-message *ngFor="let message of group.messages" [text]="message.text"
                     [userName]="message.user_name" (click)="toggleMessageOptions(message)">
-                    <ng-container *ngIf="message.reply">
 
-                        <mark6-messenger-reply-preview [text]="message.reply.text" [userName]="message.reply.user_name"
-                            [color]="message.reply.color">
-                        </mark6-messenger-reply-preview>
-                    </ng-container>
+                    <mark6-messenger-reply-preview *ngIf="message.reply" [text]="message.reply.text"
+                        [userName]="message.reply.user_name" [color]="message.reply.color">
+                    </mark6-messenger-reply-preview>
 
 
                 </mark6-messenger-message>
@@ -152,7 +150,9 @@
         <mark6-messenger-textarea [style.borderTopLeftRadius]="reply ? '0' : null"
             [style.borderTopRightRadius]="reply ? '0' : null">
             <mark6-messenger-actions [position]="'left'">
-                <button mat-icon-button><mat-icon svgIcon="emoji_emotions"></mat-icon></button>
+                <button mat-icon-button>
+                    <mat-icon svgIcon="emoji_emotions"></mat-icon>
+                </button>
                 <ion-button>
                     <ion-icon slot="icon-only" src="/assets/icons/material/emoji_emotions.svg"></ion-icon>
                 </ion-button>

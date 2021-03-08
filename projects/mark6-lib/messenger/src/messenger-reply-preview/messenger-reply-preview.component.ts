@@ -1,5 +1,4 @@
 import {Component, HostBinding, Input, ViewEncapsulation} from '@angular/core';
-import {MessengerReplyInterface} from '../messenger.interface';
 
 @Component({
     selector: 'mark6-messenger-reply-preview',

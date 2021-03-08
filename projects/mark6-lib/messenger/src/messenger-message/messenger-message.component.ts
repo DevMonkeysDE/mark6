@@ -1,5 +1,4 @@
 import { Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
-import { MessengerReplyPreviewInterface } from '../messenger.interface';
 
 @Component({
     selector: 'mark6-messenger-message',
@@ -15,5 +14,4 @@ export class Mark6MessengerMessageComponent {
     @Input() public text: String;
     @Input() public createdAt: Date;
     @Input() public userName: String;
-    @Input() public reply: MessengerReplyPreviewInterface;
 }
