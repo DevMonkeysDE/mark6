@@ -1,5 +1,4 @@
-import {Component, HostBinding, Input, ViewEncapsulation} from '@angular/core';
-import {MessengerMessageInterface} from '../messenger.interface';
+import {Component, HostBinding,  ViewEncapsulation} from '@angular/core';
 
 @Component({
     selector: 'mark6-messenger-avatar',

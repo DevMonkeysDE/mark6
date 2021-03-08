@@ -1,11 +1,10 @@
-<ng-container *ngIf="message">
-    <div class="mark6-messenger-message-header" *ngIf="message.user_name">
-        <span class="mark6-messenger-message-header-user-name">{{message.user_name}}</span>
-        <span>&nbsp;</span>
-        <span class="mark6-messenger-message-header-created-at">{{message.created_at | dateFormat}}</span>
-    </div>
-    <mark6-messenger-reply-preview *ngIf="message.reply" [reply]="message.reply"></mark6-messenger-reply-preview>
-    <span>{{message.text}}</span>
-</ng-container>
+<div class="mark6-messenger-message-header" *ngIf="userName">
+    <span class="mark6-messenger-message-header-user-name">{{userName}}</span>
+    <span>&nbsp;</span>
+    <span class="mark6-messenger-message-header-created-at" *ngIf="createdAt">{{createdAt | dateFormat}}</span>
+</div>
+<ng-content select="mark6-messenger-reply-preview"></ng-content>
 
-<ng-content></ng-content>
+<!-- <mark6-messenger-reply-preview *ngIf="reply" [text]="reply.text" [userName]="reply.user_name" [color]="reply.color">
+    </mark6-messenger-reply-preview> -->
+<span *ngIf="text">{{text}}</span>

@@ -1,5 +1,4 @@
 import {Component, HostBinding, Input, ViewEncapsulation} from '@angular/core';
-import {MessengerReplyInterface} from '../messenger.interface';
 
 @Component({
     selector: 'mark6-messenger-reply-preview',
@@ -12,6 +11,9 @@ export class Mark6MessengerReplyComponent {
     private hostClass = 'mark6-messenger-reply-preview';
     @HostBinding('class') classes = this.hostClass;
 
-    @Input() public reply: MessengerReplyInterface;
+    @Input() public text: String;
+    @Input() public userName: String;
+    @Input() public color: String;
+
 
 }

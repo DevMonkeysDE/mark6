@@ -1,5 +1,4 @@
-import {Component, HostBinding, Input, ViewEncapsulation} from '@angular/core';
-import {MessengerMessageInterface} from '../messenger.interface';
+import { Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
     selector: 'mark6-messenger-message',
@@ -12,7 +11,7 @@ export class Mark6MessengerMessageComponent {
     private hostClass = 'mark6-messenger-message';
     @HostBinding('class') classes = this.hostClass;
 
-    @Input() public message: MessengerMessageInterface;
-    @Input() public timeStampFormat;
-
+    @Input() public text: String;
+    @Input() public createdAt: Date;
+    @Input() public userName: String;
 }

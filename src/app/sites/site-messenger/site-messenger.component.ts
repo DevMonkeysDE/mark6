@@ -6,12 +6,8 @@ import {MatIconRegistry} from '@angular/material/icon';
 import {Mark6MessengerAutoSizeDirective} from '../../../../projects/mark6-lib/messenger/src/messenger-textarea-auto-size.directive';
 import {MatBottomSheet, MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA} from '@angular/material/bottom-sheet';
 import {UiService} from '../../services/ui.service';
-import {
-    MessengerMessageBlockInterface,
-    MessengerMessageInterface,
-    MessengerReplyInterface
-} from 'projects/mark6-lib/messenger/src/messenger.interface';
 import {take} from 'rxjs/operators';
+import { MessengerMessageBlockInterface, MessengerMessageInterface, MessengerReplyInterface } from 'src/app/interfaces';
 
 @Component({
     selector: 'app-site-messenger',
