@@ -21,7 +21,7 @@ import {take} from 'rxjs/operators';
 export class SiteMessengerComponent {
 
     public currentUserId = 1;
-    public messageBlock: MessengerMessageBlockInterface;
+    public messageBlock: MessengerMessageBlockInterface[];
     public textareaValue = '';
     public reply: MessengerReplyPreviewInterface;
 

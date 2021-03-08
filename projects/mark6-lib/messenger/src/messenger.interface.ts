@@ -23,7 +23,7 @@ export interface MessengerServiceMessageDateFormat {
 
 export interface MessengerMessageBlockInterface {
     date: Date;
-    messageGroup: MessengerMessageGroupInterface;
+    messageGroup: MessengerMessageGroupInterface[];
 }
 
 export interface MessengerMessageGroupInterface {
