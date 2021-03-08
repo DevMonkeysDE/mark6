@@ -17,10 +17,17 @@
         &.mat-icon-button {
             width: calc(var(--mark6-messenger-footer-size) * var(--mark6-messenger-spacing-multiplier));
             height: calc(var(--mark6-messenger-footer-size) * var(--mark6-messenger-spacing-multiplier));
+            color: var(--mark6-messenger-footer-contrast);
             line-height: var(--mark6-messenger-footer-size);
+            background-color: transparent;
+            mat-icon {
+                margin: auto;
+                display: block;
+            }
         }
     }
 
+    // Style Support for Ionic Material Style Button
     ion-button {
         &.button-has-icon-only {
             width: calc(var(--mark6-messenger-footer-size) * var(--mark6-messenger-spacing-multiplier));
@@ -30,8 +37,15 @@
             --padding-bottom: 0;
             --padding-start: 0;
             --padding-end: 0;
+            --color: var(--mark6-messenger-footer-contrast);
+            font-size: 16px;
+            --background: transparent;
             --box-shadow: none;
             --border-radius: 50%;
+        }
+
+        ion-icon {
+            font-size: 1.500em;
         }
     }
 
