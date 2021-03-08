@@ -93,25 +93,20 @@
         <!-- use ng-container instead of <mark6-messenger-block> -->
         <ng-container *ngFor="let block of messageBlock">
 
-            <pre>{{block | json}}</pre>
-
             <mark6-messenger-block-date [date]="block.date"></mark6-messenger-block-date>
 
             <mark6-messenger-message-group *ngFor="let group of block.messageGroup"
-                [ngClass]="group.user_id === currentUserId ? 'mark6-message-come-from-me' : 'mark6-message-come-from-others'"
-                [direction]="group.user_id === currentUserId ? 'right' : 'left'">
+                                           [ngClass]="group.user_id === currentUserId ? 'mark6-message-come-from-me' : 'mark6-message-come-from-others'"
+                                           [direction]="group.user_id === currentUserId ? 'right' : 'left'">
 
-                <mark6-messenger-avatar
-                    *ngIf="(group.user_id === currentUserId && avatarMe) || (group.user_id !== currentUserId && avatarOthers)">
-                    <mark6-image [round]="true" [preview]="group.user_avatar.preview" [src]="group.user_avatar.src">
-                    </mark6-image>
+                <mark6-messenger-avatar *ngIf="(group.user_id === currentUserId && avatarMe) || (group.user_id !== currentUserId && avatarOthers)">
+                    <mark6-image [round]="true" [preview]="group.user_avatar.preview" [src]="group.user_avatar.src"></mark6-image>
                     <!-- TODO Sven - Allow using regular <img> tags.
                     <img src="" alt="">
                     -->
                 </mark6-messenger-avatar>
 
-                <mark6-messenger-message *ngFor="let message of group.messages" [message]="message"
-                    (click)="toggleMessageOptions(message)"></mark6-messenger-message>
+                <mark6-messenger-message *ngFor="let message of group.messages" [message]="message" (click)="toggleMessageOptions(message)"></mark6-messenger-message>
 
             </mark6-messenger-message-group>
 

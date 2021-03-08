@@ -31,7 +31,7 @@ export interface MessengerMessageGroupInterface {
     user_id?: any;
     user_name?: string;
     user_avatar?: AvatarInterface;
-    messages?: MessengerMessageInterface;
+    messages?: MessengerMessageInterface[];
 }
 
 export interface AvatarInterface {
