@@ -60,11 +60,11 @@ const messengerDirectives = [
 })
 export class Mark6MessengerModule {
 
-    constructor(@Optional() @SkipSelf() parentModule?: Mark6MessengerModule) {
-        if (parentModule) {
-            throw new Error('GreetingModule is already loaded. Import it in the AppModule only');
-        }
-    }
+    // constructor(@Optional() @SkipSelf() parentModule?: Mark6MessengerModule) {
+    //     if (parentModule) {
+    //         throw new Error('GreetingModule is already loaded. Import it in the AppModule only');
+    //     }
+    // }
 
     static forRoot(config: MessengerServiceConfig): ModuleWithProviders<Mark6MessengerModule> {
         return {
