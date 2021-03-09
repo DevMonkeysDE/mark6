@@ -32,16 +32,30 @@
 }
 
 .mark6-messenger {
-    // Messenger Message Me
-    --mark6-messenger-message-me-background: #4151d0;
-    --mark6-messenger-message-me-contrast: #fff;
+    &.light {
+        // Messenger Message Me
+        --mark6-messenger-message-me-background: #4151d0;
+        --mark6-messenger-message-me-contrast: #fff;
 
-    // Messenger Message Others
-    --mark6-messenger-message-others-background: #F5F5F5;
-    --mark6-messenger-message-others-contrast: #212121;
+        // Messenger Message Others
+        --mark6-messenger-message-others-background: #F5F5F5;
+        --mark6-messenger-message-others-contrast: #212121;
+    }
 
-    mark6-messenger-messages {
-        // height: 100%; TODO CHECK IF THIS IS STILL NEEDED
+    &.dark {
+        background-color: #0d1418;
+
+        // Messenger Message Me
+        --mark6-messenger-message-me-background: #bf360c;
+        --mark6-messenger-message-me-contrast: #fff;
+
+        // Messenger Message Others
+        --mark6-messenger-message-others-background: #262d31;
+        --mark6-messenger-message-others-contrast: #e7e7e8;
+
+        // Messenger Footer
+        --mark6-messenger-footer-background: #2d383e;
+        --mark6-messenger-footer-contrast: #777f82;
     }
 
     height: calc(100% - (56px * 1));
@@ -109,10 +123,6 @@
     }
 
     mark6-messenger-footer {
-
-        button {
-            // color: #212121;
-        }
 
         mark6-messenger-reply-preview {
             margin-right: 0;

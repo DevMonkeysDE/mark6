@@ -7,7 +7,7 @@ import {Mark6MessengerAutoSizeDirective} from '../../../../projects/mark6-lib/me
 import {MatBottomSheet, MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA} from '@angular/material/bottom-sheet';
 import {UiService} from '../../services/ui.service';
 import {take} from 'rxjs/operators';
-import { MessengerMessageBlockInterface, MessengerMessageInterface, MessengerReplyInterface } from 'src/app/interfaces';
+import {MessengerMessageBlockInterface, MessengerMessageInterface, MessengerReplyInterface} from 'src/app/interfaces';
 
 @Component({
     selector: 'app-site-messenger',
@@ -29,13 +29,13 @@ export class SiteMessengerComponent {
     public defaultElementSize = 1;
     public defaultFontSize = 16;
     public defaultAvatarSize = 36;
-    public backgroundImages = [
+    public theme = [
         {
-            theme: 'light',
+            scheme: 'light',
             image: 'light-watercolor'
         },
         {
-            theme: 'dark',
+            scheme: 'dark',
             image: 'dark-space'
         }
     ];

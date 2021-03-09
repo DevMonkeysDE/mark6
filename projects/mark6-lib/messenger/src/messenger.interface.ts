@@ -20,4 +20,3 @@ export interface MessengerServiceBlockDateFormat {
 export interface MessengerServiceMessageDateFormat {
     format?: Intl.DateTimeFormatOptions;
 }
-

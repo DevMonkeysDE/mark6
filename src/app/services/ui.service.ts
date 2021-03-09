@@ -6,8 +6,8 @@ import {Injectable} from '@angular/core';
 export class UiService {
 
     public showToolbar = true;
-    public messengerBackground = {
-        theme: 'light',
+    public theme = {
+        scheme: 'light',
         image: null
     };
 
