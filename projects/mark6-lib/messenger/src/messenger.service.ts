@@ -24,8 +24,8 @@ export class MessengerService {
         const dateFormats = config.dateFormats;
 
         this.dateFormats = {
-            message: {...defaultDateFormats.message, ...dateFormats.message},
-            block: {...defaultDateFormats.block, ...dateFormats.block},
+            message: {...defaultDateFormats.message, ...dateFormats?.message},
+            block: {...defaultDateFormats.block, ...dateFormats?.block},
             locale: dateFormats.locale || defaultDateFormats.locale
         };
 
