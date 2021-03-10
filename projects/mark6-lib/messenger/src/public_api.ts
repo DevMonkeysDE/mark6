@@ -18,4 +18,4 @@ export * from './messenger-message-group/messenger-message-group.component';
 export * from './messenger-reply-preview/messenger-reply-preview.component';
 export * from './messenger-textarea/messenger-textarea.component';
 
-// export * from './messenger-textarea-auto-size.directive';
+export * from './messenger-textarea-auto-size.directive';
