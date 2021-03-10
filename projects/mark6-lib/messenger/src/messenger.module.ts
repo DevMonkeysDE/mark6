@@ -66,7 +66,7 @@ export class Mark6MessengerModule {
     //     }
     // }
 
-    static forRoot(config: MessengerServiceConfig): ModuleWithProviders<Mark6MessengerModule> {
+    static forRoot(config?: MessengerServiceConfig): ModuleWithProviders<Mark6MessengerModule> {
         return {
             ngModule: Mark6MessengerModule,
             providers: [
