@@ -1,4 +1,4 @@
-.mark6-messenger-reply-preview {
+.mark6-messenger-reply {
     display: block;
 
     // border-top-left-radius: calc(10px * var(--mark6-messenger-spacing-multiplier));
@@ -28,7 +28,7 @@
 
         span {
             margin: 0;
-            font-weight: 600;
+            // font-weight: 600;
         }
 
         button {

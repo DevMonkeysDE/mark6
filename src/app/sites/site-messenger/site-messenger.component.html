@@ -112,11 +112,11 @@
                                          [userName]="message.user_name"
                                          (click)="toggleMessageOptions(message)">
 
-                    <mark6-messenger-reply-preview *ngIf="message.reply"
-                                                   [text]="message.reply.text"
-                                                   [userName]="message.reply.user_name"
-                                                   [color]="message.reply.color">
-                    </mark6-messenger-reply-preview>
+                    <mark6-messenger-reply *ngIf="message.reply"
+                                           [text]="message.reply.text"
+                                           [userName]="message.reply.user_name"
+                                           [color]="message.reply.color">
+                    </mark6-messenger-reply>
 
 
                 </mark6-messenger-message>
@@ -142,13 +142,13 @@
         </mark6-messenger-actions>
         -->
 
-        <mark6-messenger-reply-preview *ngIf="reply" [text]="reply.text" [userName]="reply.user_name" [color]="reply.color" [ngClass]="{visible: textareaValue.length !== 0}">
+        <mark6-messenger-reply *ngIf="reply" [text]="reply.text" [userName]="reply.user_name" [color]="reply.color" [ngClass]="{visible: textareaValue.length !== 0}">
             <button mat-icon-button (click)="reply = null">
                 <mat-icon svgIcon="close"></mat-icon>
             </button>
-        </mark6-messenger-reply-preview>
+        </mark6-messenger-reply>
 
-        <!-- TODO - ADD THIS NG STYLE FOR BORDER RADIUS IF <mark6-messenger-reply-preview> IS VISIBLE-->
+        <!-- TODO - ADD THIS NG STYLE FOR BORDER RADIUS IF <mark6-messenger-reply> IS VISIBLE-->
         <mark6-messenger-textarea [style.borderTopLeftRadius]="reply ? '0' : null" [style.borderTopRightRadius]="reply ? '0' : null">
             <mark6-messenger-actions [position]="'left'">
                 <button mat-icon-button>

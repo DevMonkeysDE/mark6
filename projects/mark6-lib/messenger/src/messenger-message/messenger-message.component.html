@@ -3,8 +3,8 @@
     <span>&nbsp;</span>
     <span class="mark6-messenger-message-header-created-at" *ngIf="createdAt">{{createdAt | dateFormat}}</span>
 </div>
-<ng-content select="mark6-messenger-reply-preview"></ng-content>
 
-<!-- <mark6-messenger-reply-preview *ngIf="reply" [text]="reply.text" [userName]="reply.user_name" [color]="reply.color">
-    </mark6-messenger-reply-preview> -->
-<span *ngIf="text">{{text}}</span>
+<ng-content select="mark6-messenger-reply"></ng-content>
+<ng-content></ng-content>
+
+<span class="mark6-messenger-message-content" *ngIf="text">{{text}}</span>

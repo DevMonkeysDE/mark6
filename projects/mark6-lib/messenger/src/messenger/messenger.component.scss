@@ -21,4 +21,7 @@
     --mark6-messenger-footer-size: 48px; // Cant be smaller then height of textarea + <mark6-messenger-textarea> padding
     --mark6-messenger-footer-background: #f5f5f5;
     --mark6-messenger-footer-contrast: #212121;
+
+    // Ionic ion-content Support
+    --ion-background-color: transparent;
 }

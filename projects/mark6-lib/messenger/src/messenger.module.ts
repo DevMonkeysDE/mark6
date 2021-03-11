@@ -18,7 +18,7 @@ import {Mark6MessengerAutoSizeDirective} from './messenger-textarea-auto-size.di
 import {Mark6MessengerTextareaComponent} from './messenger-textarea/messenger-textarea.component';
 import {Mark6MessengerActionsComponent} from './messenger-actions/messenger-actions.component';
 import {DateFormatPipe} from './messenger-message/messenger-message-date-format.pipe';
-import {Mark6MessengerReplyComponent} from './messenger-reply-preview/messenger-reply-preview.component';
+import {Mark6MessengerReplyComponent} from './messenger-reply/messenger-reply.component';
 import {MessengerServiceConfig} from './messenger.interface';
 
 // Declare Components here:

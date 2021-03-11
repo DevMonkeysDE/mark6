@@ -87,6 +87,13 @@
     }
 
     mark6-messenger-message-group {
+
+        mark6-messenger-message {
+            ::ng-deep .mark6-messenger-message-header {
+                font-weight: 700;
+            }
+        }
+
         &.mark6-message-direction-left {
             mark6-messenger-message {
                 color: var(--mark6-messenger-message-others-contrast);
@@ -199,4 +206,11 @@
         }
 
     }
+
+    mark6-messenger-reply {
+        ::ng-deep .mark6-messenger-reply-header {
+            font-weight: 700;
+        }
+    }
+
 }

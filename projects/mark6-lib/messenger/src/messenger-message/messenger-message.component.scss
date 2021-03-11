@@ -9,7 +9,8 @@
     &-header {
 
         &-user-name {
-            font-weight: 600;
+            // font-weight: 600;
+            word-break: break-word;
         }
 
         &-created-at {
@@ -18,8 +19,12 @@
         }
     }
 
-    mark6-messenger-reply-preview {
+    mark6-messenger-reply {
         margin: calc(4px * var(--mark6-messenger-spacing-multiplier)) 0;
+    }
+
+    .mark6-messenger-message-content {
+        word-break: break-word;
     }
 
 }
