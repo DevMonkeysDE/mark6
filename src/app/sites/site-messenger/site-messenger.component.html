@@ -110,6 +110,7 @@
                 <mark6-messenger-message *ngFor="let message of group.messages"
                                          [text]="message.text"
                                          [userName]="message.user_name"
+                                         [createdAt]="message.created_at"
                                          (click)="toggleMessageOptions(message)">
 
                     <mark6-messenger-reply *ngIf="message.reply"
