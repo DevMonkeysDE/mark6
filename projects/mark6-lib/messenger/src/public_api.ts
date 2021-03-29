@@ -15,6 +15,10 @@ export * from './messenger-footer/messenger-footer.component';
 export * from './messenger-header/messenger-header.component';
 export * from './messenger-message/messenger-message.component';
 export * from './messenger-message-group/messenger-message-group.component';
+export * from './messenger-message-header/messenger-message-header.component';
+export * from './messenger-message-header-date/messenger-message-header-date.component';
+export * from './messenger-message-header-name/messenger-message-header-name.component';
+export * from './messenger-message-text/messenger-message-text.component';
 export * from './messenger-reply/messenger-reply.component';
 export * from './messenger-textarea/messenger-textarea.component';
 

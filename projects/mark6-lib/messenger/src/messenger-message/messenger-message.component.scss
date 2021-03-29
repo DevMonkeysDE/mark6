@@ -6,25 +6,8 @@
     color: var(--mark6-messenger-message-contrast);
     background-color: var(--mark6-messenger-message-background);
 
-    &-header {
-
-        &-user-name {
-            // font-weight: 600;
-            word-break: break-word;
-        }
-
-        &-created-at {
-            opacity: .6;
-            font-size: 0.625em;
-        }
-    }
-
     mark6-messenger-reply {
         margin: calc(4px * var(--mark6-messenger-spacing-multiplier)) 0;
-    }
-
-    .mark6-messenger-message-content {
-        word-break: break-word;
     }
 
 }

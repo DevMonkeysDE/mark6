@@ -1,0 +1,40 @@
+@import "~@devmonkeys/scss-elements/loader";
+
+:host {
+    height: 100%;
+    display: block;
+    background-color: #151515;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+
+    li {
+        margin: 48px 16px;
+        list-style: none;
+    }
+}
+
+mark6-phone-call {
+    margin: auto;
+    border-radius: 4px;
+    box-shadow: 0 0 0 2px #ff9800;
+
+    &.dpi-x1 {
+        width: 360px;
+        height: 780px;
+    }
+
+    &.dpi-x2 {
+        width: 720px;
+        height: 1560px;
+    }
+
+    &.dpi-x3 {
+        width: 1080px;
+        height: 2340px;
+    }
+}

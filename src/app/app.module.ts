@@ -36,6 +36,8 @@ import {Mark6DropDownModule} from '../../projects/mark6-lib/drop-down/src';
 import {Mark6CropperModule} from '../../projects/mark6-lib/cropper/src';
 import {FormsModule} from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import {Mark6PhoneCallModule} from '../../projects/mark6-lib/phone-call/src';
+import {SitePhoneCallComponent} from './sites/site-phone-call/site-phone-call.component';
 
 
 @NgModule({
@@ -45,6 +47,7 @@ import { IonicModule } from '@ionic/angular';
         SiteUserProfileComponent,
         SiteMessengerComponent,
         SiteImageComponent,
+        SitePhoneCallComponent,
         MessengerMessageOptionsComponent
     ],
     imports: [
@@ -75,6 +78,7 @@ import { IonicModule } from '@ionic/angular';
         Mark6EditableImageModule,
         Mark6DropDownModule,
         Mark6MessengerModule.forRoot({dateFormats: {block: {days: ['Heute', 'Gestern']}}}),
+        Mark6PhoneCallModule,
         Mark6CropperModule,
         // HammerJS
         HammerModule

@@ -107,11 +107,13 @@
                     -->
                 </mark6-messenger-avatar>
 
-                <mark6-messenger-message *ngFor="let message of group.messages"
-                                         [text]="message.text"
-                                         [userName]="message.user_name"
-                                         [createdAt]="message.created_at"
-                                         (click)="toggleMessageOptions(message)">
+                <mark6-messenger-message *ngFor="let message of group.messages" (click)="toggleMessageOptions(message)">
+
+                    <mark6-messenger-message-header>
+                        <mark6-messenger-message-header-name>{{message.user_name}}</mark6-messenger-message-header-name>
+                        <span>&nbsp;</span>
+                        <mark6-messenger-message-header-date>{{message.created_at | date:'HH:mm'}}</mark6-messenger-message-header-date>
+                    </mark6-messenger-message-header>
 
                     <mark6-messenger-reply *ngIf="message.reply"
                                            [text]="message.reply.text"
@@ -119,6 +121,7 @@
                                            [color]="message.reply.color">
                     </mark6-messenger-reply>
 
+                    <mark6-messenger-message-text>{{message.text}}</mark6-messenger-message-text>
 
                 </mark6-messenger-message>
 

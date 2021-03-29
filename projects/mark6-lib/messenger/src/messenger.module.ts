@@ -17,9 +17,12 @@ import {Mark6MessengerFooterComponent} from './messenger-footer/messenger-footer
 import {Mark6MessengerAutoSizeDirective} from './messenger-textarea-auto-size.directive';
 import {Mark6MessengerTextareaComponent} from './messenger-textarea/messenger-textarea.component';
 import {Mark6MessengerActionsComponent} from './messenger-actions/messenger-actions.component';
-import {DateFormatPipe} from './messenger-message/messenger-message-date-format.pipe';
 import {Mark6MessengerReplyComponent} from './messenger-reply/messenger-reply.component';
 import {MessengerServiceConfig} from './messenger.interface';
+import {Mark6MessengerMessageHeaderComponent} from './messenger-message-header/messenger-message-header.component';
+import {Mark6MessengerMessageHeaderNameComponent} from './messenger-message-header-name/messenger-message-header-name.component';
+import {Mark6MessengerMessageHeaderDateComponent} from './messenger-message-header-date/messenger-message-header-date.component';
+import {Mark6MessengerMessageTextComponent} from './messenger-message-text/messenger-message-text.component';
 
 // Declare Components here:
 const messengerComponents = [
@@ -33,6 +36,10 @@ const messengerComponents = [
     Mark6MessengerHeaderComponent,
     Mark6MessengerMessageComponent,
     Mark6MessengerMessageGroupComponent,
+    Mark6MessengerMessageHeaderComponent,
+    Mark6MessengerMessageHeaderDateComponent,
+    Mark6MessengerMessageHeaderNameComponent,
+    Mark6MessengerMessageTextComponent,
     Mark6MessengerReplyComponent,
     Mark6MessengerTextareaComponent
 ];
@@ -49,8 +56,7 @@ const messengerDirectives = [
     ],
     declarations: [
         messengerComponents,
-        messengerDirectives,
-        DateFormatPipe
+        messengerDirectives
     ],
     exports: [
         messengerComponents,
