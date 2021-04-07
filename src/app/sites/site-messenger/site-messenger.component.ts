@@ -3,7 +3,7 @@ import {MessengerDummyDataService} from './messenger-dummy-data.service';
 import {MatListOption} from '@angular/material/list';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material/icon';
-import {CdkTextareaAutosize} from '@angular/cdk/text-field';
+import {Mark6MessengerAutoSizeDirective} from '@devmonkeys/mark6/messenger';
 import {MatBottomSheet, MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA} from '@angular/material/bottom-sheet';
 import {UiService} from '../../services/ui.service';
 import {take} from 'rxjs/operators';
@@ -41,7 +41,7 @@ export class SiteMessengerComponent {
         }
     ];
 
-    @ViewChild(CdkTextareaAutosize) CdkTextareaAutosize: CdkTextareaAutosize;
+    @ViewChild(Mark6MessengerAutoSizeDirective) Mark6MessengerAutoSize: Mark6MessengerAutoSizeDirective;
 
     constructor(
         public messengerDummyDataService: MessengerDummyDataService,
@@ -60,11 +60,13 @@ export class SiteMessengerComponent {
         iconRegistry.addSvgIcon('emoji_emotions', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/material/emoji_emotions.svg'));
         // Feather Icons
         iconRegistry.addSvgIcon('send', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/feather/send.svg'));
+
+        this.updateTextArea(); // TODO - Find a smarter way...
     }
 
     updateTextArea() {
         setTimeout(() => {
-            this.CdkTextareaAutosize.resizeToFitContent();
+            this.Mark6MessengerAutoSize.resizeToFitContent();
         }, 50);
     }
 
