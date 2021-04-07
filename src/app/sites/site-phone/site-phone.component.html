@@ -1,0 +1,26 @@
+<!--<ul>
+    <li><button mat-flat-button color="primary" (click)="dpi = 1">x1</button></li>
+    <li><button mat-flat-button color="primary" (click)="dpi = 2">x2</button></li>
+    <li><button mat-flat-button color="primary" (click)="dpi = 3">x3</button></li>
+</ul>-->
+
+<mark6-phone>
+
+    <mark6-phone-incoming-call *ngIf="currentMode === 'incoming-call'">
+        <div class="mark6-content-top">
+            <p>Eingehender Anruf</p>
+            <h1>Luise Schmötz</h1>
+        </div>
+
+        <mark6-phone-incoming-call-avatar-pulse>
+            <mark6-image [round]="true" src="/assets/demo/avatar-ryu.png"></mark6-image>
+        </mark6-phone-incoming-call-avatar-pulse>
+
+        <div class="mark6-content-bottom">
+            <button mat-fab>
+                <mat-icon svgIcon="call"></mat-icon>
+            </button>
+        </div>
+    </mark6-phone-incoming-call>
+
+</mark6-phone>

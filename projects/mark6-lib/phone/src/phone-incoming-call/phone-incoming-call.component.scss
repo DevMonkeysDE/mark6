@@ -1,0 +1,29 @@
+.mark6-phone-incoming-call {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .mark6-content-top,
+    .mark6-content-center,
+    .mark6-content-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .mark6-content-top {
+        height: 25%;
+    }
+
+    .mark6-content-center,
+    mark6-phone-incoming-call-avatar-pulse {
+        height: 50%;
+    }
+
+    .mark6-content-bottom {
+        height: 25%;
+    }
+
+}

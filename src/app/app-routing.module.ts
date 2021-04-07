@@ -3,7 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {SiteUserProfileComponent} from './sites/site-user-profile/site-user-profile.component';
 import {SiteImageComponent} from './sites/site-image/site-image.component';
 import {SiteMessengerComponent} from './sites/site-messenger/site-messenger.component';
-import {SitePhoneCallComponent} from './sites/site-phone-call/site-phone-call.component';
+import {SitePhoneComponent} from './sites/site-phone/site-phone.component';
 
 
 const routes: Routes = [
@@ -11,7 +11,7 @@ const routes: Routes = [
     {path: 'profile', component: SiteUserProfileComponent},
     {path: 'messenger', component: SiteMessengerComponent},
     {path: 'image', component: SiteImageComponent},
-    {path: 'phone-call', component: SitePhoneCallComponent},
+    {path: 'phone', component: SitePhoneComponent},
 ];
 
 @NgModule({

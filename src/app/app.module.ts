@@ -2,9 +2,13 @@ import {BrowserModule, HammerModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
+import {FormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+// Ionic
+import { IonicModule } from '@ionic/angular';
 
 // Material
 import {MatCardModule} from '@angular/material/card';
@@ -26,6 +30,7 @@ import {ScrollingModule as ScrollingModuleExp} from '@angular/cdk-experimental/s
 import {SiteUserProfileComponent} from './sites/site-user-profile/site-user-profile.component';
 import {SiteMessengerComponent, MessengerMessageOptionsComponent} from './sites/site-messenger/site-messenger.component';
 import {SiteImageComponent} from './sites/site-image/site-image.component';
+import {SitePhoneComponent} from './sites/site-phone/site-phone.component';
 
 // Mark6
 import {Mark6ImageModule} from '@devmonkeys/mark6/image';
@@ -34,10 +39,8 @@ import {Mark6ContentWrapperModule} from '../../projects/mark6-lib/content-wrappe
 import {Mark6EditableImageModule} from '../../projects/mark6-lib/editable-image/src';
 import {Mark6DropDownModule} from '../../projects/mark6-lib/drop-down/src';
 import {Mark6CropperModule} from '../../projects/mark6-lib/cropper/src';
-import {FormsModule} from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
-import {Mark6PhoneCallModule} from '../../projects/mark6-lib/phone-call/src';
-import {SitePhoneCallComponent} from './sites/site-phone-call/site-phone-call.component';
+import {Mark6PhoneModule} from '../../projects/mark6-lib/phone/src';
+
 
 
 @NgModule({
@@ -47,7 +50,7 @@ import {SitePhoneCallComponent} from './sites/site-phone-call/site-phone-call.co
         SiteUserProfileComponent,
         SiteMessengerComponent,
         SiteImageComponent,
-        SitePhoneCallComponent,
+        SitePhoneComponent,
         MessengerMessageOptionsComponent
     ],
     imports: [
@@ -78,7 +81,7 @@ import {SitePhoneCallComponent} from './sites/site-phone-call/site-phone-call.co
         Mark6EditableImageModule,
         Mark6DropDownModule,
         Mark6MessengerModule.forRoot({dateFormats: {block: {days: ['Heute', 'Gestern']}}}),
-        Mark6PhoneCallModule,
+        Mark6PhoneModule,
         Mark6CropperModule,
         // HammerJS
         HammerModule

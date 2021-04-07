@@ -1,0 +1,22 @@
+.mark6-phone {
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+    background-color: var(--mark6-phone-background);
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+    // Global
+    --mark6-phone-avatar-size: 36px;
+    --mark6-phone-base-font-size: 16px;
+    --mark6-phone-spacing-multiplier: 1; // Default:1 - make 1.2, 1.4 etc. small steps for small changes
+
+    --mark6-phone-background: #202125;
+    --mark6-phone-contrast: #f2f3f5;
+
+    // Ionic ion-content Support
+    --ion-background-color: transparent;
+}

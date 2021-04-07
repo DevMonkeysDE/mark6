@@ -3,11 +3,12 @@ import {MessengerDummyDataService} from './messenger-dummy-data.service';
 import {MatListOption} from '@angular/material/list';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material/icon';
-import {Mark6MessengerAutoSizeDirective} from '../../../../projects/mark6-lib/messenger/src/messenger-textarea-auto-size.directive';
+import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {MatBottomSheet, MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA} from '@angular/material/bottom-sheet';
 import {UiService} from '../../services/ui.service';
 import {take} from 'rxjs/operators';
 import {MessengerMessageBlockInterface, MessengerMessageInterface, MessengerReplyInterface} from 'src/app/interfaces';
+
 
 @Component({
     selector: 'app-site-messenger',
@@ -40,7 +41,7 @@ export class SiteMessengerComponent {
         }
     ];
 
-    @ViewChild(Mark6MessengerAutoSizeDirective) Mark6MessengerAutoSize: Mark6MessengerAutoSizeDirective;
+    @ViewChild(CdkTextareaAutosize) CdkTextareaAutosize: CdkTextareaAutosize;
 
     constructor(
         public messengerDummyDataService: MessengerDummyDataService,
@@ -63,7 +64,7 @@ export class SiteMessengerComponent {
 
     updateTextArea() {
         setTimeout(() => {
-            this.Mark6MessengerAutoSize.resize();
+            this.CdkTextareaAutosize.resizeToFitContent();
         }, 50);
     }
 
