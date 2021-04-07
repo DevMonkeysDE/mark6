@@ -1,13 +1,14 @@
-import {Component, Inject, Input, ViewChild} from '@angular/core';
+import {Component, Inject, ViewChild} from '@angular/core';
 import {MessengerDummyDataService} from './messenger-dummy-data.service';
 import {MatListOption} from '@angular/material/list';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material/icon';
-import {Mark6MessengerAutoSizeDirective} from '@devmonkeys/mark6/messenger';
+
 import {MatBottomSheet, MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA} from '@angular/material/bottom-sheet';
 import {UiService} from '../../services/ui.service';
 import {take} from 'rxjs/operators';
 import {MessengerMessageBlockInterface, MessengerMessageInterface, MessengerReplyInterface} from 'src/app/interfaces';
+import {Mark6TextareaAutosizeDirective} from '@devmonkeys/mark6/directives';
 
 
 @Component({
@@ -41,7 +42,7 @@ export class SiteMessengerComponent {
         }
     ];
 
-    @ViewChild(Mark6MessengerAutoSizeDirective) Mark6MessengerAutoSize: Mark6MessengerAutoSizeDirective;
+    @ViewChild(Mark6TextareaAutosizeDirective) Mark6MessengerAutoSize: Mark6TextareaAutosizeDirective;
 
     constructor(
         public messengerDummyDataService: MessengerDummyDataService,

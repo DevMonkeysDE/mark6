@@ -21,5 +21,3 @@ export * from './messenger-message-header-name/messenger-message-header-name.com
 export * from './messenger-message-text/messenger-message-text.component';
 export * from './messenger-reply/messenger-reply.component';
 export * from './messenger-textarea/messenger-textarea.component';
-
-export * from './messenger-textarea-auto-size.directive';

@@ -33,14 +33,13 @@ import {SiteImageComponent} from './sites/site-image/site-image.component';
 import {SitePhoneComponent} from './sites/site-phone/site-phone.component';
 
 // Mark6
+import {Mark6DirectivesModule} from '@devmonkeys/mark6/directives';
+import {Mark6ContentWrapperModule} from '@devmonkeys/mark6/content-wrapper';
+import {Mark6CropperModule} from '@devmonkeys/mark6/cropper';
+import {Mark6EditableImageModule} from '@devmonkeys/mark6/editable-image';
 import {Mark6ImageModule} from '@devmonkeys/mark6/image';
 import {Mark6MessengerModule} from '@devmonkeys/mark6/messenger';
-import {Mark6ContentWrapperModule} from '../../projects/mark6-lib/content-wrapper/src';
-import {Mark6EditableImageModule} from '../../projects/mark6-lib/editable-image/src';
-import {Mark6DropDownModule} from '../../projects/mark6-lib/drop-down/src';
-import {Mark6CropperModule} from '../../projects/mark6-lib/cropper/src';
-import {Mark6PhoneModule} from '../../projects/mark6-lib/phone/src';
-
+import {Mark6PhoneModule} from '@devmonkeys/mark6/phone';
 
 
 @NgModule({
@@ -79,10 +78,10 @@ import {Mark6PhoneModule} from '../../projects/mark6-lib/phone/src';
         Mark6ContentWrapperModule,
         Mark6ImageModule,
         Mark6EditableImageModule,
-        Mark6DropDownModule,
         Mark6MessengerModule.forRoot({dateFormats: {block: {days: ['Heute', 'Gestern']}}}),
         Mark6PhoneModule,
         Mark6CropperModule,
+        Mark6DirectivesModule,
         // HammerJS
         HammerModule
     ],

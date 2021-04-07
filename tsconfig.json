@@ -16,11 +16,26 @@
             "dom"
         ],
         "paths": {
+            "@devmonkeys/mark6/directives": [
+                "projects/mark6-lib/directives/src"
+            ],
+            "@devmonkeys/mark6/content-wrapper": [
+                "projects/mark6-lib/content-wrapper/src"
+            ],
+            "@devmonkeys/mark6/cropper": [
+                "projects/mark6-lib/cropper/src"
+            ],
+            "@devmonkeys/mark6/editable-image": [
+                "projects/mark6-lib/editable-image/src"
+            ],
             "@devmonkeys/mark6/image": [
                 "projects/mark6-lib/image/src"
             ],
-            "@devmonkeys/mark6/messenger":[
+            "@devmonkeys/mark6/messenger": [
                 "projects/mark6-lib/messenger/src"
+            ],
+            "@devmonkeys/mark6/phone": [
+                "projects/mark6-lib/phone/src"
             ],
             "mark6-lib": [
                 "dist/mark6-lib/mark6-lib",

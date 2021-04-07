@@ -1,4 +1,4 @@
-import {ModuleWithProviders, NgModule, Optional, SkipSelf} from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 // Modules
@@ -14,7 +14,6 @@ import {Mark6MessengerMessageComponent} from './messenger-message/messenger-mess
 import {Mark6MessengerMessageGroupComponent} from './messenger-message-group/messenger-message-group.component';
 import {Mark6MessengerHeaderComponent} from './messenger-header/messenger-header.component';
 import {Mark6MessengerFooterComponent} from './messenger-footer/messenger-footer.component';
-import {Mark6MessengerAutoSizeDirective} from './messenger-textarea-auto-size.directive';
 import {Mark6MessengerTextareaComponent} from './messenger-textarea/messenger-textarea.component';
 import {Mark6MessengerActionsComponent} from './messenger-actions/messenger-actions.component';
 import {Mark6MessengerReplyComponent} from './messenger-reply/messenger-reply.component';
@@ -44,34 +43,20 @@ const messengerComponents = [
     Mark6MessengerTextareaComponent
 ];
 
-// Declare Directives here:
-const messengerDirectives = [
-    Mark6MessengerAutoSizeDirective
-];
-
 @NgModule({
     imports: [
         CommonModule,
         Mark6ImageModule,
     ],
     declarations: [
-        messengerComponents,
-        messengerDirectives
+        messengerComponents
     ],
     exports: [
-        messengerComponents,
-        messengerDirectives
+        messengerComponents
     ],
     providers: []
 })
 export class Mark6MessengerModule {
-
-    // constructor(@Optional() @SkipSelf() parentModule?: Mark6MessengerModule) {
-    //     if (parentModule) {
-    //         throw new Error('GreetingModule is already loaded. Import it in the AppModule only');
-    //     }
-    // }
-
     static forRoot(config?: MessengerServiceConfig): ModuleWithProviders<Mark6MessengerModule> {
         return {
             ngModule: Mark6MessengerModule,
@@ -80,5 +65,4 @@ export class Mark6MessengerModule {
             ]
         };
     }
-
 }
