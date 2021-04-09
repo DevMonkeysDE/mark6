@@ -43,16 +43,21 @@ const messengerComponents = [
     Mark6MessengerTextareaComponent
 ];
 
+// Declare Directives here:
+const messengerDirectives = [];
+
 @NgModule({
     imports: [
         CommonModule,
         Mark6ImageModule,
     ],
     declarations: [
-        messengerComponents
+        messengerComponents,
+        messengerDirectives
     ],
     exports: [
-        messengerComponents
+        messengerComponents,
+        messengerDirectives
     ],
     providers: []
 })

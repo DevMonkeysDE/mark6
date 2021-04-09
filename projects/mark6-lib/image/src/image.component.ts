@@ -1,13 +1,4 @@
-import {
-    Component,
-    HostBinding,
-    Input,
-    ViewChild,
-    ElementRef,
-    Output,
-    EventEmitter,
-    ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef
-} from '@angular/core';
+import {Component, HostBinding, Input, ViewChild, ElementRef, Output, EventEmitter, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
 import { SimpleChanges } from '@angular/core';
 import { OnChanges } from '@angular/core';
 import { animate, style, transition, trigger, state } from '@angular/animations';
