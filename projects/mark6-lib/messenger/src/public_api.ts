@@ -19,5 +19,6 @@ export * from './messenger-message-header/messenger-message-header.component';
 export * from './messenger-message-header-date/messenger-message-header-date.component';
 export * from './messenger-message-header-name/messenger-message-header-name.component';
 export * from './messenger-message-text/messenger-message-text.component';
+export * from './messenger-message-timestamp/messenger-message-timestamp.component';
 export * from './messenger-reply/messenger-reply.component';
 export * from './messenger-textarea/messenger-textarea.component';
