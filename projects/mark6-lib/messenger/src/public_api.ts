@@ -14,7 +14,6 @@ export * from './messenger-content/messenger-content.component';
 export * from './messenger-footer/messenger-footer.component';
 export * from './messenger-header/messenger-header.component';
 export * from './messenger-message/messenger-message.component';
-export * from './messenger-message-extended/messenger-message-extended.component';
 export * from './messenger-message-group/messenger-message-group.component';
 export * from './messenger-message-header/messenger-message-header.component';
 export * from './messenger-message-header-date/messenger-message-header-date.component';

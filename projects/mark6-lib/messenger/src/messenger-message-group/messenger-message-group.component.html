@@ -1,9 +1,6 @@
 <ng-content select="mark6-messenger-avatar"></ng-content>
 <div class="mark6-messenger-messages">
-    <ng-content select="mark6-messenger-message"></ng-content>
-</div>
-<div class="mark6-messenger-messages mark6-messenger-message-extended">
-    <ng-content select="mark6-messenger-message-extended"></ng-content>
+    <ng-content select="mark6-messenger-message, [mark6-messenger-messages]"></ng-content>
 </div>
 
 <!-- Allow adding Custom Elements like Attachments or what ever people want -->
