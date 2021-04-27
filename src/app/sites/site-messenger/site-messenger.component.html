@@ -107,25 +107,33 @@
                     -->
                 </mark6-messenger-avatar>
 
-                <mark6-messenger-message *ngFor="let message of group.messages" (click)="toggleMessageOptions(message)">
+                <mark6-messenger-message-extended>
 
-                    <mark6-messenger-message-header>
-                        <mark6-messenger-message-header-name>{{message.user_name}}</mark6-messenger-message-header-name>
-                        <span>&nbsp;</span>
-                        <mark6-messenger-message-header-date>{{message.created_at | date:'HH:mm'}}</mark6-messenger-message-header-date>
-                    </mark6-messenger-message-header>
+                    <ng-container *ngFor="let message of group.messages">
+                        <mark6-messenger-message-header mark6-messenger-auto-expand>Message header</mark6-messenger-message-header>
 
-                    <mark6-messenger-reply *ngIf="message.reply"
-                                           [text]="message.reply.text"
-                                           [userName]="message.reply.user_name"
-                                           [color]="message.reply.color">
-                    </mark6-messenger-reply>
+                        <mark6-messenger-message (click)="toggleMessageOptions(message)">
 
-                    <mark6-messenger-message-text>{{message.text}}</mark6-messenger-message-text>
+                            <mark6-messenger-message-header>
+                                <mark6-messenger-message-header-name>{{message.user_name}}</mark6-messenger-message-header-name>
+                                <span>&nbsp;</span>
+                                <mark6-messenger-message-header-date>{{message.created_at | date:'HH:mm'}}</mark6-messenger-message-header-date>
+                            </mark6-messenger-message-header>
 
-                    <mark6-messenger-message-timestamp>{{message.created_at | date:'HH:mm'}}</mark6-messenger-message-timestamp>
+                            <mark6-messenger-reply *ngIf="message.reply"
+                                                   [text]="message.reply.text"
+                                                   [userName]="message.reply.user_name"
+                                                   [color]="message.reply.color">
+                            </mark6-messenger-reply>
 
-                </mark6-messenger-message>
+                            <mark6-messenger-message-text>{{message.text}}</mark6-messenger-message-text>
+
+                        </mark6-messenger-message>
+
+                        <mark6-messenger-message-timestamp mark6-messenger-auto-expand>{{message.created_at | date:'HH:mm'}}</mark6-messenger-message-timestamp>
+                    </ng-container>
+
+                </mark6-messenger-message-extended>
 
             </mark6-messenger-message-group>
 

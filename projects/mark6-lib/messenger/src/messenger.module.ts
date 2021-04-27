@@ -17,6 +17,7 @@ import {Mark6MessengerContentComponent} from './messenger-content/messenger-cont
 import {Mark6MessengerFooterComponent} from './messenger-footer/messenger-footer.component';
 import {Mark6MessengerHeaderComponent} from './messenger-header/messenger-header.component';
 import {Mark6MessengerMessageComponent} from './messenger-message/messenger-message.component';
+import {Mark6MessengerMessageExtendedComponent} from './messenger-message-extended/messenger-message-extended.component';
 import {Mark6MessengerMessageGroupComponent} from './messenger-message-group/messenger-message-group.component';
 import {Mark6MessengerMessageHeaderComponent} from './messenger-message-header/messenger-message-header.component';
 import {Mark6MessengerMessageHeaderDateComponent} from './messenger-message-header-date/messenger-message-header-date.component';
@@ -37,6 +38,7 @@ const messengerComponents = [
     Mark6MessengerFooterComponent,
     Mark6MessengerHeaderComponent,
     Mark6MessengerMessageComponent,
+    Mark6MessengerMessageExtendedComponent,
     Mark6MessengerMessageGroupComponent,
     Mark6MessengerMessageHeaderComponent,
     Mark6MessengerMessageHeaderDateComponent,
