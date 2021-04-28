@@ -3,7 +3,6 @@ import { AfterViewInit, Directive, ElementRef, Input, OnDestroy } from '@angular
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { XpAnimations } from './animation';
-import { Mark6MessengerAutoExpandService } from './messenger-auto-expand.service';
 import { Mark6MessengerMessageComponent } from './messenger-message/messenger-message.component';
 
 @Directive({
