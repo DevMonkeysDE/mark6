@@ -1,9 +1,14 @@
 /* tslint:disable */
-import { style, animate, keyframes } from '@angular/animations';
+import { style, state, animate, keyframes } from '@angular/animations';
 
 /**********  Entries Animations ********************/
 
 export const XpAnimations: any = {}
+
+XpAnimations['mark6-auto-expand-animation'] = animate('0.5s 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940)', keyframes([
+    style({ height: '0px', opacity: 0, }),
+    style({ height: '*', opacity: 1, }),
+]));
 
 XpAnimations['scale_in_top'] = animate('0.5s 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940)', keyframes([
   style({ visibility: 'visible', opacity: 0, }),
@@ -301,26 +306,26 @@ XpAnimations['rotate_top'] = animate('0.6s ease-in-out', keyframes([
   style({ visibility: 'visible', }),
   style({ transformOrigin: 'top', transform: 'rotate(0)', }),
   style({ transform: 'rotate(360deg)', transformOrigin: 'top', }),
-])); 
+]));
 
 XpAnimations['rotate_hor_center'] = animate('0.5s 0.1ms cubic-bezier(0.455, 0.030, 0.515, 0.955)', keyframes([
   style({ visibility: 'visible', }),
   style({ transform: 'rotateX(0)', }),
   style({ transform: 'rotateX(-360deg)', }),
-])); 
+]));
 
 XpAnimations['rotate_ver_center'] = animate('0.5s 0.1ms cubic-bezier(0.455, 0.030, 0.515, 0.955)', keyframes([
   style({ visibility: 'visible', }),
   style({ transform: 'rotateY(0)', }),
   style({ transform: 'rotateY(-360deg)', }),
-])); 
+]));
 
 XpAnimations['rotate_diagonal'] = animate('0.5s linear', keyframes([
   style({ visibility: 'visible', }),
   style({ transform: 'rotate3d(1, 1, 0, 0deg)', }),
   style({ transform: 'rotate3d(1, 1, 0, -180deg)', }),
   style({ transform: 'rotate3d(1, 1, 0, -360deg)', }),
-])); 
+]));
 
 XpAnimations['rotate_scale']  = animate('0.65s linear', keyframes([
   style({ visibility: 'visible', }),
@@ -916,7 +921,7 @@ XpAnimations['swing_out_left'] = animate('1.2s', keyframes([
   style({ transform: 'rotateY(100deg)', transformOrigin: 'left', opacity: 0, visibility: 'hidden', }),
   style({ transform: 'rotateY(0)', transformOrigin: '0% 0%', opacity: 1, }),
 ]));
- 
+
 XpAnimations['swing_out_right']  = animate('1.2s', keyframes([
   style({ visibility: 'visible', }),
   style({ transform: 'rotateY(0deg)', transformOrigin: 'right', opacity: 1, }),

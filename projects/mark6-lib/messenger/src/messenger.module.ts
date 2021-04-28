@@ -25,7 +25,9 @@ import {Mark6MessengerMessageTextComponent} from './messenger-message-text/messe
 import {Mark6MessengerMessageTimestampComponent} from './messenger-message-timestamp/messenger-message-timestamp.component';
 import {Mark6MessengerReplyComponent} from './messenger-reply/messenger-reply.component';
 import {Mark6MessengerTextareaComponent} from './messenger-textarea/messenger-textarea.component';
-import { Mark6MessengerAutoExpandirective } from './messenger-auto-expand.directive';
+
+// Directives
+import {Mark6MessengerAutoExpandDirective} from './messenger-auto-expand.directive';
 
 // Declare Components here:
 const messengerComponents = [
@@ -49,7 +51,9 @@ const messengerComponents = [
 ];
 
 // Declare Directives here:
-const messengerDirectives = [Mark6MessengerAutoExpandirective];
+const messengerDirectives = [
+    Mark6MessengerAutoExpandDirective
+];
 
 @NgModule({
     imports: [
