@@ -1,5 +1,5 @@
 import { AnimationBuilder, AnimationPlayer } from '@angular/animations';
-import { AfterViewInit, Directive, ElementRef, Input, OnDestroy } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, HostBinding, Input, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { XpAnimations } from './animation';
@@ -11,7 +11,7 @@ import { Mark6MessengerMessageComponent } from './messenger-message/messenger-me
 export class Mark6MessengerAutoExpandirective implements AfterViewInit, OnDestroy {
     player: AnimationPlayer;
     @Input() animation = 'slide_in_top';
-
+    @HostBinding('style') style = { visibility: 'visible', opacity: 0, }
     message: HTMLElement;
     constructor(private builder: AnimationBuilder, private el: ElementRef<HTMLElement>) {
     }
@@ -20,7 +20,7 @@ export class Mark6MessengerAutoExpandirective implements AfterViewInit, OnDestro
 
     }
     ngAfterViewInit() {
-        this.message = this.el.nativeElement.parentElement.querySelector<HTMLElement>('mark6-messenger-message');
+        this.message = this.el.nativeElement.parentElement.querySelectorAll<HTMLElement>('mark6-messenger-message')[0];
         this.message.addEventListener('click', () => this.animate());
     }
 
