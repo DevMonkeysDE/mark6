@@ -10,7 +10,6 @@ import { Mark6MessengerMessageComponent } from './messenger-message/messenger-me
 })
 export class Mark6MessengerAutoExpandirective implements AfterViewInit, OnDestroy {
     player: AnimationPlayer;
-    @Input() mark6MessengerAutoExpand: Mark6MessengerMessageComponent;
     @Input() animation = 'slide_in_top';
 
     message: HTMLElement;
