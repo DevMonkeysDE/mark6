@@ -110,7 +110,7 @@
                 <ng-container mark6-messenger-messages *ngFor="let message of group.messages">
                     <mark6-messenger-message-header mark6-messenger-auto-expand>Message header</mark6-messenger-message-header>
 
-                    <mark6-messenger-message (click)="toggleMessageOptions(message)">
+                    <mark6-messenger-message (click)="toggleMessageOptions(message)" #msg>
 
                         <mark6-messenger-message-header>
                             <mark6-messenger-message-header-name>{{message.user_name}}</mark6-messenger-message-header-name>
@@ -128,7 +128,7 @@
 
                     </mark6-messenger-message>
 
-                    <mark6-messenger-message-timestamp mark6-messenger-auto-expand>{{message.created_at | date:'HH:mm'}}</mark6-messenger-message-timestamp>
+                    <mark6-messenger-message-timestamp [mark6MessengerAutoExpand]="msg">{{message.created_at | date:'HH:mm'}}</mark6-messenger-message-timestamp>
                 </ng-container>
 
             </mark6-messenger-message-group>
