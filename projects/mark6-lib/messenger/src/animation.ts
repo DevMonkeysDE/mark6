@@ -5,9 +5,14 @@ import { style, state, animate, keyframes } from '@angular/animations';
 
 export const XpAnimations: any = {}
 
-XpAnimations['mark6-auto-expand-animation'] = animate('0.5s 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940)', keyframes([
+XpAnimations['mark6-auto-expand-animation-open'] = animate('0.5s 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940)', keyframes([
     style({ height: '0px', opacity: 0, }),
-    style({ height: '*', opacity: 1, }),
+    style({ height: '!', opacity: 1, }),
+]));
+
+XpAnimations['mark6-auto-expand-animation-close'] = animate('0.5s 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940)', keyframes([
+    style({ height: '!', opacity: 1, }),
+    style({ height: '0px', opacity: 0, }),
 ]));
 
 XpAnimations['scale_in_top'] = animate('0.5s 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940)', keyframes([

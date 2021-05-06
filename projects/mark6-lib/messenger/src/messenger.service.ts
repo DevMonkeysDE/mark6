@@ -19,6 +19,7 @@ export class MessengerService {
     private blockFormatter: Intl.DateTimeFormat;
     private messageFormatter: Intl.DateTimeFormat;
     private blockWeekDaysFormatter: Intl.DateTimeFormat;
+    lastAutoExpandedMessage: Record<string, HTMLElement> = {};
 
     constructor(@Optional() config: MessengerServiceConfig) {
         const dateFormats = config.dateFormats;

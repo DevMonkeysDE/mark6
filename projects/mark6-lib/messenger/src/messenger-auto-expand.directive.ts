@@ -1,34 +1,45 @@
 import {AnimationBuilder, AnimationPlayer} from '@angular/animations';
 import {AfterViewInit, Directive, ElementRef, HostBinding, Input, OnDestroy} from '@angular/core';
 import {XpAnimations} from './animation';
+import {MessengerService} from './messenger.service';
 
 @Directive({
     selector: '[mark6MessengerAutoExpand]'
 })
 export class Mark6MessengerAutoExpandDirective implements AfterViewInit, OnDestroy {
 
-    @Input() animation = 'mark6-auto-expand-animation';
-    @HostBinding('style') style = {height: 0, opacity: 0,};
-    private player: AnimationPlayer;
+    @Input() mark6MessengerAutoExpand = 'default';
+    @HostBinding('style') style = {height: 0, opacity: 0};
+    private animation = 'mark6-auto-expand-animation-';
     private message: HTMLElement;
 
-    constructor(private animationBuilder: AnimationBuilder, private el: ElementRef<HTMLElement>) {
-    }
+    constructor(private messengerService: MessengerService, private animationBuilder: AnimationBuilder, private el: ElementRef<HTMLElement>) {}
 
     animate() {
-        // console.log('animate', this.animation);
         if (this.animation) {
-            if (this.player) {
-                this.player.destroy();
+            if (this.messengerService.lastAutoExpandedMessage[this.mark6MessengerAutoExpand]) {
+                this.playAnimation('close', this.messengerService.lastAutoExpandedMessage[this.mark6MessengerAutoExpand]);
             }
-            if (XpAnimations[this.animation]) {
-                const metaData = XpAnimations[this.animation];
-                const factory = this.animationBuilder.build(metaData);
-                const player = factory.create(this.el.nativeElement);
-                player.play();
+
+            if (this.messengerService.lastAutoExpandedMessage[this.mark6MessengerAutoExpand] !== this.el.nativeElement) {
+                this.playAnimation('open');
             } else {
-                throw new Error(`Invalid animation  ${this.animation}`);
+                delete this.messengerService.lastAutoExpandedMessage[this.mark6MessengerAutoExpand];
             }
+        }
+    }
+
+    private playAnimation(state: 'open' | 'close', element = this.el.nativeElement) {
+        const animation = this.animation + state;
+
+        if (XpAnimations[animation]) {
+            const metaData = XpAnimations[animation];
+            const factory = this.animationBuilder.build(metaData);
+            const player = factory.create(element);
+            this.messengerService.lastAutoExpandedMessage[this.mark6MessengerAutoExpand] = element;
+            player.play();
+        } else {
+            throw new Error(`Invalid animation  ${this.animation}`);
         }
     }
 
@@ -37,6 +48,7 @@ export class Mark6MessengerAutoExpandDirective implements AfterViewInit, OnDestr
     }
 
     ngAfterViewInit() {
+        /* TODO: FIX EventListener delete them if not needed anymore */
         this.message = this.el.nativeElement.parentElement.querySelectorAll<HTMLElement>('mark6-messenger-message')[0];
         this.message.addEventListener('click', () => this.animate());
     }
