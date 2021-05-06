@@ -1,7 +1,7 @@
-import {AnimationBuilder, AnimationPlayer} from '@angular/animations';
-import {AfterViewInit, Directive, ElementRef, HostBinding, Input, OnDestroy} from '@angular/core';
-import {XpAnimations} from './animation';
-import {MessengerService} from './messenger.service';
+import { AnimationBuilder, AnimationPlayer } from '@angular/animations';
+import { AfterViewInit, Directive, ElementRef, HostBinding, Input, OnDestroy } from '@angular/core';
+import { XpAnimations } from './animation';
+import { MessengerService } from './messenger.service';
 
 @Directive({
     selector: '[mark6MessengerAutoExpand]'
@@ -9,11 +9,12 @@ import {MessengerService} from './messenger.service';
 export class Mark6MessengerAutoExpandDirective implements AfterViewInit, OnDestroy {
 
     @Input() mark6MessengerAutoExpand = 'default';
-    @HostBinding('style') style = {height: 0, opacity: 0};
+    @Input() index = 0;
+    @HostBinding('style') style = { height: 0, opacity: 0 };
     private animation = 'mark6-auto-expand-animation-';
     private message: HTMLElement;
 
-    constructor(private messengerService: MessengerService, private animationBuilder: AnimationBuilder, private el: ElementRef<HTMLElement>) {}
+    constructor(private messengerService: MessengerService, private animationBuilder: AnimationBuilder, private el: ElementRef<HTMLElement>) { }
 
     animate() {
         if (this.animation) {
@@ -46,10 +47,10 @@ export class Mark6MessengerAutoExpandDirective implements AfterViewInit, OnDestr
     ngOnDestroy() {
         this.message.removeEventListener('click', () => this.animate());
     }
-
+    private i = 0;
     ngAfterViewInit() {
         /* TODO: FIX EventListener delete them if not needed anymore */
-        this.message = this.el.nativeElement.parentElement.querySelectorAll<HTMLElement>('mark6-messenger-message')[0];
+        this.message = this.el.nativeElement.parentElement.querySelectorAll<HTMLElement>('mark6-messenger-message')[this.index];
         this.message.addEventListener('click', () => this.animate());
     }
 

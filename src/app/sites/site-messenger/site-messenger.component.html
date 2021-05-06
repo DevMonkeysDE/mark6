@@ -107,8 +107,8 @@
                     -->
                 </mark6-messenger-avatar>
 
-                <ng-container mark6-messenger-messages *ngFor="let message of group.messages">
-                    <mark6-messenger-message-header mark6MessengerAutoExpand="header">Message header</mark6-messenger-message-header>
+                <ng-container mark6-messenger-messages *ngFor="let message of group.messages;index as i">
+                    <mark6-messenger-message-header [index]="i" [mark6MessengerAutoExpand]="'header'+i">Message header</mark6-messenger-message-header>
 
                     <mark6-messenger-message>
 
@@ -128,7 +128,7 @@
 
                     </mark6-messenger-message>
 
-                    <mark6-messenger-message-timestamp mark6MessengerAutoExpand="footer">{{message.created_at | date:'HH:mm'}}</mark6-messenger-message-timestamp>
+                    <mark6-messenger-message-timestamp [index]="i" [mark6MessengerAutoExpand]="'footer'+i">{{message.created_at | date:'HH:mm'}}</mark6-messenger-message-timestamp>
                 </ng-container>
 
             </mark6-messenger-message-group>
