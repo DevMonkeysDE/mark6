@@ -10,7 +10,6 @@ const defaultDateFormats: MessengerServiceDateFormats = {
     message: {
         format: {hour: '2-digit', minute: '2-digit', hour12: false}
     },
-    locale: 'de-DE'
 };
 
 @Injectable({providedIn: 'root'})

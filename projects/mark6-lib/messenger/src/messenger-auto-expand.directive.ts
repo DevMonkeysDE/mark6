@@ -47,7 +47,7 @@ export class Mark6MessengerAutoExpandDirective implements AfterViewInit, OnDestr
     ngOnDestroy() {
         this.message.removeEventListener('click', () => this.animate());
     }
-    private i = 0;
+
     ngAfterViewInit() {
         /* TODO: FIX EventListener delete them if not needed anymore */
         this.message = this.el.nativeElement.parentElement.querySelectorAll<HTMLElement>('mark6-messenger-message')[this.index];
