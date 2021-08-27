@@ -1,0 +1,5 @@
+.mark6-comment-text {
+    margin-top: calc(var(--mark6-comment-base-font-size) * var(--mark6-comment-spacing-multiplier));
+    margin-bottom: calc(var(--mark6-comment-base-font-size) * var(--mark6-comment-spacing-multiplier));
+    display: block;
+}

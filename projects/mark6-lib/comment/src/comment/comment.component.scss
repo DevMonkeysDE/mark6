@@ -1,0 +1,17 @@
+@import "~@devmonkeys/scss-elements/loader";
+
+.mark6-comment {
+    display: block;
+    box-sizing: border-box;
+    font-size: calc(var(--mark6-comment-base-font-size) * var(--mark6-comment-spacing-multiplier));
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+    // Global
+    --mark6-comment-avatar-size: 48px;
+    --mark6-comment-base-font-size: 16px;
+    --mark6-comment-base-font-weight-bold: 600;
+    --mark6-comment-spacing-multiplier: 1; // Default:1 - make 1.2, 1.4 etc. small steps for small changes
+}

@@ -1,0 +1,12 @@
+.mark6-comment-header {
+    display: flex;
+    align-items: center;
+    img, mark6-image {
+        width: calc(var(--mark6-comment-avatar-size) * var(--mark6-comment-spacing-multiplier));
+        margin-right: calc(var(--mark6-comment-base-font-size) * var(--mark6-comment-spacing-multiplier));
+    }
+
+    .mark6-comment-details {
+
+    }
+}

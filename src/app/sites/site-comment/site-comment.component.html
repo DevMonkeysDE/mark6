@@ -2,27 +2,31 @@
     <div class="site-comment-inner">
 
         <ng-container *ngFor="let comment of comments">
-            <mark6-comment [comment]="comment">
-                <mark6-image [round]="true" [preview]="'https://dummyimage.com/128x128/f2f2f2/404040.png'" [src]="'https://dummyimage.com/256x256/f2f2f2/404040.png'"></mark6-image>
-                <div class="mark6-comment-header-actions">
-                    <button mat-icon-button>
-                        <mat-icon svgIcon="reply"></mat-icon>
-                    </button>
-                    <button mat-icon-button>
-                        <mat-icon svgIcon="report_problem"></mat-icon>
-                    </button>
-                </div>
+            <mark6-comment>
+                <mark6-comment-header>
+                    <mark6-image mark6-comment-avatar [round]="true" [preview]="'https://dummyimage.com/128x128/f2f2f2/404040.png'" [src]="'https://dummyimage.com/256x256/f2f2f2/404040.png'"></mark6-image>
+                    <mark6-comment-name>{{comment.name}}</mark6-comment-name>
+                    <mark6-comment-date>{{comment.created_at.seconds | date}}</mark6-comment-date>
+                    <mark6-comment-actions>
+                        <button mat-icon-button><mat-icon svgIcon="reply"></mat-icon></button>
+                        <button mat-icon-button><mat-icon svgIcon="report_problem"></mat-icon></button>
+                    </mark6-comment-actions>
+                </mark6-comment-header>
+                <p mark6-comment-text>{{comment.message}}</p>
             </mark6-comment>
             <ng-container *ngIf="comment.replies">
                 <div class="replies">
                     <ng-container *ngFor="let reply of comment.replies">
-                        <mark6-comment [comment]="reply">
-                            <mark6-image [round]="true" [preview]="'https://dummyimage.com/128x128/f2f2f2/404040.png'" [src]="'https://dummyimage.com/256x256/f2f2f2/404040.png'"></mark6-image>
-                            <div class="mark6-comment-header-actions">
-                                <button mat-icon-button>
-                                    <mat-icon svgIcon="report_problem"></mat-icon>
-                                </button>
-                            </div>
+                        <mark6-comment>
+                            <mark6-comment-header>
+                                <mark6-image mark6-comment-avatar [round]="true" [preview]="'https://dummyimage.com/128x128/f2f2f2/404040.png'" [src]="'https://dummyimage.com/256x256/f2f2f2/404040.png'"></mark6-image>
+                                <mark6-comment-name>{{reply.name}}</mark6-comment-name>
+                                <mark6-comment-date>{{reply.created_at.seconds | date}}</mark6-comment-date>
+                                <mark6-comment-actions>
+                                    <button mat-icon-button><mat-icon svgIcon="report_problem"></mat-icon></button>
+                                </mark6-comment-actions>
+                            </mark6-comment-header>
+                            <p mark6-comment-text>{{reply.message}}</p>
                         </mark6-comment>
                     </ng-container>
                 </div>

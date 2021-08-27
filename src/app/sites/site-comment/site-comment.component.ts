@@ -1,7 +1,24 @@
 import {Component} from '@angular/core';
 import {MatIconRegistry} from '@angular/material/icon';
 import {DomSanitizer} from '@angular/platform-browser';
-import {CommentInterface} from '@devmonkeys/mark6/comment';
+
+export interface CreatedAt {
+    seconds: number;
+    nanoseconds: number;
+}
+
+export interface Reply {
+    name: string;
+    created_at: CreatedAt;
+    message: string;
+}
+
+export interface CommentInterface {
+    name: string;
+    created_at: CreatedAt;
+    message: string;
+    replies?: Reply[];
+}
 
 @Component({
     selector: 'app-site-comment',
@@ -13,7 +30,7 @@ export class SiteCommentComponent {
 
     public comments: CommentInterface[] = [
         {
-            user_name: 'Budi',
+            name: 'Budi',
             created_at: {
                 seconds: 1577412087,
                 nanoseconds: 603000000
@@ -21,7 +38,7 @@ export class SiteCommentComponent {
             message: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
             replies: [
                 {
-                    user_name: 'Budi',
+                    name: 'Budi',
                     created_at: {
                         seconds: 1577412087,
                         nanoseconds: 603000000
@@ -29,7 +46,7 @@ export class SiteCommentComponent {
                     message: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
                 },
                 {
-                    user_name: 'Budi',
+                    name: 'Budi',
                     created_at: {
                         seconds: 1577412087,
                         nanoseconds: 603000000
@@ -37,7 +54,7 @@ export class SiteCommentComponent {
                     message: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
                 },
                 {
-                    user_name: 'Budi',
+                    name: 'Budi',
                     created_at: {
                         seconds: 1577412087,
                         nanoseconds: 603000000
@@ -47,7 +64,7 @@ export class SiteCommentComponent {
             ]
         },
         {
-            user_name: 'Budi',
+            name: 'Budi',
             created_at: {
                 seconds: 1577412087,
                 nanoseconds: 603000000
@@ -55,7 +72,7 @@ export class SiteCommentComponent {
             message: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
             replies: [
                 {
-                    user_name: 'Budi',
+                    name: 'Budi',
                     created_at: {
                         seconds: 1577412087,
                         nanoseconds: 603000000
@@ -63,7 +80,7 @@ export class SiteCommentComponent {
                     message: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
                 },
                 {
-                    user_name: 'Budi',
+                    name: 'Budi',
                     created_at: {
                         seconds: 1577412087,
                         nanoseconds: 603000000
@@ -71,7 +88,7 @@ export class SiteCommentComponent {
                     message: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
                 },
                 {
-                    user_name: 'Budi',
+                    name: 'Budi',
                     created_at: {
                         seconds: 1577412087,
                         nanoseconds: 603000000
