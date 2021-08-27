@@ -2,7 +2,7 @@
     <ng-content select="mark6-image"></ng-content>
     <div class="mark6-comment-header-details">
         <div class="mark6-comment-header-name">{{comment.user_name}}</div>
-        <div class="mark6-comment-header-date">{{comment.created_at.seconds}}</div>
+        <div class="mark6-comment-header-date">{{comment.created_at.seconds | date}}</div>
     </div>
     <ng-content select=".mark6-comment-header-actions"></ng-content>
 </div>
