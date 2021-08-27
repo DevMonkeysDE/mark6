@@ -30,7 +30,7 @@ export class Mark6CommentComponent {
     private hostClass = 'mark6-comment';
     @HostBinding('class') classes = this.hostClass;
 
-    @Input() public comment: CommentInterface[] = [];
+    @Input() public comment: CommentInterface;
 
     constructor() {
     }
