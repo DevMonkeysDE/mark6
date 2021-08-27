@@ -40,7 +40,6 @@ export class Mark6ImageComponent implements OnChanges {
     @Input() public backgroundImage: string;
     @Input() public addClass: string;
     @Input() public round = false;
-    // @Input() public emitSize = false;
 
     @Output() public failed = new EventEmitter<void>();
     @Output() public loaded = new EventEmitter<void>();
@@ -48,7 +47,7 @@ export class Mark6ImageComponent implements OnChanges {
     @ViewChild('imgPreview', { static: false }) previewImg: ElementRef;
 
     public state: 'loading' | 'success' | 'failed' = 'loading';
-    public aspectRatioNumber = this.parseRation(1);
+    public aspectRatioNumber = null;
 
     private timeoutId: number;
 

@@ -1,0 +1,33 @@
+<section class="site-comment">
+    <div class="site-comment-inner">
+
+        <ng-container *ngFor="let comment of comments">
+            <mark6-comment [comment]="comment">
+                <mark6-image [round]="true" [preview]="'https://dummyimage.com/128x128/f2f2f2/404040.png'" [src]="'https://dummyimage.com/256x256/f2f2f2/404040.png'"></mark6-image>
+                <div class="mark6-comment-header-actions">
+                    <button mat-icon-button>
+                        <mat-icon svgIcon="reply"></mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon svgIcon="report_problem"></mat-icon>
+                    </button>
+                </div>
+            </mark6-comment>
+            <ng-container *ngIf="comment.replies">
+                <div class="replies">
+                    <ng-container *ngFor="let reply of comment.replies">
+                        <mark6-comment [comment]="reply">
+                            <mark6-image [round]="true" [preview]="'https://dummyimage.com/128x128/f2f2f2/404040.png'" [src]="'https://dummyimage.com/256x256/f2f2f2/404040.png'"></mark6-image>
+                            <div class="mark6-comment-header-actions">
+                                <button mat-icon-button>
+                                    <mat-icon svgIcon="report_problem"></mat-icon>
+                                </button>
+                            </div>
+                        </mark6-comment>
+                    </ng-container>
+                </div>
+            </ng-container>
+        </ng-container>
+
+    </div>
+</section>

@@ -101,7 +101,7 @@
                                            [direction]="group.user_id === currentUserId ? 'right' : 'left'">
 
                 <mark6-messenger-avatar *ngIf="(group.user_id === currentUserId && avatarMe) || (group.user_id !== currentUserId && avatarOthers)">
-                    <mark6-image [round]="true" [preview]="group.user_avatar.preview" [src]="group.user_avatar.src"></mark6-image>
+                    <mark6-image [aspectRatio]="1" [round]="true" [preview]="group.user_avatar.preview" [src]="group.user_avatar.src"></mark6-image>
                     <!-- TODO Sven - Allow using regular <img> tags.
                     <img src="" alt="">
                     -->
@@ -175,6 +175,7 @@
                 <button mat-icon-button [ngClass]="{visible: textareaValue.length === 0}">
                     <mat-icon svgIcon="camera_alt"></mat-icon>
                 </button>
+                <ion-button color="primary">Primary</ion-button>
             </mark6-messenger-actions>
         </mark6-messenger-textarea>
 

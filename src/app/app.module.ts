@@ -27,6 +27,7 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import {ScrollingModule as ScrollingModuleExp} from '@angular/cdk-experimental/scrolling';
 
 // Sites
+import {SiteCommentComponent} from './sites/site-comment/site-comment.component';
 import {SiteUserProfileComponent} from './sites/site-user-profile/site-user-profile.component';
 import {SiteMessengerComponent, MessengerMessageOptionsComponent} from './sites/site-messenger/site-messenger.component';
 import {SiteImageComponent} from './sites/site-image/site-image.component';
@@ -40,12 +41,14 @@ import {Mark6EditableImageModule} from '@devmonkeys/mark6/editable-image';
 import {Mark6ImageModule} from '@devmonkeys/mark6/image';
 import {Mark6MessengerModule} from '@devmonkeys/mark6/messenger';
 import {Mark6PhoneModule} from '@devmonkeys/mark6/phone';
+import {Mark6CommentModule} from '@devmonkeys/mark6/comment';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         // Sites
+        SiteCommentComponent,
         SiteUserProfileComponent,
         SiteMessengerComponent,
         SiteImageComponent,
@@ -75,6 +78,7 @@ import {Mark6PhoneModule} from '@devmonkeys/mark6/phone';
         ScrollingModule,
         ScrollingModuleExp,
         // Mark6
+        Mark6CommentModule,
         Mark6ContentWrapperModule,
         Mark6ImageModule,
         Mark6EditableImageModule,

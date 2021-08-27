@@ -22,3 +22,4 @@ export * from './messenger-message-text/messenger-message-text.component';
 export * from './messenger-message-timestamp/messenger-message-timestamp.component';
 export * from './messenger-reply/messenger-reply.component';
 export * from './messenger-textarea/messenger-textarea.component';
+export * from './messenger-auto-expand.directive';

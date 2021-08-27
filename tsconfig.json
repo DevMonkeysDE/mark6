@@ -16,6 +16,9 @@
             "dom"
         ],
         "paths": {
+            "@devmonkeys/mark6/phone": [
+                "projects/mark6-lib/phone/src"
+            ],
             "@devmonkeys/mark6/directives": [
                 "projects/mark6-lib/directives/src"
             ],
@@ -34,8 +37,8 @@
             "@devmonkeys/mark6/messenger": [
                 "projects/mark6-lib/messenger/src"
             ],
-            "@devmonkeys/mark6/phone": [
-                "projects/mark6-lib/phone/src"
+            "@devmonkeys/mark6/comment": [
+                "projects/mark6-lib/comment/src"
             ],
             "mark6-lib": [
                 "dist/mark6-lib/mark6-lib",

@@ -1,25 +1,35 @@
-<div class="mark6-image-placeholder"
-     [style.paddingTop.%]="100 / (aspectRatioNumber)"
-     [style.backgroundImage]="backgroundImage"></div>
+<ng-container *ngIf="{
+  preview: preview && state !== 'failed',
+  success: src && state !== 'failed',
+  failed: state === 'failed'
+} as check">
 
-<img class="mark6-image-preview"
-     #imgPreview
-     *ngIf="preview && state !== 'failed'"
-     [@fadeOut]="state"
-     [attr.src]="preview"
-     [attr.alt]="alt"/>
+    <div class="mark6-image-placeholder"
+         [style.paddingTop.%]="aspectRatioNumber ? 100 / (aspectRatioNumber) : null"
+         [style.backgroundImage]="backgroundImage"></div>
 
-<img class="mark6-image-success"
-     *ngIf="src && state !== 'failed'"
-     [@fadeIn]="state"
-     [ngClass]="state"
-     (load)="loadSuccess()"
-     (error)="loadFailed()"
-     [attr.src]="src"
-     [attr.srcset]="srcSet"
-     [attr.alt]="alt"/>
+    <img class="mark6-image-preview"
+         #imgPreview
+         *ngIf="check.preview"
+         [ngClass]="{'no-aspect-spacer': aspectRatioNumber === null}"
+         [@fadeOut]="state"
+         [attr.src]="preview"
+         [attr.alt]="alt"/>
 
-<img class="mark6-image-failed"
-     *ngIf="state === 'failed'"
-     [src]="failedSrc"
-     alt="Image not found"/>
+    <img class="mark6-image-success"
+         *ngIf="check.success"
+         [@fadeIn]="state"
+         [ngClass]="{'no-aspect-spacer': aspectRatioNumber === null && !check.preview}"
+         (load)="loadSuccess()"
+         (error)="loadFailed()"
+         [attr.src]="src"
+         [attr.srcset]="srcSet"
+         [attr.alt]="alt"/>
+
+    <img class="mark6-image-failed"
+         *ngIf="check.failed"
+         [ngClass]="{'no-aspect-spacer': aspectRatioNumber === null}"
+         [src]="failedSrc"
+         alt="Image not found"/>
+
+</ng-container>
