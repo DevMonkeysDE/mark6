@@ -13,6 +13,7 @@
          *ngIf="check.preview"
          [ngClass]="{'no-aspect-spacer': aspectRatioNumber === null}"
          [@fadeOut]="state"
+         [attr.loading]="loadingStrategy"
          [attr.src]="preview"
          [attr.alt]="alt"/>
 
@@ -22,6 +23,7 @@
          [ngClass]="{'no-aspect-spacer': aspectRatioNumber === null && !check.preview}"
          (load)="loadSuccess()"
          (error)="loadFailed()"
+         [attr.loading]="loadingStrategy"
          [attr.src]="src"
          [attr.srcset]="srcSet"
          [attr.alt]="alt"/>
@@ -30,6 +32,7 @@
          *ngIf="check.failed"
          [ngClass]="{'no-aspect-spacer': aspectRatioNumber === null}"
          [src]="failedSrc"
+         [attr.loading]="loadingStrategy"
          alt="Image not found"/>
 
 </ng-container>

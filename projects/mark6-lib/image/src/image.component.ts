@@ -40,6 +40,7 @@ export class Mark6ImageComponent implements OnChanges {
     @Input() public backgroundImage: string;
     @Input() public addClass: string;
     @Input() public round = false;
+    @Input() public loadingStrategy: 'eager' | 'lazy' = 'lazy';
 
     @Output() public failed = new EventEmitter<void>();
     @Output() public loaded = new EventEmitter<void>();
